@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="es"> <!-- Indica que el idioma principal de la página es español -->
+
+<head>
+
+    <!-- Configuración básica de la página -->
+    <meta charset="UTF-8"> <!-- Permite utilizar tildes, ñ y otros caracteres especiales -->
+
+    <!-- Hace que la página se adapte correctamente a celulares y tablets -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Valentina | Sitio Personal</title> <!-- Título que aparece en la pestaña del navegador -->
+
+    <!-- Conecta este archivo HTML con el archivo de estilos CSS -->
+    <link rel="stylesheet" href="estilos.css">
+
+</head>
+
+<body>
+
+    <!-- =====================================
+         MENÚ DE NAVEGACIÓN
+         ===================================== -->
+
+    <header>
+        <nav class="navbar">
+            <!-- "class" permite aplicar los estilos definidos en CSS -->
+
+            <!-- Logo / nombre -->
+            <a href="#inicio" class="logo">
+                <!-- href="#inicio" lleva al elemento que tenga id="inicio" -->
+                Valentina<span>.</span>
+                <!-- El span permite darle un estilo diferente solamente al punto -->
+            </a>
+
+
+            <!-- Opciones del menú -->
+            <ul class="menu">
+                <!-- ul crea una lista no ordenada -->
+
+                <li>
+                    <a href="#inicio">Inicio</a>
+                    <!-- Al hacer clic, lleva a la sección cuyo id es "inicio" -->
+                </li>
+
+                <li>
+                    <a href="#sobre-mi">Sobre mí</a>
+                    <!-- Lleva directamente a la sección "Sobre mí" -->
+                </li>
+
+                <li>
+                    <a href="#contacto">Contacto</a>
+                    <!-- Lleva directamente a la sección "Contacto" -->
+                </li>
+
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <main>
+        <!-- main contiene el contenido principal del sitio -->
+
+
+        <!-- =====================================
+             INICIO
+             ===================================== -->
+
+        <section id="inicio" class="inicio">
+            <!--
+                "section" divide la página en una sección temática.
+                id="inicio" permite llegar aquí desde los enlaces del menú.
+                class="inicio" permite aplicar estilos CSS.
+            -->
+
+
+            <div class="inicio-texto">
+
+                <p class="pequeno-titulo">
+                    BIENVENIDO A MI SITIO
+                </p>
+
+                <h1>
+                    Hola, soy
+                    <span>Valentina</span>
+                    <!-- span permite aplicar un estilo diferente al nombre -->
+                </h1>
+
+                <p class="descripcion">
+                    Estudiante de programación, futura estudiante
+                    de Medicina Veterinaria y una persona que trabaja
+                    constantemente por alcanzar sus metas.
+                </p>
+
+
+                <!-- Botones de navegación -->
+
+                <div class="botones">
+
+                    <a href="#sobre-mi" class="boton principal">
+                        <!-- Enlace que lleva a la sección "Sobre mí" -->
+                        Conocerme
+                    </a>
+
+                    <a href="#contacto" class="boton secundario">
+                        <!-- Enlace que lleva a la sección "Contacto" -->
+                        Contacto
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Elemento visual decorativo -->
+
+            <div class="inicio-visual">
+
+                <div class="circulo grande"></div>
+                <!-- Círculo decorativo grande -->
+
+                <div class="circulo pequeno"></div>
+                <!-- Círculo decorativo pequeño -->
+
+                <div class="huella">
+                    🐾
+                    <!-- Huella utilizada como elemento visual -->
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             SOBRE MÍ
+             ===================================== -->
+
+        <section id="sobre-mi" class="sobre-mi">
+
+            <div class="titulo-seccion">
+
+                <p class="pequeno-titulo">
+                    CONOCE UN POCO MÁS
+                </p>
+
+                <h2>Sobre mí</h2>
+
+                <div class="linea"></div>
+                <!-- Línea decorativa debajo del título -->
+
+            </div>
+
+
+            <!-- Foto + información -->
+
+            <div class="sobre-contenido">
+
+
+                <!-- FOTO -->
+
+                <div class="foto-contenedor">
+
+                    <div class="foto">
+
+                        <img
+                            src="mifoto.jpg"
+                            alt="Foto de Valentina"
+                        >
+                        <!--
+                            src indica dónde se encuentra la imagen.
+                            alt proporciona una descripción de la imagen.
+                            El texto alternativo también ayuda a la accesibilidad.
+                        -->
+
+                    </div>
+
+                </div>
+
+
+                <!-- INFORMACIÓN PERSONAL -->
+
+                <div class="sobre-texto">
+
+                    <p>
+                        Hola, soy <strong>Valentina</strong>, tengo 17 años
+                        y soy estudiante de 4to medio en Chile.
+                        Actualmente estudio programación y, al mismo tiempo,
+                        me preparo para entrar a la educación superior.
+                    </p>
+
+                    <p>
+                        Aunque la programación no es necesariamente mi área
+                        favorita, decidí estudiarla porque es una herramienta
+                        que me permite acercarme al futuro que quiero.
+                        También me permite tener la posibilidad de trabajar
+                        de manera remota mientras estudio.
+                    </p>
+
+
+                    <!-- Meta personal -->
+
+                    <div class="meta">
+
+                        <div class="meta-icon">
+                            🐾
+                        </div>
+
+                        <div>
+
+                            <h3>Mi gran meta</h3>
+
+                            <p>
+                                Desde los 5 años tengo decidido que quiero
+                                estudiar <strong>Medicina Veterinaria</strong>.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =====================================
+                 TARJETAS INFORMATIVAS
+                 ===================================== -->
+
+            <div class="tarjetas">
+
+                <!--
+                    article representa un bloque independiente
+                    de información dentro de la página.
+                -->
+
+                <article class="tarjeta">
+
+                    <div class="icono">
+                        🌎
+                    </div>
+
+                    <h3>Mi futuro</h3>
+
+                    <p>
+                        Quiero viajar internacionalmente, especializarme
+                        en Nueva Zelanda y trabajar con animales exóticos.
+                    </p>
+
+                </article>
+
+
+                <article class="tarjeta">
+
+                    <div class="icono">
+                        🐋
+                    </div>
+
+                    <h3>Animales</h3>
+
+                    <p>
+                        Me gustaría trabajar con animales como leones,
+                        ballenas, delfines, pingüinos y nutrias.
+                    </p>
+
+                </article>
+
+
+                <article class="tarjeta">
+
+                    <div class="icono">
+                        ✨
+                    </div>
+
+                    <h3>Cómo soy</h3>
+
+                    <p>
+                        Me considero perseverante, puntual, amigable,
+                        estudiosa y cautelosa.
+                    </p>
+
+                </article>
+
+            </div>
+
+
+            <!-- =====================================
+                 GUSTOS Y PASATIEMPOS
+                 ===================================== -->
+
+            <div class="gustos">
+
+                <div class="titulo-seccion">
+
+                    <p class="pequeno-titulo">
+                        MI DÍA A DÍA
+                    </p>
+
+                    <h2>Lo que disfruto</h2>
+
+                </div>
+
+
+                <!-- Lista visual de intereses -->
+
+                <div class="etiquetas">
+
+                    <span>📚 Leer</span>
+                    <span>🎧 Escuchar música</span>
+                    <span>🍳 Cocinar</span>
+                    <span>🎮 Jugar</span>
+                    <span>😴 Dormir</span>
+                    <span>🎨 Dibujar</span>
+
+                </div>
+
+
+                <!-- Información adicional sobre la música -->
+
+                <p class="musica">
+
+                    🎵 La música también es importante para mí.
+                    CORTIS es uno de mis grupos favoritos y su música
+                    me ayuda a sobrellevar los momentos de estrés,
+                    sentirme mejor y seguir esforzándome.
+
+                </p>
+
+            </div>
+
+
+            <!-- =====================================
+                 APRENDIZAJE
+                 ===================================== -->
+
+            <div class="aprendizaje">
+
+                <div>
+
+                    <p class="pequeno-titulo">
+                        SIEMPRE APRENDIENDO
+                    </p>
+
+                    <h2>
+                        Quiero seguir mejorando
+                    </h2>
+
+                </div>
+
+
+                <!-- Habilidades que estoy desarrollando -->
+
+                <div class="habilidades">
+
+
+                    <!-- Inglés -->
+
+                    <div class="habilidad">
+
+                        <div class="habilidad-titulo">
+
+                            <span>Inglés</span>
+
+                            <span>En progreso</span>
+
+                        </div>
+
+
+                        <!--
+                            La barra funciona mediante CSS.
+                            El ancho de "progreso ingles" representa
+                            visualmente el porcentaje de avance.
+                        -->
+
+                        <div class="barra">
+                            <div class="progreso ingles"></div>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Programación -->
+
+                    <div class="habilidad">
+
+                        <div class="habilidad-titulo">
+
+                            <span>Programación</span>
+
+                            <span>En aprendizaje</span>
+
+                        </div>
+
+
+                        <div class="barra">
+                            <div class="progreso programacion"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             CONTACTO
+             ===================================== -->
+
+        <section id="contacto" class="contacto">
+
+            <div class="titulo-seccion">
+
+                <p class="pequeno-titulo">
+                    ¿HABLAMOS?
+                </p>
+
+                <h2>Contacto</h2>
+
+                <div class="linea"></div>
+
+
+                <p>
+                    Si quieres comunicarte conmigo,
+                    puedes dejarme un mensaje.
+                </p>
+
+            </div>
+
+
+            <!-- =====================================
+                 FORMULARIO DE CONTACTO
+                 ===================================== -->
+
+            <form class="formulario">
+                <!--
+                    "form" permite crear un formulario
+                    para recopilar información del usuario.
+                -->
+
+
+                <!-- Nombre -->
+
+                <label for="nombre">
+                    Nombre
+                </label>
+                <!--
+                    "for" conecta esta etiqueta con el input
+                    que tenga el mismo "id".
+                -->
+
+                <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    placeholder="Tu nombre"
+                    required
+                >
+                <!--
+                    type="text": permite escribir texto.
+                    id="nombre": identifica este campo.
+                    name="nombre": asigna un nombre al dato.
+                    placeholder: muestra un texto de ejemplo.
+                    required: obliga a completar el campo.
+                -->
+
+
+                <!-- Correo electrónico -->
+
+                <label for="email">
+                    Correo electrónico
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="tu@email.com"
+                    required
+                >
+                <!--
+                    type="email" indica que el campo es para un correo.
+                    El navegador puede comprobar que tenga un formato válido.
+                -->
+
+
+                <!-- Mensaje -->
+
+                <label for="mensaje">
+                    Mensaje
+                </label>
+
+                <textarea
+                    id="mensaje"
+                    name="mensaje"
+                    rows="6"
+                    placeholder="Escribe tu mensaje..."
+                    required
+                ></textarea>
+                <!--
+                    textarea permite escribir mensajes más largos.
+                    rows="6" define una altura inicial aproximada de 6 líneas.
+                -->
+
+
+                <!-- Botón para enviar -->
+
+                <button type="submit">
+                    Enviar mensaje →
+                </button>
+                <!-- type="submit" indica que el botón envía el formulario -->
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================
+         PIE DE PÁGINA
+         ===================================== -->
+
+    <footer>
+
+        <p>
+            © 2026 Valentina · Sitio web personal
+        </p>
+
+    </footer>
+
+
+</body>
+</html>

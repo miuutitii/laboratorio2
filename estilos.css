@@ -1,0 +1,1011 @@
+/* =========================================
+   CONFIGURACIÓN GENERAL
+   ========================================= */
+
+* {
+    margin: 0; /* Elimina los márgenes predeterminados del navegador */
+    padding: 0; /* Elimina los espacios internos predeterminados */
+    box-sizing: border-box; /* Hace que el padding y borde se incluyan dentro del tamaño del elemento */
+}
+
+html {
+    scroll-behavior: smooth; /* Hace que el desplazamiento entre secciones sea suave */
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif; /* Define la tipografía principal */
+    color: #26332f; /* Define el color general del texto */
+    background-color: #f8f5ee; /* Define el color crema del fondo */
+    line-height: 1.6; /* Aumenta el espacio entre las líneas de texto */
+}
+
+a {
+    text-decoration: none; /* Elimina el subrayado predeterminado de los enlaces */
+    color: inherit; /* Hace que el enlace use el color de texto de su elemento padre */
+}
+
+img {
+    max-width: 100%; /* Evita que una imagen sea más grande que su contenedor */
+    display: block; /* Evita espacios innecesarios debajo de las imágenes */
+}
+
+
+/* =========================================
+   COLORES DEL SITIO
+   ========================================= */
+
+:root {
+    /* Variables que permiten reutilizar los mismos colores en todo el sitio */
+
+    --verde-oscuro: #17352f; /* Color principal oscuro */
+    --verde: #2f5d50; /* Verde utilizado en botones y detalles */
+    --verde-claro: #719789; /* Verde claro para elementos decorativos */
+
+    --crema: #f8f5ee; /* Color principal del fondo */
+    --blanco: #ffffff; /* Color blanco */
+
+    --dorado: #c7a96b; /* Color dorado para detalles */
+    --dorado-claro: #e7d7b2; /* Dorado más claro para fondos */
+
+    --texto: #26332f; /* Color principal del texto */
+    --gris: #66736e; /* Color utilizado para textos secundarios */
+
+    --borde: #dedbd3; /* Color de los bordes */
+}
+
+
+/* =========================================
+   MENÚ
+   ========================================= */
+
+header {
+    position: sticky; /* Mantiene el menú visible mientras se desplaza la página */
+    top: 0; /* Hace que el menú quede pegado a la parte superior */
+    z-index: 1000; /* Coloca el menú por encima de los demás elementos */
+
+    background-color: rgba(248, 245, 238, 0.95); /* Fondo crema con un 95% de opacidad */
+
+    backdrop-filter: blur(10px); /* Difumina el contenido que queda detrás del menú */
+
+    border-bottom: 1px solid #e5e1d8; /* Agrega una línea sutil debajo del menú */
+}
+
+.navbar {
+    width: 90%; /* El menú ocupa el 90% del ancho de la pantalla */
+    max-width: 1100px; /* Evita que el contenido sea demasiado ancho en pantallas grandes */
+
+    min-height: 75px; /* Define una altura mínima para el menú */
+
+    margin: auto; /* Centra horizontalmente el menú */
+
+    display: flex; /* Activa Flexbox para organizar los elementos */
+    justify-content: space-between; /* Separa el logo y las opciones del menú */
+    align-items: center; /* Centra verticalmente los elementos */
+}
+
+
+/* Nombre */
+
+.logo {
+    font-size: 1.5rem; /* Aumenta el tamaño del nombre */
+    font-weight: bold; /* Hace que el nombre aparezca en negrita */
+
+    color: var(--verde-oscuro); /* Utiliza el verde oscuro definido anteriormente */
+}
+
+.logo span {
+    color: var(--dorado); /* Colorea el punto del logo de dorado */
+}
+
+
+/* Links */
+
+.menu {
+    display: flex; /* Coloca las opciones del menú en una fila */
+
+    gap: 35px; /* Agrega espacio entre cada opción */
+
+    list-style: none; /* Elimina los puntos de la lista */
+}
+
+.menu a {
+    position: relative; /* Permite posicionar correctamente la línea decorativa */
+
+    color: var(--verde-oscuro); /* Define el color de los enlaces */
+
+    font-size: 0.95rem; /* Define un tamaño ligeramente menor al texto normal */
+
+    transition: color 0.3s ease; /* Hace suave el cambio de color al pasar el mouse */
+}
+
+
+/* Línea debajo del link */
+
+.menu a::after {
+    content: ""; /* Crea un elemento decorativo vacío */
+
+    position: absolute; /* Permite posicionarlo respecto al enlace */
+
+    left: 0; /* Comienza desde el lado izquierdo del enlace */
+    bottom: -6px; /* Coloca la línea debajo del texto */
+
+    width: 0; /* La línea comienza oculta */
+    height: 2px; /* Define el grosor de la línea */
+
+    background-color: var(--dorado); /* La línea será de color dorado */
+
+    transition: width 0.3s ease; /* Hace que la línea aparezca suavemente */
+}
+
+.menu a:hover {
+    color: var(--verde); /* Cambia el color del enlace cuando pasamos el mouse */
+}
+
+.menu a:hover::after {
+    width: 100%; /* La línea ocupa todo el ancho del enlace al pasar el mouse */
+}
+
+
+/* =========================================
+   INICIO
+   ========================================= */
+
+.inicio {
+    width: 90%; /* La sección utiliza el 90% del ancho disponible */
+    max-width: 1100px; /* Limita el ancho máximo en pantallas grandes */
+
+    min-height: calc(100vh - 75px); /* Ocupa casi toda la pantalla descontando la altura del menú */
+
+    margin: auto; /* Centra la sección horizontalmente */
+
+    display: grid; /* Activa CSS Grid para organizar el contenido */
+
+    grid-template-columns: 1.1fr 0.9fr; /* Divide el espacio en dos columnas */
+
+    align-items: center; /* Centra verticalmente el contenido */
+
+    gap: 50px; /* Deja espacio entre las dos columnas */
+}
+
+
+/* Texto */
+
+.inicio-texto {
+    padding: 60px 0; /* Agrega espacio arriba y abajo del contenido */
+}
+
+.pequeno-titulo {
+    margin-bottom: 12px; /* Separa este texto del título principal */
+
+    color: var(--dorado); /* Utiliza el color dorado */
+
+    font-size: 0.75rem; /* Hace el texto pequeño */
+
+    font-weight: bold; /* Destaca el texto */
+
+    letter-spacing: 3px; /* Aumenta el espacio entre las letras */
+}
+
+.inicio h1 {
+    margin-bottom: 25px; /* Separa el título del texto siguiente */
+
+    color: var(--verde-oscuro); /* Define el color del título */
+
+    font-size: clamp(3rem, 7vw, 5.5rem); /* Hace que el tamaño se adapte al ancho de la pantalla */
+
+    line-height: 1; /* Reduce el espacio vertical entre líneas */
+
+    letter-spacing: -3px; /* Acerca ligeramente las letras */
+}
+
+.inicio h1 span {
+    display: block; /* Hace que "Valentina" aparezca en una línea independiente */
+
+    color: var(--verde); /* Cambia el color del nombre */
+}
+
+.descripcion {
+    max-width: 600px; /* Evita que el texto se extienda demasiado horizontalmente */
+
+    margin-bottom: 35px; /* Separa la descripción de los botones */
+
+    color: var(--gris); /* Utiliza un gris para diferenciar el texto secundario */
+
+    font-size: 1.1rem; /* Aumenta ligeramente el tamaño del texto */
+}
+
+
+/* Botones */
+
+.botones {
+    display: flex; /* Coloca los botones utilizando Flexbox */
+
+    gap: 15px; /* Deja espacio entre los botones */
+
+    flex-wrap: wrap; /* Permite que los botones bajen de línea si no hay espacio */
+}
+
+.boton {
+    padding: 13px 25px; /* Define el espacio interno del botón */
+
+    border-radius: 5px; /* Redondea ligeramente las esquinas */
+
+    font-weight: bold; /* Destaca el texto del botón */
+
+    transition: 0.3s ease; /* Hace suaves los cambios al pasar el mouse */
+}
+
+.boton:hover {
+    transform: translateY(-3px); /* Eleva visualmente el botón al pasar el mouse */
+}
+
+.principal {
+    background-color: var(--verde-oscuro); /* Define el fondo del botón principal */
+
+    color: white; /* Define el color blanco del texto */
+}
+
+.principal:hover {
+    background-color: var(--verde); /* Cambia el fondo cuando se pasa el mouse */
+}
+
+.secundario {
+    border: 1px solid var(--verde); /* Crea un borde verde alrededor del botón */
+
+    color: var(--verde); /* Define el color del texto */
+}
+
+.secundario:hover {
+    background-color: var(--verde); /* Colorea el fondo al pasar el mouse */
+
+    color: white; /* Cambia el texto a blanco */
+}
+
+
+/* =========================================
+   ELEMENTO VISUAL DEL INICIO
+   ========================================= */
+
+.inicio-visual {
+    position: relative; /* Permite posicionar los círculos dentro de este elemento */
+
+    height: 500px; /* Define el espacio disponible para la decoración */
+
+    display: flex; /* Activa Flexbox */
+
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+}
+
+.circulo {
+    position: absolute; /* Permite colocar los círculos independientemente */
+
+    border-radius: 50%; /* Convierte el elemento en un círculo */
+}
+
+.grande {
+    width: 360px; /* Define el ancho del círculo */
+    height: 360px; /* Define la altura del círculo */
+
+    background-color: var(--dorado-claro); /* Define el color del círculo */
+
+    opacity: 0.55; /* Hace que el círculo sea parcialmente transparente */
+}
+
+.pequeno {
+    width: 150px; /* Define el ancho del círculo pequeño */
+    height: 150px; /* Define la altura del círculo pequeño */
+
+    top: 60px; /* Lo mueve hacia abajo desde la parte superior */
+    right: 20px; /* Lo separa 20px del lado derecho */
+
+    background-color: var(--verde-claro); /* Define su color */
+
+    opacity: 0.35; /* Reduce su intensidad */
+}
+
+.huella {
+    position: relative; /* Permite controlar su posición y nivel */
+
+    z-index: 2; /* Coloca la huella por encima de los círculos */
+
+    width: 260px; /* Define el ancho del círculo central */
+    height: 260px; /* Define la altura del círculo central */
+
+    display: flex; /* Activa Flexbox */
+
+    justify-content: center; /* Centra la huella horizontalmente */
+    align-items: center; /* Centra la huella verticalmente */
+
+    border-radius: 50%; /* Convierte el contenedor en un círculo */
+
+    background-color: var(--verde-oscuro); /* Fondo verde oscuro */
+
+    font-size: 6rem; /* Aumenta el tamaño del emoji */
+
+    box-shadow:
+        0 25px 60px rgba(23, 53, 47, 0.2); /* Crea una sombra grande y suave */
+}
+
+
+/* =========================================
+   SECCIONES
+   ========================================= */
+
+.sobre-mi,
+.contacto {
+    width: 90%; /* Limita el contenido al 90% de la pantalla */
+    max-width: 1100px; /* Define un ancho máximo */
+
+    margin: auto; /* Centra las secciones */
+
+    padding: 110px 0; /* Agrega espacio arriba y abajo */
+}
+
+
+/* Títulos */
+
+.titulo-seccion {
+    margin-bottom: 60px; /* Separa el título del contenido */
+
+    text-align: center; /* Centra el texto */
+}
+
+.titulo-seccion h2 {
+    color: var(--verde-oscuro); /* Color principal de los títulos */
+
+    font-size: clamp(2rem, 5vw, 3rem); /* Adapta el tamaño del título a la pantalla */
+
+    line-height: 1.2; /* Controla el espacio entre líneas */
+}
+
+.linea {
+    width: 55px; /* Define el ancho de la línea */
+    height: 3px; /* Define el grosor */
+
+    margin: 20px auto; /* Centra la línea y deja espacio arriba y abajo */
+
+    background-color: var(--dorado); /* Color dorado de la línea */
+}
+
+
+/* =========================================
+   SOBRE MÍ
+   ========================================= */
+
+.sobre-contenido {
+    display: grid; /* Organiza la foto y el texto mediante Grid */
+
+    grid-template-columns: 0.85fr 1.15fr; /* La foto ocupa menos espacio que el texto */
+
+    align-items: center; /* Centra verticalmente ambos elementos */
+
+    gap: 80px; /* Espacio entre la foto y el texto */
+}
+
+
+/* Foto */
+
+.foto-contenedor {
+    position: relative; /* Permite colocar la decoración detrás de la foto */
+
+    width: min(100%, 390px); /* Usa el menor valor entre 100% y 390px */
+
+    margin: auto; /* Centra la fotografía */
+}
+
+.foto {
+    position: relative; /* Permite controlar la posición de la fotografía */
+
+    z-index: 2; /* Coloca la foto por encima de la decoración */
+
+    width: 100%; /* Ocupa todo el ancho disponible */
+
+    aspect-ratio: 4 / 5; /* Mantiene una proporción vertical de fotografía */
+
+    overflow: hidden; /* Oculta cualquier parte de la imagen que sobresalga */
+
+    border: 10px solid white; /* Crea un marco blanco alrededor de la foto */
+
+    border-radius: 10px; /* Redondea las esquinas */
+
+    background-color: #ddd; /* Color que aparece mientras no hay una imagen */
+
+    box-shadow:
+        0 20px 45px rgba(23, 53, 47, 0.12); /* Agrega profundidad mediante una sombra */
+}
+
+.foto img {
+    width: 100%; /* Hace que la imagen ocupe todo el contenedor */
+
+    height: 100%; /* Hace que la imagen ocupe toda la altura */
+
+    object-fit: cover; /* Recorta la imagen para llenar el espacio sin deformarla */
+}
+
+
+/* Marco decorativo */
+
+.foto-contenedor::after {
+    content: ""; /* Crea el elemento decorativo */
+
+    position: absolute; /* Permite posicionarlo detrás de la fotografía */
+
+    top: 20px; /* Mueve el marco hacia abajo */
+    left: 20px; /* Mueve el marco hacia la derecha */
+
+    width: 100%; /* Hace que tenga el mismo ancho que la foto */
+    height: 100%; /* Hace que tenga el mismo alto que la foto */
+
+    border: 2px solid var(--dorado); /* Crea un borde dorado */
+
+    border-radius: 10px; /* Redondea las esquinas */
+}
+
+
+/* Texto */
+
+.sobre-texto {
+    color: var(--gris); /* Define el color del texto secundario */
+
+    font-size: 1rem; /* Define el tamaño del texto */
+}
+
+.sobre-texto p {
+    margin-bottom: 20px; /* Separa los párrafos */
+}
+
+.sobre-texto strong {
+    color: var(--verde-oscuro); /* Destaca palabras importantes */
+}
+
+
+/* =========================================
+   TARJETA DE META
+   ========================================= */
+
+.meta {
+    display: flex; /* Coloca el icono y el texto en una fila */
+
+    gap: 18px; /* Separa el icono del texto */
+
+    margin-top: 30px; /* Separa la tarjeta del párrafo anterior */
+
+    padding: 25px; /* Agrega espacio interno */
+
+    background-color: white; /* Fondo blanco de la tarjeta */
+
+    border-left: 4px solid var(--dorado); /* Agrega una línea dorada al lado izquierdo */
+
+    border-radius: 0 8px 8px 0; /* Redondea solamente las esquinas derechas */
+
+    box-shadow:
+        0 12px 30px rgba(23, 53, 47, 0.08); /* Agrega una sombra suave */
+}
+
+.meta-icon {
+    font-size: 2rem; /* Aumenta el tamaño del icono */
+}
+
+.meta h3 {
+    margin-bottom: 5px; /* Separa el título del texto */
+
+    color: var(--verde-oscuro); /* Color del título */
+}
+
+.meta p {
+    margin: 0; /* Elimina el margen predeterminado del párrafo */
+}
+
+
+/* =========================================
+   TARJETAS
+   ========================================= */
+
+.tarjetas {
+    display: grid; /* Organiza las tarjetas mediante Grid */
+
+    grid-template-columns: repeat(3, 1fr); /* Crea tres columnas del mismo tamaño */
+
+    gap: 25px; /* Espacio entre las tarjetas */
+
+    margin-top: 100px; /* Separa las tarjetas del contenido superior */
+}
+
+.tarjeta {
+    padding: 35px 30px; /* Espacio interno de las tarjetas */
+
+    background-color: white; /* Fondo blanco */
+
+    border: 1px solid var(--borde); /* Borde sutil */
+
+    border-radius: 8px; /* Redondea las esquinas */
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease; /* Suaviza el movimiento y la sombra */
+}
+
+.tarjeta:hover {
+    transform: translateY(-7px); /* Levanta la tarjeta cuando pasamos el mouse */
+
+    box-shadow:
+        0 15px 40px rgba(23, 53, 47, 0.1); /* Agrega una sombra al pasar el mouse */
+}
+
+.icono {
+    margin-bottom: 18px; /* Separa el icono del título */
+
+    font-size: 2rem; /* Aumenta el tamaño del icono */
+}
+
+.tarjeta h3 {
+    margin-bottom: 10px; /* Separa el título del párrafo */
+
+    color: var(--verde-oscuro); /* Color del título */
+}
+
+.tarjeta p {
+    color: var(--gris); /* Color del texto secundario */
+
+    font-size: 0.95rem; /* Tamaño ligeramente menor */
+}
+
+
+/* =========================================
+   GUSTOS
+   ========================================= */
+
+.gustos {
+    margin-top: 120px; /* Separa esta sección del contenido anterior */
+
+    text-align: center; /* Centra todo el contenido */
+}
+
+.gustos .titulo-seccion {
+    margin-bottom: 35px; /* Reduce el espacio debajo del título */
+}
+
+.gustos .titulo-seccion h2 {
+    font-size: 2rem; /* Define un tamaño específico para este título */
+}
+
+.etiquetas {
+    display: flex; /* Organiza las etiquetas en fila */
+
+    justify-content: center; /* Centra las etiquetas */
+
+    flex-wrap: wrap; /* Permite que bajen de línea en pantallas pequeñas */
+
+    gap: 12px; /* Espacio entre las etiquetas */
+}
+
+.etiquetas span {
+    padding: 10px 18px; /* Espacio interno de cada etiqueta */
+
+    background-color: white; /* Fondo blanco */
+
+    border: 1px solid var(--borde); /* Borde suave */
+
+    border-radius: 50px; /* Hace que las etiquetas tengan forma de cápsula */
+
+    font-size: 0.9rem; /* Tamaño del texto */
+}
+
+.musica {
+    max-width: 750px; /* Limita el ancho del texto */
+
+    margin: 35px auto 0; /* Centra el texto y deja espacio arriba */
+
+    color: var(--gris); /* Color gris */
+
+    font-style: italic; /* Hace que el texto aparezca en cursiva */
+}
+
+
+/* =========================================
+   APRENDIZAJE
+   ========================================= */
+
+.aprendizaje {
+    margin-top: 120px; /* Separa esta sección de la anterior */
+
+    padding: 60px; /* Espacio interno */
+
+    display: grid; /* Utiliza CSS Grid */
+
+    grid-template-columns: 0.8fr 1.2fr; /* Divide el contenido en dos columnas */
+
+    gap: 70px; /* Espacio entre columnas */
+
+    background-color: var(--verde-oscuro); /* Fondo verde oscuro */
+
+    color: white; /* Texto blanco */
+
+    border-radius: 10px; /* Redondea las esquinas */
+}
+
+.aprendizaje h2 {
+    font-size: 2rem; /* Tamaño del título */
+
+    line-height: 1.2; /* Espacio entre líneas */
+}
+
+.habilidades {
+    display: flex; /* Activa Flexbox */
+
+    flex-direction: column; /* Coloca las habilidades una debajo de otra */
+
+    gap: 30px; /* Espacio entre habilidades */
+}
+
+.habilidad-titulo {
+    display: flex; /* Coloca nombre y estado en una fila */
+
+    justify-content: space-between; /* Envía cada texto a un extremo */
+
+    margin-bottom: 10px; /* Separa el texto de la barra */
+
+    font-size: 0.9rem; /* Tamaño del texto */
+}
+
+.habilidad-titulo span:last-child {
+    color: var(--dorado-claro); /* Colorea el estado de la habilidad */
+}
+
+.barra {
+    width: 100%; /* La barra ocupa todo el espacio disponible */
+
+    height: 7px; /* Define el grosor de la barra */
+
+    overflow: hidden; /* Evita que el progreso sobresalga */
+
+    border-radius: 10px; /* Redondea los extremos */
+
+    background-color: rgba(255, 255, 255, 0.15); /* Fondo blanco con poca opacidad */
+}
+
+.progreso {
+    height: 100%; /* Ocupa toda la altura de la barra */
+
+    background-color: var(--dorado); /* Color del progreso */
+
+    border-radius: 10px; /* Redondea los extremos */
+}
+
+.ingles {
+    width: 60%; /* Representa visualmente el progreso del inglés */
+
+}
+
+.programacion {
+    width: 45%; /* Representa visualmente el progreso en programación */
+}
+
+
+/* =========================================
+   CONTACTO
+   ========================================= */
+
+.contacto {
+    padding-top: 130px; /* Agrega espacio extra antes de la sección */
+}
+
+.contacto .titulo-seccion > p:last-child {
+    max-width: 600px; /* Limita el ancho del texto */
+
+    margin: 20px auto 0; /* Centra el párrafo */
+
+    color: var(--gris); /* Color gris para el texto secundario */
+}
+
+
+/* Formulario */
+
+.formulario {
+    max-width: 700px; /* Limita el ancho del formulario */
+
+    margin: auto; /* Centra el formulario */
+
+    padding: 45px; /* Agrega espacio interno */
+
+    background-color: white; /* Fondo blanco */
+
+    border-radius: 10px; /* Redondea las esquinas */
+
+    box-shadow:
+        0 15px 40px rgba(23, 53, 47, 0.1); /* Agrega una sombra suave */
+}
+
+.formulario label {
+    display: block; /* Hace que la etiqueta ocupe toda la línea */
+
+    margin-bottom: 8px; /* Separa la etiqueta del campo */
+
+    color: var(--verde-oscuro); /* Color de la etiqueta */
+
+    font-weight: bold; /* Destaca la etiqueta */
+}
+
+.formulario input,
+.formulario textarea {
+    width: 100%; /* Hace que los campos ocupen todo el ancho */
+
+    margin-bottom: 25px; /* Separa los campos entre sí */
+
+    padding: 14px 16px; /* Agrega espacio interno */
+
+    border: 1px solid var(--borde); /* Define un borde suave */
+
+    border-radius: 5px; /* Redondea las esquinas */
+
+    outline: none; /* Elimina el borde azul predeterminado del navegador */
+
+    background-color: #fcfbf8; /* Fondo ligeramente diferente al blanco */
+
+    color: var(--texto); /* Color del texto */
+
+    font-family: inherit; /* Usa la misma fuente del resto de la página */
+
+    font-size: 1rem; /* Tamaño del texto */
+
+    transition: 0.3s ease; /* Suaviza los cambios al seleccionar el campo */
+}
+
+.formulario input:focus,
+.formulario textarea:focus {
+    border-color: var(--verde); /* Cambia el borde al seleccionar el campo */
+
+    box-shadow:
+        0 0 0 3px rgba(47, 93, 80, 0.1); /* Crea un efecto de resaltado alrededor del campo */
+}
+
+.formulario textarea {
+    resize: vertical; /* Permite cambiar la altura, pero no el ancho */
+}
+
+.formulario button {
+    width: 100%; /* Hace que el botón ocupe todo el ancho */
+
+    padding: 14px; /* Espacio interno del botón */
+
+    border: none; /* Elimina el borde predeterminado */
+
+    border-radius: 5px; /* Redondea las esquinas */
+
+    background-color: var(--verde-oscuro); /* Fondo verde oscuro */
+
+    color: white; /* Texto blanco */
+
+    font-family: inherit; /* Utiliza la misma fuente */
+
+    font-size: 1rem; /* Tamaño del texto */
+
+    font-weight: bold; /* Texto en negrita */
+
+    cursor: pointer; /* Cambia el cursor a una mano al pasar por encima */
+
+    transition: 0.3s ease; /* Hace suave el cambio de color y movimiento */
+}
+
+.formulario button:hover {
+    background-color: var(--verde); /* Cambia el color del botón al pasar el mouse */
+
+    transform: translateY(-2px); /* Eleva ligeramente el botón */
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+    padding: 35px 20px; /* Espacio interno del pie de página */
+
+    text-align: center; /* Centra el texto */
+
+    background-color: var(--verde-oscuro); /* Fondo verde oscuro */
+
+    color: rgba(255, 255, 255, 0.7); /* Blanco con transparencia para un texto más suave */
+
+    font-size: 0.85rem; /* Reduce el tamaño del texto */
+}
+
+
+/* =========================================
+   RESPONSIVE - TABLETS
+   ========================================= */
+
+/*
+   Estas reglas se aplican cuando la pantalla
+   tiene un ancho máximo de 900px.
+*/
+
+@media (max-width: 900px) {
+
+    /* El inicio pasa de dos columnas a una */
+
+    .inicio {
+        grid-template-columns: 1fr; /* Utiliza una sola columna */
+
+        text-align: center; /* Centra el texto */
+
+        padding: 70px 0; /* Reduce el espacio de la sección */
+    }
+
+    .descripcion {
+        margin-left: auto; /* Centra horizontalmente el bloque */
+        margin-right: auto; /* Centra horizontalmente el bloque */
+    }
+
+    .botones {
+        justify-content: center; /* Centra los botones */
+    }
+
+    .inicio-visual {
+        height: 350px; /* Reduce el espacio de la decoración */
+    }
+
+
+    /* Sobre mí */
+
+    .sobre-contenido {
+        grid-template-columns: 1fr; /* Foto y texto pasan a una sola columna */
+
+        gap: 60px; /* Reduce el espacio entre ellos */
+    }
+
+
+    /* Tarjetas */
+
+    .tarjetas {
+        grid-template-columns: 1fr; /* Las tres tarjetas pasan a una columna */
+    }
+
+
+    /* Aprendizaje */
+
+    .aprendizaje {
+        grid-template-columns: 1fr; /* Las dos columnas pasan a una */
+
+        gap: 40px; /* Reduce el espacio entre los elementos */
+    }
+}
+
+
+/* =========================================
+   RESPONSIVE - CELULARES
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    /* Menú */
+
+    .navbar {
+        min-height: 100px; /* Aumenta la altura para acomodar el menú */
+
+        flex-direction: column; /* Coloca logo y menú uno debajo del otro */
+
+        justify-content: center; /* Centra verticalmente */
+
+        gap: 10px; /* Espacio entre logo y menú */
+    }
+
+    .menu {
+        gap: 20px; /* Reduce el espacio entre los enlaces */
+    }
+
+    .menu a {
+        font-size: 0.85rem; /* Reduce el tamaño de los enlaces */
+    }
+
+
+    /* Inicio */
+
+    .inicio {
+        min-height: auto; /* Permite que la sección tenga la altura necesaria */
+
+        padding: 70px 0; /* Reduce el espacio en celulares */
+    }
+
+    .inicio h1 {
+        font-size: 3rem; /* Reduce el tamaño del título */
+
+        letter-spacing: -1px; /* Reduce el espacio entre las letras */
+    }
+
+    .descripcion {
+        font-size: 1rem; /* Ajusta el tamaño del texto */
+    }
+
+
+    /* Botones */
+
+    .botones {
+        flex-direction: column; /* Coloca los botones uno debajo del otro */
+    }
+
+    .boton {
+        width: 100%; /* Hace que los botones ocupen todo el ancho */
+    }
+
+
+    /* Elemento visual */
+
+    .inicio-visual {
+        height: 280px; /* Reduce el espacio de la decoración */
+    }
+
+    .grande {
+        width: 240px; /* Reduce el círculo grande */
+        height: 240px;
+    }
+
+    .huella {
+        width: 180px; /* Reduce el círculo de la huella */
+        height: 180px;
+
+        font-size: 4rem; /* Reduce el tamaño de la huella */
+    }
+
+    .pequeno {
+        width: 100px; /* Reduce el círculo pequeño */
+        height: 100px;
+    }
+
+
+    /* Secciones */
+
+    .sobre-mi,
+    .contacto {
+        padding: 80px 0; /* Reduce el espacio vertical */
+    }
+
+
+    /* Foto */
+
+    .foto-contenedor {
+        width: 85%; /* Reduce ligeramente el tamaño de la fotografía */
+    }
+
+
+    /* Meta */
+
+    .meta {
+        padding: 20px; /* Reduce el espacio interno */
+    }
+
+
+    /* Aprendizaje */
+
+    .aprendizaje {
+        padding: 35px 25px; /* Reduce el espacio interno */
+    }
+
+
+    /* Formulario */
+
+    .formulario {
+        padding: 30px 20px; /* Reduce el padding para aprovechar mejor la pantalla */
+    }
+}
+
+
+/* =========================================
+   RESPONSIVE - CELULARES PEQUEÑOS
+   ========================================= */
+
+@media (max-width: 400px) {
+
+    .menu {
+        gap: 12px; /* Reduce aún más el espacio entre los enlaces */
+    }
+
+    .inicio h1 {
+        font-size: 2.5rem; /* Reduce el título para pantallas muy pequeñas */
+    }
+
+    .titulo-seccion h2 {
+        font-size: 2rem; /* Ajusta los títulos de las secciones */
+    }
+}
