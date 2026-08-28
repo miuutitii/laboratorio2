@@ -80,8 +80,7 @@ sitio-personal/
 ├── estilos.css
 ├── README.md
 │
-└── img/
-    └── valentina.jpg
+└── mifoto.jpg
 
 Archivos principales
 
@@ -97,7 +96,7 @@ README.md
 
 Contiene la documentación general del proyecto.
 
-img/valentina.jpg
+mifoto.jpg
 
 Corresponde a la fotografía utilizada en la sección "Sobre mí".
 
