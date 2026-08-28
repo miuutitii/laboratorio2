@@ -1009,3 +1009,264 @@ footer {
         font-size: 2rem; /* Ajusta los títulos de las secciones */
     }
 }
+
+/* =========================================
+   REPRODUCTOR DE MÚSICA
+   ========================================= */
+
+.reproductor {
+    max-width: 550px; /* Limita el ancho del reproductor */
+
+    margin-top: 45px; /* Separa el reproductor de los botones */
+
+    padding: 25px; /* Agrega espacio interno */
+
+    background-color: rgba(255, 255, 255, 0.75);
+    /* Fondo blanco con un poco de transparencia */
+
+    border: 1px solid var(--borde);
+    /* Agrega un borde suave */
+
+    border-radius: 12px;
+    /* Redondea las esquinas */
+
+    box-shadow:
+        0 15px 35px rgba(23, 53, 47, 0.08);
+    /* Agrega una sombra suave */
+
+    text-align: left;
+    /* Mantiene la información alineada a la izquierda */
+}
+
+
+/* Información de la canción */
+
+.reproductor-info {
+    margin-bottom: 18px;
+    /* Separa la información de los controles */
+}
+
+.now-playing {
+    display: block;
+    /* Permite controlar el espacio del elemento */
+
+    margin-bottom: 6px;
+    /* Separa "NOW PLAYING" del nombre */
+
+    color: var(--dorado);
+    /* Utiliza el color dorado del sitio */
+
+    font-size: 0.7rem;
+    /* Hace pequeño el texto */
+
+    font-weight: bold;
+    /* Destaca el texto */
+
+    letter-spacing: 2px;
+    /* Aumenta el espacio entre las letras */
+}
+
+.reproductor-info h3 {
+    margin-bottom: 3px;
+    /* Separa el nombre de la descripción */
+
+    color: var(--verde-oscuro);
+    /* Utiliza el verde oscuro */
+
+    font-size: 1.1rem;
+    /* Define el tamaño del nombre */
+}
+
+.reproductor-info p {
+    color: var(--gris);
+    /* Utiliza el gris para el texto secundario */
+
+    font-size: 0.85rem;
+    /* Hace más pequeño el texto */
+
+    font-style: italic;
+    /* Le da un estilo más delicado */
+}
+
+
+/* Controles del reproductor */
+
+.reproductor-controles audio {
+    width: 100%;
+    /* Hace que el reproductor ocupe todo el ancho disponible */
+
+    height: 40px;
+    /* Define una altura compacta */
+}
+
+
+/* Barra decorativa */
+
+.barra-musica {
+    width: 100%;
+    /* La barra ocupa todo el ancho */
+
+    height: 5px;
+    /* Define el grosor de la barra */
+
+    margin-top: 15px;
+    /* Separa la barra de los controles */
+
+    overflow: hidden;
+    /* Oculta cualquier parte del progreso que sobresalga */
+
+    border-radius: 10px;
+    /* Redondea los extremos */
+
+    background-color: #e4e1d8;
+    /* Color de fondo de la barra */
+}
+
+
+/* Progreso animado */
+
+.progreso-musica {
+    width: 35%;
+    /* Define el ancho inicial del progreso */
+
+    height: 100%;
+    /* Ocupa toda la altura de la barra */
+
+    background-color: var(--dorado);
+    /* Color dorado del progreso */
+
+    border-radius: 10px;
+    /* Redondea los extremos */
+
+    animation: avanzar-musica 157s linear infinite;
+    /*
+        Hace que la barra avance durante 180 segundos.
+        180 segundos = 3 minutos.
+        "linear" mantiene una velocidad constante.
+        "infinite" hace que vuelva a comenzar al terminar.
+    */
+}
+
+
+/* Animación de la barra */
+
+@keyframes avanzar-musica {
+
+    from {
+        width: 0%;
+        /* La barra comienza vacía */
+    }
+
+    to {
+        width: 100%;
+        /* La barra termina completamente llena */
+    }
+
+}
+
+
+/* =========================================
+   REPRODUCTOR EN CELULARES
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .reproductor {
+        width: 100%;
+        /* Utiliza todo el ancho disponible */
+
+        padding: 20px;
+        /* Reduce el espacio interno */
+    }
+
+    .reproductor-info h3 {
+        font-size: 1rem;
+        /* Reduce ligeramente el nombre */
+    }
+
+    .reproductor-info p {
+        font-size: 0.8rem;
+        /* Reduce el texto secundario */
+    }
+
+}
+
+/* =========================================
+   PORTADA DE LA CANCIÓN
+   ========================================= */
+
+.portada-musica {
+    width: 120px;
+    /* Define el tamaño del círculo */
+
+    height: 120px;
+    /* Mantiene el mismo alto que el ancho */
+
+    margin: 0 auto 20px;
+    /* Centra la portada y deja espacio debajo */
+
+    overflow: hidden;
+    /* Oculta las partes de la imagen que sobresalgan */
+
+    border-radius: 50%;
+    /* Convierte la imagen cuadrada en un círculo */
+
+    border: 4px solid var(--blanco);
+    /* Crea un pequeño borde blanco */
+
+    box-shadow:
+        0 10px 25px rgba(23, 53, 47, 0.18);
+    /* Agrega profundidad mediante una sombra */
+
+    animation: girar-portada 20s linear infinite;
+    /*
+        Hace que la portada gire.
+        8 segundos = una vuelta completa.
+        linear = velocidad constante.
+        infinite = gira continuamente.
+    */
+}
+
+
+.portada-musica img {
+    width: 100%;
+    /* Hace que la imagen ocupe todo el círculo */
+
+    height: 100%;
+    /* Mantiene la imagen dentro del círculo */
+
+    object-fit: cover;
+    /* Recorta la imagen para que cubra todo el espacio */
+
+    display: block;
+    /* Elimina espacios innecesarios debajo de la imagen */
+}
+
+
+/* =========================================
+   ANIMACIÓN DE LA PORTADA
+   ========================================= */
+
+@keyframes girar-portada {
+
+    from {
+        transform: rotate(0deg);
+        /* Comienza en su posición original */
+    }
+
+    to {
+        transform: rotate(360deg);
+        /* Completa una vuelta de 360 grados */
+    }
+
+}
+
+.portada-musica::after {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-color: #17352f;
+    border: 3px solid white;
+    border-radius: 50%;
+}
