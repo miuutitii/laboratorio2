@@ -2,264 +2,334 @@
    CONFIGURACIÓN GENERAL
    ========================================= */
 
+/*
+   Selector universal:
+   - Elimina márgenes y rellenos predeterminados del navegador.
+   - box-sizing: border-box hace que padding y border
+     se incluyan dentro del ancho/alto definido.
+*/
 * {
-    margin: 0; /* Elimina los márgenes predeterminados del navegador */
-    padding: 0; /* Elimina los espacios internos predeterminados */
-    box-sizing: border-box; /* Hace que el padding y borde se incluyan dentro del tamaño del elemento */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+
+/*
+   Hace que los desplazamientos internos de la página
+   sean suaves al utilizar enlaces/anclas.
+*/
 html {
-    scroll-behavior: smooth; /* Hace que el desplazamiento entre secciones sea suave */
+    scroll-behavior: smooth;
 }
 
+
+/*
+   Estilos generales del documento.
+*/
 body {
-    font-family: Arial, Helvetica, sans-serif; /* Define la tipografía principal */
-    color: #26332f; /* Define el color general del texto */
-    background-color: #f8f5ee; /* Define el color crema del fondo */
-    line-height: 1.6; /* Aumenta el espacio entre las líneas de texto */
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: #26332f;
+
+    background-color: #f8f5ee;
+
+    line-height: 1.6;
 }
 
+
+/*
+   Los enlaces heredan el color del elemento padre
+   y no muestran subrayado por defecto.
+*/
 a {
-    text-decoration: none; /* Elimina el subrayado predeterminado de los enlaces */
-    color: inherit; /* Hace que el enlace use el color de texto de su elemento padre */
+    text-decoration: none;
+    color: inherit;
 }
 
+
+/*
+   Las imágenes nunca superan el ancho de su contenedor.
+   display: block elimina espacios en línea no deseados.
+*/
 img {
-    max-width: 100%; /* Evita que una imagen sea más grande que su contenedor */
-    display: block; /* Evita espacios innecesarios debajo de las imágenes */
+    max-width: 100%;
+    display: block;
 }
 
 
+
 /* =========================================
-   COLORES DEL SITIO
+   COLORES
    ========================================= */
 
+/*
+   Variables globales del proyecto.
+
+   Centralizar los colores permite cambiar la identidad
+   visual de la página desde un único lugar.
+*/
 :root {
-    /* Variables que permiten reutilizar los mismos colores en todo el sitio */
 
-    --verde-oscuro: #17352f; /* Color principal oscuro */
-    --verde: #2f5d50; /* Verde utilizado en botones y detalles */
-    --verde-claro: #719789; /* Verde claro para elementos decorativos */
+    --verde-oscuro: #17352f;
 
-    --crema: #f8f5ee; /* Color principal del fondo */
-    --blanco: #ffffff; /* Color blanco */
+    --verde: #2f5d50;
 
-    --dorado: #c7a96b; /* Color dorado para detalles */
-    --dorado-claro: #e7d7b2; /* Dorado más claro para fondos */
+    --verde-claro: #719789;
 
-    --texto: #26332f; /* Color principal del texto */
-    --gris: #66736e; /* Color utilizado para textos secundarios */
+    --crema: #f8f5ee;
 
-    --borde: #dedbd3; /* Color de los bordes */
+    --blanco: #ffffff;
+
+    --dorado: #c7a96b;
+
+    --dorado-claro: #e7d7b2;
+
+    --texto: #26332f;
+
+    --gris: #66736e;
+
+    --borde: #dedbd3;
 }
+
 
 
 /* =========================================
-   MENÚ
+   MENÚ DE NAVEGACIÓN
    ========================================= */
 
+/*
+   El encabezado permanece fijo en la parte superior
+   mientras el usuario hace scroll.
+*/
 header {
-    position: sticky; /* Mantiene el menú visible mientras se desplaza la página */
-    top: 0; /* Hace que el menú quede pegado a la parte superior */
-    z-index: 1000; /* Coloca el menú por encima de los demás elementos */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 
-    background-color: rgba(248, 245, 238, 0.95); /* Fondo crema con un 95% de opacidad */
+    background-color: rgba(248, 245, 238, 0.95);
 
-    backdrop-filter: blur(10px); /* Difumina el contenido que queda detrás del menú */
+    backdrop-filter: blur(10px);
 
-    border-bottom: 1px solid #e5e1d8; /* Agrega una línea sutil debajo del menú */
+    border-bottom: 1px solid #e5e1d8;
 }
 
+
+/*
+   Contenedor principal del menú.
+*/
 .navbar {
-    width: 90%; /* El menú ocupa el 90% del ancho de la pantalla */
-    max-width: 1100px; /* Evita que el contenido sea demasiado ancho en pantallas grandes */
+    width: 90%;
+    max-width: 1100px;
+    min-height: 75px;
 
-    min-height: 75px; /* Define una altura mínima para el menú */
+    margin: auto;
 
-    margin: auto; /* Centra horizontalmente el menú */
-
-    display: flex; /* Activa Flexbox para organizar los elementos */
-    justify-content: space-between; /* Separa el logo y las opciones del menú */
-    align-items: center; /* Centra verticalmente los elementos */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 
-/* Nombre */
+
+/* ---------- Logo ---------- */
 
 .logo {
-    font-size: 1.5rem; /* Aumenta el tamaño del nombre */
-    font-weight: bold; /* Hace que el nombre aparezca en negrita */
-
-    color: var(--verde-oscuro); /* Utiliza el verde oscuro definido anteriormente */
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--verde-oscuro);
 }
+
 
 .logo span {
-    color: var(--dorado); /* Colorea el punto del logo de dorado */
+    color: var(--dorado);
 }
 
 
-/* Links */
+
+/* ---------- Menú ---------- */
 
 .menu {
-    display: flex; /* Coloca las opciones del menú en una fila */
-
-    gap: 35px; /* Agrega espacio entre cada opción */
-
-    list-style: none; /* Elimina los puntos de la lista */
+    display: flex;
+    gap: 35px;
+    list-style: none;
 }
+
 
 .menu a {
-    position: relative; /* Permite posicionar correctamente la línea decorativa */
+    position: relative;
 
-    color: var(--verde-oscuro); /* Define el color de los enlaces */
+    color: var(--verde-oscuro);
 
-    font-size: 0.95rem; /* Define un tamaño ligeramente menor al texto normal */
+    font-size: 0.95rem;
 
-    transition: color 0.3s ease; /* Hace suave el cambio de color al pasar el mouse */
+    transition: color 0.3s ease;
 }
 
 
-/* Línea debajo del link */
-
+/*
+   Línea decorativa que aparece debajo del enlace
+   al pasar el cursor.
+*/
 .menu a::after {
-    content: ""; /* Crea un elemento decorativo vacío */
+    content: "";
 
-    position: absolute; /* Permite posicionarlo respecto al enlace */
+    position: absolute;
 
-    left: 0; /* Comienza desde el lado izquierdo del enlace */
-    bottom: -6px; /* Coloca la línea debajo del texto */
+    left: 0;
+    bottom: -6px;
 
-    width: 0; /* La línea comienza oculta */
-    height: 2px; /* Define el grosor de la línea */
+    width: 0;
+    height: 2px;
 
-    background-color: var(--dorado); /* La línea será de color dorado */
+    background-color: var(--dorado);
 
-    transition: width 0.3s ease; /* Hace que la línea aparezca suavemente */
+    transition: width 0.3s ease;
 }
+
 
 .menu a:hover {
-    color: var(--verde); /* Cambia el color del enlace cuando pasamos el mouse */
+    color: var(--verde);
 }
 
+
 .menu a:hover::after {
-    width: 100%; /* La línea ocupa todo el ancho del enlace al pasar el mouse */
+    width: 100%;
 }
+
 
 
 /* =========================================
-   INICIO
+   SECCIÓN INICIO / HERO
    ========================================= */
 
+/*
+   Distribuye la sección inicial en dos columnas:
+   - izquierda: texto
+   - derecha: elemento visual
+*/
 .inicio {
-    width: 90%; /* La sección utiliza el 90% del ancho disponible */
-    max-width: 1100px; /* Limita el ancho máximo en pantallas grandes */
+    width: 90%;
+    max-width: 1100px;
 
-    min-height: calc(100vh - 75px); /* Ocupa casi toda la pantalla descontando la altura del menú */
+    min-height: calc(100vh - 75px);
 
-    margin: auto; /* Centra la sección horizontalmente */
+    margin: auto;
 
-    display: grid; /* Activa CSS Grid para organizar el contenido */
+    display: grid;
 
-    grid-template-columns: 1.1fr 0.9fr; /* Divide el espacio en dos columnas */
+    grid-template-columns: 1.1fr 0.9fr;
 
-    align-items: center; /* Centra verticalmente el contenido */
+    align-items: center;
 
-    gap: 50px; /* Deja espacio entre las dos columnas */
+    gap: 50px;
 }
 
-
-/* Texto */
 
 .inicio-texto {
-    padding: 60px 0; /* Agrega espacio arriba y abajo del contenido */
+    padding: 60px 0;
 }
+
 
 .pequeno-titulo {
-    margin-bottom: 12px; /* Separa este texto del título principal */
+    margin-bottom: 12px;
 
-    color: var(--dorado); /* Utiliza el color dorado */
+    color: var(--dorado);
 
-    font-size: 0.75rem; /* Hace el texto pequeño */
+    font-size: 0.75rem;
 
-    font-weight: bold; /* Destaca el texto */
+    font-weight: bold;
 
-    letter-spacing: 3px; /* Aumenta el espacio entre las letras */
+    letter-spacing: 3px;
 }
+
 
 .inicio h1 {
-    margin-bottom: 25px; /* Separa el título del texto siguiente */
+    margin-bottom: 25px;
 
-    color: var(--verde-oscuro); /* Define el color del título */
+    color: var(--verde-oscuro);
 
-    font-size: clamp(3rem, 7vw, 5.5rem); /* Hace que el tamaño se adapte al ancho de la pantalla */
+    font-size: clamp(3rem, 7vw, 5.5rem);
 
-    line-height: 1; /* Reduce el espacio vertical entre líneas */
+    line-height: 1;
 
-    letter-spacing: -3px; /* Acerca ligeramente las letras */
+    letter-spacing: -3px;
 }
+
 
 .inicio h1 span {
-    display: block; /* Hace que "Valentina" aparezca en una línea independiente */
+    display: block;
 
-    color: var(--verde); /* Cambia el color del nombre */
+    color: var(--verde);
 }
+
 
 .descripcion {
-    max-width: 600px; /* Evita que el texto se extienda demasiado horizontalmente */
+    max-width: 600px;
 
-    margin-bottom: 35px; /* Separa la descripción de los botones */
+    margin-bottom: 35px;
 
-    color: var(--gris); /* Utiliza un gris para diferenciar el texto secundario */
+    color: var(--gris);
 
-    font-size: 1.1rem; /* Aumenta ligeramente el tamaño del texto */
+    font-size: 1.1rem;
 }
 
 
-/* Botones */
+
+/* =========================================
+   BOTONES
+   ========================================= */
 
 .botones {
-    display: flex; /* Coloca los botones utilizando Flexbox */
+    display: flex;
 
-    gap: 15px; /* Deja espacio entre los botones */
+    gap: 15px;
 
-    flex-wrap: wrap; /* Permite que los botones bajen de línea si no hay espacio */
+    flex-wrap: wrap;
 }
+
 
 .boton {
-    padding: 13px 25px; /* Define el espacio interno del botón */
+    padding: 13px 25px;
 
-    border-radius: 5px; /* Redondea ligeramente las esquinas */
+    border-radius: 5px;
 
-    font-weight: bold; /* Destaca el texto del botón */
+    font-weight: bold;
 
-    transition: 0.3s ease; /* Hace suaves los cambios al pasar el mouse */
+    transition: 0.3s ease;
 }
+
 
 .boton:hover {
-    transform: translateY(-3px); /* Eleva visualmente el botón al pasar el mouse */
+    transform: translateY(-3px);
 }
+
 
 .principal {
-    background-color: var(--verde-oscuro); /* Define el fondo del botón principal */
+    background-color: var(--verde-oscuro);
 
-    color: white; /* Define el color blanco del texto */
+    color: white;
 }
+
 
 .principal:hover {
-    background-color: var(--verde); /* Cambia el fondo cuando se pasa el mouse */
+    background-color: var(--verde);
 }
+
 
 .secundario {
-    border: 1px solid var(--verde); /* Crea un borde verde alrededor del botón */
+    border: 1px solid var(--verde);
 
-    color: var(--verde); /* Define el color del texto */
+    color: var(--verde);
 }
+
 
 .secundario:hover {
-    background-color: var(--verde); /* Colorea el fondo al pasar el mouse */
+    background-color: var(--verde);
 
-    color: white; /* Cambia el texto a blanco */
+    color: white;
 }
+
 
 
 /* =========================================
@@ -267,420 +337,366 @@ header {
    ========================================= */
 
 .inicio-visual {
-    position: relative; /* Permite posicionar los círculos dentro de este elemento */
+    position: relative;
 
-    height: 500px; /* Define el espacio disponible para la decoración */
+    height: 500px;
 
-    display: flex; /* Activa Flexbox */
+    display: flex;
 
-    justify-content: center; /* Centra los elementos horizontalmente */
-    align-items: center; /* Centra los elementos verticalmente */
+    justify-content: center;
+
+    align-items: center;
 }
+
 
 .circulo {
-    position: absolute; /* Permite colocar los círculos independientemente */
+    position: absolute;
 
-    border-radius: 50%; /* Convierte el elemento en un círculo */
+    border-radius: 50%;
 }
+
 
 .grande {
-    width: 360px; /* Define el ancho del círculo */
-    height: 360px; /* Define la altura del círculo */
+    width: 360px;
+    height: 360px;
 
-    background-color: var(--dorado-claro); /* Define el color del círculo */
+    background-color: var(--dorado-claro);
 
-    opacity: 0.55; /* Hace que el círculo sea parcialmente transparente */
+    opacity: 0.55;
 }
+
 
 .pequeno {
-    width: 150px; /* Define el ancho del círculo pequeño */
-    height: 150px; /* Define la altura del círculo pequeño */
+    width: 150px;
+    height: 150px;
 
-    top: 60px; /* Lo mueve hacia abajo desde la parte superior */
-    right: 20px; /* Lo separa 20px del lado derecho */
+    top: 60px;
+    right: 20px;
 
-    background-color: var(--verde-claro); /* Define su color */
+    background-color: var(--verde-claro);
 
-    opacity: 0.35; /* Reduce su intensidad */
+    opacity: 0.35;
 }
 
-.huella {
-    position: relative; /* Permite controlar su posición y nivel */
 
-    z-index: 2; /* Coloca la huella por encima de los círculos */
+.laboratorio-icono {
+    position: relative;
 
-    width: 260px; /* Define el ancho del círculo central */
-    height: 260px; /* Define la altura del círculo central */
+    z-index: 2;
 
-    display: flex; /* Activa Flexbox */
+    width: 260px;
+    height: 260px;
 
-    justify-content: center; /* Centra la huella horizontalmente */
-    align-items: center; /* Centra la huella verticalmente */
+    display: flex;
 
-    border-radius: 50%; /* Convierte el contenedor en un círculo */
+    justify-content: center;
+    align-items: center;
 
-    background-color: var(--verde-oscuro); /* Fondo verde oscuro */
+    border-radius: 50%;
 
-    font-size: 6rem; /* Aumenta el tamaño del emoji */
+    background-color: var(--verde-oscuro);
+
+    font-size: 6rem;
 
     box-shadow:
-        0 25px 60px rgba(23, 53, 47, 0.2); /* Crea una sombra grande y suave */
+        0 25px 60px rgba(23, 53, 47, 0.2);
 }
+
 
 
 /* =========================================
-   SECCIONES
+   TÍTULOS DE SECCIONES
    ========================================= */
-
-.sobre-mi,
-.contacto {
-    width: 90%; /* Limita el contenido al 90% de la pantalla */
-    max-width: 1100px; /* Define un ancho máximo */
-
-    margin: auto; /* Centra las secciones */
-
-    padding: 110px 0; /* Agrega espacio arriba y abajo */
-}
-
-
-/* Títulos */
 
 .titulo-seccion {
-    margin-bottom: 60px; /* Separa el título del contenido */
+    margin-bottom: 60px;
 
-    text-align: center; /* Centra el texto */
+    text-align: center;
 }
+
 
 .titulo-seccion h2 {
-    color: var(--verde-oscuro); /* Color principal de los títulos */
+    color: var(--verde-oscuro);
 
-    font-size: clamp(2rem, 5vw, 3rem); /* Adapta el tamaño del título a la pantalla */
+    font-size: clamp(2rem, 5vw, 3rem);
 
-    line-height: 1.2; /* Controla el espacio entre líneas */
+    line-height: 1.2;
 }
+
 
 .linea {
-    width: 55px; /* Define el ancho de la línea */
-    height: 3px; /* Define el grosor */
+    width: 55px;
+    height: 3px;
 
-    margin: 20px auto; /* Centra la línea y deja espacio arriba y abajo */
+    margin: 20px auto;
 
-    background-color: var(--dorado); /* Color dorado de la línea */
+    background-color: var(--dorado);
 }
+
+
+.texto-introduccion {
+    max-width: 700px;
+
+    margin: 25px auto 0;
+
+    color: var(--gris);
+}
+
 
 
 /* =========================================
-   SOBRE MÍ
+   LABORATORIOS
    ========================================= */
 
-.sobre-contenido {
-    display: grid; /* Organiza la foto y el texto mediante Grid */
+/*
+   Contenedor general de la sección de laboratorios.
+*/
+.laboratorios {
+    width: 90%;
+    max-width: 1100px;
 
-    grid-template-columns: 0.85fr 1.15fr; /* La foto ocupa menos espacio que el texto */
+    margin: auto;
 
-    align-items: center; /* Centra verticalmente ambos elementos */
-
-    gap: 80px; /* Espacio entre la foto y el texto */
+    padding: 110px 0;
 }
 
 
-/* Foto */
+/*
+   Las tarjetas se muestran en dos columnas
+   en pantallas grandes.
+*/
+.laboratorios-grid {
+    display: grid;
 
-.foto-contenedor {
-    position: relative; /* Permite colocar la decoración detrás de la foto */
+    grid-template-columns: repeat(2, 1fr);
 
-    width: min(100%, 390px); /* Usa el menor valor entre 100% y 390px */
-
-    margin: auto; /* Centra la fotografía */
+    gap: 25px;
 }
 
-.foto {
-    position: relative; /* Permite controlar la posición de la fotografía */
 
-    z-index: 2; /* Coloca la foto por encima de la decoración */
 
-    width: 100%; /* Ocupa todo el ancho disponible */
+/* =========================================
+   TARJETAS DE LABORATORIOS
+   ========================================= */
 
-    aspect-ratio: 4 / 5; /* Mantiene una proporción vertical de fotografía */
+/*
+   Estilo base de todas las tarjetas.
 
-    overflow: hidden; /* Oculta cualquier parte de la imagen que sobresalga */
+   IMPORTANTE:
+   El color de fondo de la tarjeta continúa siendo blanco.
+   La diferenciación visual entre laboratorios se realiza
+   mediante el borde superior de 5px.
 
-    border: 10px solid white; /* Crea un marco blanco alrededor de la foto */
+   Cada laboratorio cambia únicamente el color de
+   ese borde mediante .laboratorio-1, .laboratorio-2, etc.
+*/
+.laboratorio-card {
+    position: relative;
 
-    border-radius: 10px; /* Redondea las esquinas */
+    min-height: 220px;
 
-    background-color: #ddd; /* Color que aparece mientras no hay una imagen */
+    padding: 32px 30px;
+
+    background-color: var(--blanco);
+
+    border-radius: 16px;
 
     box-shadow:
-        0 20px 45px rgba(23, 53, 47, 0.12); /* Agrega profundidad mediante una sombra */
-}
+        0 12px 30px rgba(23, 53, 47, 0.08);
 
-.foto img {
-    width: 100%; /* Hace que la imagen ocupe todo el contenedor */
-
-    height: 100%; /* Hace que la imagen ocupe toda la altura */
-
-    object-fit: cover; /* Recorta la imagen para llenar el espacio sin deformarla */
-}
-
-
-/* Marco decorativo */
-
-.foto-contenedor::after {
-    content: ""; /* Crea el elemento decorativo */
-
-    position: absolute; /* Permite posicionarlo detrás de la fotografía */
-
-    top: 20px; /* Mueve el marco hacia abajo */
-    left: 20px; /* Mueve el marco hacia la derecha */
-
-    width: 100%; /* Hace que tenga el mismo ancho que la foto */
-    height: 100%; /* Hace que tenga el mismo alto que la foto */
-
-    border: 2px solid var(--dorado); /* Crea un borde dorado */
-
-    border-radius: 10px; /* Redondea las esquinas */
-}
-
-
-/* Texto */
-
-.sobre-texto {
-    color: var(--gris); /* Define el color del texto secundario */
-
-    font-size: 1rem; /* Define el tamaño del texto */
-}
-
-.sobre-texto p {
-    margin-bottom: 20px; /* Separa los párrafos */
-}
-
-.sobre-texto strong {
-    color: var(--verde-oscuro); /* Destaca palabras importantes */
-}
-
-
-/* =========================================
-   TARJETA DE META
-   ========================================= */
-
-.meta {
-    display: flex; /* Coloca el icono y el texto en una fila */
-
-    gap: 18px; /* Separa el icono del texto */
-
-    margin-top: 30px; /* Separa la tarjeta del párrafo anterior */
-
-    padding: 25px; /* Agrega espacio interno */
-
-    background-color: white; /* Fondo blanco de la tarjeta */
-
-    border-left: 4px solid var(--dorado); /* Agrega una línea dorada al lado izquierdo */
-
-    border-radius: 0 8px 8px 0; /* Redondea solamente las esquinas derechas */
-
-    box-shadow:
-        0 12px 30px rgba(23, 53, 47, 0.08); /* Agrega una sombra suave */
-}
-
-.meta-icon {
-    font-size: 2rem; /* Aumenta el tamaño del icono */
-}
-
-.meta h3 {
-    margin-bottom: 5px; /* Separa el título del texto */
-
-    color: var(--verde-oscuro); /* Color del título */
-}
-
-.meta p {
-    margin: 0; /* Elimina el margen predeterminado del párrafo */
-}
-
-
-/* =========================================
-   TARJETAS
-   ========================================= */
-
-.tarjetas {
-    display: grid; /* Organiza las tarjetas mediante Grid */
-
-    grid-template-columns: repeat(3, 1fr); /* Crea tres columnas del mismo tamaño */
-
-    gap: 25px; /* Espacio entre las tarjetas */
-
-    margin-top: 100px; /* Separa las tarjetas del contenido superior */
-}
-
-.tarjeta {
-    padding: 35px 30px; /* Espacio interno de las tarjetas */
-
-    background-color: white; /* Fondo blanco */
-
-    border: 1px solid var(--borde); /* Borde sutil */
-
-    border-radius: 8px; /* Redondea las esquinas */
+    /*
+       Color de respaldo.
+       Si una tarjeta no tiene una clase específica
+       .laboratorio-1, .laboratorio-2, etc., utilizará
+       el verde principal del proyecto.
+    */
+    border-top: 5px solid var(--verde);
 
     transition:
         transform 0.3s ease,
-        box-shadow 0.3s ease; /* Suaviza el movimiento y la sombra */
+        box-shadow 0.3s ease;
 }
 
-.tarjeta:hover {
-    transform: translateY(-7px); /* Levanta la tarjeta cuando pasamos el mouse */
+
+/*
+   Efecto visual al pasar el cursor sobre una tarjeta:
+   - Se eleva ligeramente.
+   - La sombra aumenta para reforzar la sensación
+     de profundidad.
+*/
+.laboratorio-card:hover {
+    transform: translateY(-7px);
 
     box-shadow:
-        0 15px 40px rgba(23, 53, 47, 0.1); /* Agrega una sombra al pasar el mouse */
+        0 18px 40px rgba(23, 53, 47, 0.13);
 }
 
-.icono {
-    margin-bottom: 18px; /* Separa el icono del título */
-
-    font-size: 2rem; /* Aumenta el tamaño del icono */
-}
-
-.tarjeta h3 {
-    margin-bottom: 10px; /* Separa el título del párrafo */
-
-    color: var(--verde-oscuro); /* Color del título */
-}
-
-.tarjeta p {
-    color: var(--gris); /* Color del texto secundario */
-
-    font-size: 0.95rem; /* Tamaño ligeramente menor */
-}
 
 
 /* =========================================
-   GUSTOS
+   PALETA DE COLORES DE LOS LABORATORIOS
    ========================================= */
 
-.gustos {
-    margin-top: 120px; /* Separa esta sección del contenido anterior */
+/*
+   Cada clase representa un laboratorio.
 
-    text-align: center; /* Centra todo el contenido */
+   Orden de colores solicitado:
+
+   Laboratorio 1 → #4a944f
+   Laboratorio 2 → #5bba62
+   Laboratorio 3 → #479e61
+   Laboratorio 4 → #c9d46c
+   Laboratorio 5 → #b1d46c
+
+   Estos colores se aplican al borde superior de cada
+   tarjeta, manteniendo el resto de la tarjeta blanca.
+*/
+
+
+/*
+   Laboratorio 1
+   Verde medio.
+*/
+.laboratorio-1 {
+    border-top-color: #4a944f;
 }
 
-.gustos .titulo-seccion {
-    margin-bottom: 35px; /* Reduce el espacio debajo del título */
+
+/*
+   Laboratorio 2
+   Verde más luminoso.
+*/
+.laboratorio-2 {
+    border-top-color: #5bba62;
 }
 
-.gustos .titulo-seccion h2 {
-    font-size: 2rem; /* Define un tamaño específico para este título */
+
+/*
+   Laboratorio 3
+   Verde con una tonalidad ligeramente más profunda
+   y fría.
+*/
+.laboratorio-3 {
+    border-top-color: #479e61;
 }
 
-.etiquetas {
-    display: flex; /* Organiza las etiquetas en fila */
 
-    justify-content: center; /* Centra las etiquetas */
-
-    flex-wrap: wrap; /* Permite que bajen de línea en pantallas pequeñas */
-
-    gap: 12px; /* Espacio entre las etiquetas */
+/*
+   Laboratorio 4
+   Verde amarillento / lima suave.
+*/
+.laboratorio-4 {
+    border-top-color: #c9d46c;
 }
 
-.etiquetas span {
-    padding: 10px 18px; /* Espacio interno de cada etiqueta */
 
-    background-color: white; /* Fondo blanco */
-
-    border: 1px solid var(--borde); /* Borde suave */
-
-    border-radius: 50px; /* Hace que las etiquetas tengan forma de cápsula */
-
-    font-size: 0.9rem; /* Tamaño del texto */
+/*
+   Laboratorio 5
+   Verde lima ligeramente más intenso que el anterior.
+*/
+.laboratorio-5 {
+    border-top-color: #b1d46c;
 }
 
-.musica {
-    max-width: 750px; /* Limita el ancho del texto */
-
-    margin: 35px auto 0; /* Centra el texto y deja espacio arriba */
-
-    color: var(--gris); /* Color gris */
-
-    font-style: italic; /* Hace que el texto aparezca en cursiva */
-}
 
 
 /* =========================================
-   APRENDIZAJE
+   CONTENIDO DE LAS TARJETAS
    ========================================= */
 
-.aprendizaje {
-    margin-top: 120px; /* Separa esta sección de la anterior */
+/*
+   Número identificador de cada laboratorio.
+*/
+.numero-laboratorio {
+    margin-bottom: 5px;
 
-    padding: 60px; /* Espacio interno */
+    /*
+       Se utiliza un tono verde neutro para que el texto
+       no dependa del color individual de cada tarjeta.
+    */
+    color: #31577d;
 
-    display: grid; /* Utiliza CSS Grid */
+    font-size: 0.8rem;
 
-    grid-template-columns: 0.8fr 1.2fr; /* Divide el contenido en dos columnas */
+    font-weight: bold;
 
-    gap: 70px; /* Espacio entre columnas */
-
-    background-color: var(--verde-oscuro); /* Fondo verde oscuro */
-
-    color: white; /* Texto blanco */
-
-    border-radius: 10px; /* Redondea las esquinas */
+    letter-spacing: 1px;
 }
 
-.aprendizaje h2 {
-    font-size: 2rem; /* Tamaño del título */
 
-    line-height: 1.2; /* Espacio entre líneas */
+/*
+   Título del laboratorio.
+*/
+.laboratorio-card h3 {
+    margin-bottom: 12px;
+
+    color: #071f3f;
+
+    font-size: 1.3rem;
 }
 
-.habilidades {
-    display: flex; /* Activa Flexbox */
 
-    flex-direction: column; /* Coloca las habilidades una debajo de otra */
+/*
+   Texto descriptivo de cada laboratorio.
 
-    gap: 30px; /* Espacio entre habilidades */
+   :last-child permite seleccionar el último párrafo
+   existente dentro de la tarjeta.
+*/
+.laboratorio-card p:last-child {
+    color: #31577d;
+
+    font-size: 0.95rem;
 }
 
-.habilidad-titulo {
-    display: flex; /* Coloca nombre y estado en una fila */
 
-    justify-content: space-between; /* Envía cada texto a un extremo */
 
-    margin-bottom: 10px; /* Separa el texto de la barra */
+/* =========================================
+   INFORMACIÓN GENERAL
+   ========================================= */
 
-    font-size: 0.9rem; /* Tamaño del texto */
+.informacion {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding-bottom: 110px;
 }
 
-.habilidad-titulo span:last-child {
-    color: var(--dorado-claro); /* Colorea el estado de la habilidad */
+
+.informacion-contenido {
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.2fr;
+
+    gap: 70px;
+
+    padding: 60px;
+
+    background-color: var(--verde-oscuro);
+
+    color: white;
+
+    border-radius: 12px;
 }
 
-.barra {
-    width: 100%; /* La barra ocupa todo el espacio disponible */
 
-    height: 7px; /* Define el grosor de la barra */
+.informacion h2 {
+    font-size: 2rem;
 
-    overflow: hidden; /* Evita que el progreso sobresalga */
-
-    border-radius: 10px; /* Redondea los extremos */
-
-    background-color: rgba(255, 255, 255, 0.15); /* Fondo blanco con poca opacidad */
+    line-height: 1.2;
 }
 
-.progreso {
-    height: 100%; /* Ocupa toda la altura de la barra */
 
-    background-color: var(--dorado); /* Color del progreso */
-
-    border-radius: 10px; /* Redondea los extremos */
+.informacion-contenido > div:last-child {
+    color: rgba(255, 255, 255, 0.8);
 }
 
-.ingles {
-    width: 60%; /* Representa visualmente el progreso del inglés */
 
+.informacion-contenido p {
+    margin-bottom: 18px;
 }
 
-.programacion {
-    width: 45%; /* Representa visualmente el progreso en programación */
-}
 
 
 /* =========================================
@@ -688,128 +704,322 @@ header {
    ========================================= */
 
 .contacto {
-    padding-top: 130px; /* Agrega espacio extra antes de la sección */
+    width: 90%;
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 110px 0 130px;
 }
+
 
 .contacto .titulo-seccion > p:last-child {
-    max-width: 600px; /* Limita el ancho del texto */
+    max-width: 600px;
 
-    margin: 20px auto 0; /* Centra el párrafo */
+    margin: 20px auto 0;
 
-    color: var(--gris); /* Color gris para el texto secundario */
+    color: var(--gris);
 }
 
 
-/* Formulario */
+
+/* ---------- Formulario ---------- */
 
 .formulario {
-    max-width: 700px; /* Limita el ancho del formulario */
+    max-width: 700px;
 
-    margin: auto; /* Centra el formulario */
+    margin: auto;
 
-    padding: 45px; /* Agrega espacio interno */
+    padding: 45px;
 
-    background-color: white; /* Fondo blanco */
+    background-color: white;
 
-    border-radius: 10px; /* Redondea las esquinas */
+    border-radius: 10px;
 
     box-shadow:
-        0 15px 40px rgba(23, 53, 47, 0.1); /* Agrega una sombra suave */
+        0 15px 40px rgba(23, 53, 47, 0.1);
 }
+
 
 .formulario label {
-    display: block; /* Hace que la etiqueta ocupe toda la línea */
+    display: block;
 
-    margin-bottom: 8px; /* Separa la etiqueta del campo */
+    margin-bottom: 8px;
 
-    color: var(--verde-oscuro); /* Color de la etiqueta */
+    color: var(--verde-oscuro);
 
-    font-weight: bold; /* Destaca la etiqueta */
+    font-weight: bold;
 }
+
 
 .formulario input,
 .formulario textarea {
-    width: 100%; /* Hace que los campos ocupen todo el ancho */
+    width: 100%;
 
-    margin-bottom: 25px; /* Separa los campos entre sí */
+    margin-bottom: 25px;
 
-    padding: 14px 16px; /* Agrega espacio interno */
+    padding: 14px 16px;
 
-    border: 1px solid var(--borde); /* Define un borde suave */
+    border: 1px solid var(--borde);
 
-    border-radius: 5px; /* Redondea las esquinas */
+    border-radius: 5px;
 
-    outline: none; /* Elimina el borde azul predeterminado del navegador */
+    outline: none;
 
-    background-color: #fcfbf8; /* Fondo ligeramente diferente al blanco */
+    background-color: #fcfbf8;
 
-    color: var(--texto); /* Color del texto */
+    color: var(--texto);
 
-    font-family: inherit; /* Usa la misma fuente del resto de la página */
+    font-family: inherit;
 
-    font-size: 1rem; /* Tamaño del texto */
+    font-size: 1rem;
 
-    transition: 0.3s ease; /* Suaviza los cambios al seleccionar el campo */
+    transition: 0.3s ease;
 }
+
 
 .formulario input:focus,
 .formulario textarea:focus {
-    border-color: var(--verde); /* Cambia el borde al seleccionar el campo */
+    border-color: var(--verde);
 
     box-shadow:
-        0 0 0 3px rgba(47, 93, 80, 0.1); /* Crea un efecto de resaltado alrededor del campo */
+        0 0 0 3px rgba(47, 93, 80, 0.1);
 }
+
 
 .formulario textarea {
-    resize: vertical; /* Permite cambiar la altura, pero no el ancho */
+    resize: vertical;
 }
+
 
 .formulario button {
-    width: 100%; /* Hace que el botón ocupe todo el ancho */
+    width: 100%;
 
-    padding: 14px; /* Espacio interno del botón */
+    padding: 14px;
 
-    border: none; /* Elimina el borde predeterminado */
+    border: none;
 
-    border-radius: 5px; /* Redondea las esquinas */
+    border-radius: 5px;
 
-    background-color: var(--verde-oscuro); /* Fondo verde oscuro */
+    background-color: var(--verde-oscuro);
 
-    color: white; /* Texto blanco */
+    color: white;
 
-    font-family: inherit; /* Utiliza la misma fuente */
+    font-family: inherit;
 
-    font-size: 1rem; /* Tamaño del texto */
+    font-size: 1rem;
 
-    font-weight: bold; /* Texto en negrita */
+    font-weight: bold;
 
-    cursor: pointer; /* Cambia el cursor a una mano al pasar por encima */
+    cursor: pointer;
 
-    transition: 0.3s ease; /* Hace suave el cambio de color y movimiento */
+    transition: 0.3s ease;
 }
+
 
 .formulario button:hover {
-    background-color: var(--verde); /* Cambia el color del botón al pasar el mouse */
+    background-color: var(--verde);
 
-    transform: translateY(-2px); /* Eleva ligeramente el botón */
+    transform: translateY(-2px);
 }
+
 
 
 /* =========================================
-   FOOTER
+   PIE DE PÁGINA
    ========================================= */
 
 footer {
-    padding: 35px 20px; /* Espacio interno del pie de página */
+    padding: 35px 20px;
 
-    text-align: center; /* Centra el texto */
+    text-align: center;
 
-    background-color: var(--verde-oscuro); /* Fondo verde oscuro */
+    background-color: var(--verde-oscuro);
 
-    color: rgba(255, 255, 255, 0.7); /* Blanco con transparencia para un texto más suave */
+    color: rgba(255, 255, 255, 0.7);
 
-    font-size: 0.85rem; /* Reduce el tamaño del texto */
+    font-size: 0.85rem;
 }
+
+
+
+/* =========================================
+   REPRODUCTOR DE MÚSICA
+   ========================================= */
+
+.reproductor {
+    max-width: 550px;
+
+    margin-top: 45px;
+
+    padding: 25px;
+
+    background-color: rgba(255, 255, 255, 0.75);
+
+    border: 1px solid var(--borde);
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 15px 35px rgba(23, 53, 47, 0.08);
+
+    text-align: left;
+}
+
+
+
+/* ---------- Portada ---------- */
+
+.portada-musica {
+    position: relative;
+
+    width: 120px;
+    height: 120px;
+
+    margin: 0 auto 20px;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+
+    border: 4px solid var(--blanco);
+
+    box-shadow:
+        0 10px 25px rgba(23, 53, 47, 0.18);
+
+    animation:
+        girar-portada 20s linear infinite;
+}
+
+
+.portada-musica img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+
+/* ---------- Información ---------- */
+
+.reproductor-info {
+    margin-bottom: 18px;
+}
+
+
+.now-playing {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: var(--dorado);
+
+    font-size: 0.7rem;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+.reproductor-info h3 {
+    margin-bottom: 3px;
+
+    color: var(--verde-oscuro);
+
+    font-size: 1.1rem;
+}
+
+
+.reproductor-info p {
+    color: var(--gris);
+
+    font-size: 0.85rem;
+
+    font-style: italic;
+}
+
+
+
+/* ---------- Audio ---------- */
+
+.reproductor-controles audio {
+    width: 100%;
+
+    height: 40px;
+}
+
+
+
+/* ---------- Barra de progreso ---------- */
+
+.barra-musica {
+    width: 100%;
+
+    height: 5px;
+
+    margin-top: 15px;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    background-color: #e4e1d8;
+}
+
+
+.progreso-musica {
+    width: 0%;
+
+    height: 100%;
+
+    background-color: var(--dorado);
+
+    border-radius: 10px;
+
+    animation:
+        avanzar-musica 157s linear infinite;
+}
+
+
+
+/* =========================================
+   ANIMACIONES
+   ========================================= */
+
+/*
+   Hace avanzar la barra de progreso del reproductor
+   desde 0% hasta 100%.
+*/
+@keyframes avanzar-musica {
+
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+
+}
+
+
+/*
+   Hace girar continuamente la portada de música.
+*/
+@keyframes girar-portada {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
 
 
 /* =========================================
@@ -817,60 +1027,71 @@ footer {
    ========================================= */
 
 /*
-   Estas reglas se aplican cuando la pantalla
-   tiene un ancho máximo de 900px.
-*/
+   Estas reglas se aplican cuando la pantalla tiene
+   un ancho máximo de 900px.
 
+   El objetivo es adaptar el diseño a tablets y
+   pantallas intermedias.
+*/
 @media (max-width: 900px) {
 
-    /* El inicio pasa de dos columnas a una */
-
+    /*
+       El inicio pasa de dos columnas a una sola.
+    */
     .inicio {
-        grid-template-columns: 1fr; /* Utiliza una sola columna */
+        grid-template-columns: 1fr;
 
-        text-align: center; /* Centra el texto */
+        text-align: center;
 
-        padding: 70px 0; /* Reduce el espacio de la sección */
+        padding: 70px 0;
     }
 
+
+    /*
+       Centra la descripción.
+    */
     .descripcion {
-        margin-left: auto; /* Centra horizontalmente el bloque */
-        margin-right: auto; /* Centra horizontalmente el bloque */
+        margin-left: auto;
+        margin-right: auto;
     }
 
+
+    /*
+       Centra los botones.
+    */
     .botones {
-        justify-content: center; /* Centra los botones */
+        justify-content: center;
     }
 
+
+    /*
+       Reduce la altura del elemento visual.
+    */
     .inicio-visual {
-        height: 350px; /* Reduce el espacio de la decoración */
+        height: 350px;
     }
 
 
-    /* Sobre mí */
-
-    .sobre-contenido {
-        grid-template-columns: 1fr; /* Foto y texto pasan a una sola columna */
-
-        gap: 60px; /* Reduce el espacio entre ellos */
+    /*
+       Las tarjetas de laboratorios pasan de dos columnas
+       a una sola columna.
+    */
+    .laboratorios-grid {
+        grid-template-columns: 1fr;
     }
 
 
-    /* Tarjetas */
+    /*
+       La sección de información pasa a una sola columna.
+    */
+    .informacion-contenido {
+        grid-template-columns: 1fr;
 
-    .tarjetas {
-        grid-template-columns: 1fr; /* Las tres tarjetas pasan a una columna */
+        gap: 40px;
     }
 
-
-    /* Aprendizaje */
-
-    .aprendizaje {
-        grid-template-columns: 1fr; /* Las dos columnas pasan a una */
-
-        gap: 40px; /* Reduce el espacio entre los elementos */
-    }
 }
+
 
 
 /* =========================================
@@ -879,394 +1100,181 @@ footer {
 
 @media (max-width: 600px) {
 
-    /* Menú */
+    /* ---------- Menú ---------- */
 
     .navbar {
-        min-height: 100px; /* Aumenta la altura para acomodar el menú */
+        min-height: 100px;
 
-        flex-direction: column; /* Coloca logo y menú uno debajo del otro */
+        flex-direction: column;
 
-        justify-content: center; /* Centra verticalmente */
+        justify-content: center;
 
-        gap: 10px; /* Espacio entre logo y menú */
+        gap: 10px;
     }
+
 
     .menu {
-        gap: 20px; /* Reduce el espacio entre los enlaces */
+        gap: 18px;
     }
+
 
     .menu a {
-        font-size: 0.85rem; /* Reduce el tamaño de los enlaces */
+        font-size: 0.8rem;
     }
 
 
-    /* Inicio */
+
+    /* ---------- Inicio ---------- */
 
     .inicio {
-        min-height: auto; /* Permite que la sección tenga la altura necesaria */
+        min-height: auto;
 
-        padding: 70px 0; /* Reduce el espacio en celulares */
+        padding: 70px 0;
     }
+
 
     .inicio h1 {
-        font-size: 3rem; /* Reduce el tamaño del título */
+        font-size: 3rem;
 
-        letter-spacing: -1px; /* Reduce el espacio entre las letras */
+        letter-spacing: -1px;
     }
+
 
     .descripcion {
-        font-size: 1rem; /* Ajusta el tamaño del texto */
+        font-size: 1rem;
     }
 
 
-    /* Botones */
+
+    /* ---------- Botones ---------- */
 
     .botones {
-        flex-direction: column; /* Coloca los botones uno debajo del otro */
+        flex-direction: column;
     }
+
 
     .boton {
-        width: 100%; /* Hace que los botones ocupen todo el ancho */
+        width: 100%;
     }
 
 
-    /* Elemento visual */
+
+    /* ---------- Elemento visual ---------- */
 
     .inicio-visual {
-        height: 280px; /* Reduce el espacio de la decoración */
+        height: 280px;
     }
 
+
     .grande {
-        width: 240px; /* Reduce el círculo grande */
+        width: 240px;
         height: 240px;
     }
 
-    .huella {
-        width: 180px; /* Reduce el círculo de la huella */
+
+    .laboratorio-icono {
+        width: 180px;
         height: 180px;
 
-        font-size: 4rem; /* Reduce el tamaño de la huella */
+        font-size: 4rem;
     }
 
+
     .pequeno {
-        width: 100px; /* Reduce el círculo pequeño */
+        width: 100px;
         height: 100px;
     }
 
 
-    /* Secciones */
 
-    .sobre-mi,
+    /* ---------- Secciones ---------- */
+
+    .laboratorios,
     .contacto {
-        padding: 80px 0; /* Reduce el espacio vertical */
+        padding: 80px 0;
     }
 
 
-    /* Foto */
 
-    .foto-contenedor {
-        width: 85%; /* Reduce ligeramente el tamaño de la fotografía */
+    /* ---------- Tarjetas ---------- */
+
+    /*
+       Se mantiene la paleta de colores definida
+       anteriormente para cada laboratorio.
+       Aquí solamente se reduce el padding para que
+       las tarjetas aprovechen mejor el espacio disponible.
+    */
+    .laboratorio-card {
+        padding: 28px 24px;
     }
 
 
-    /* Meta */
 
-    .meta {
-        padding: 20px; /* Reduce el espacio interno */
+    /* ---------- Información ---------- */
+
+    .informacion {
+        padding-bottom: 80px;
     }
 
 
-    /* Aprendizaje */
-
-    .aprendizaje {
-        padding: 35px 25px; /* Reduce el espacio interno */
+    .informacion-contenido {
+        padding: 35px 25px;
     }
 
 
-    /* Formulario */
+
+    /* ---------- Formulario ---------- */
 
     .formulario {
-        padding: 30px 20px; /* Reduce el padding para aprovechar mejor la pantalla */
-    }
-}
-
-
-/* =========================================
-   RESPONSIVE - CELULARES PEQUEÑOS
-   ========================================= */
-
-@media (max-width: 400px) {
-
-    .menu {
-        gap: 12px; /* Reduce aún más el espacio entre los enlaces */
+        padding: 30px 20px;
     }
 
-    .inicio h1 {
-        font-size: 2.5rem; /* Reduce el título para pantallas muy pequeñas */
-    }
-
-    .titulo-seccion h2 {
-        font-size: 2rem; /* Ajusta los títulos de las secciones */
-    }
-}
-
-/* =========================================
-   REPRODUCTOR DE MÚSICA
-   ========================================= */
-
-.reproductor {
-    max-width: 550px; /* Limita el ancho del reproductor */
-
-    margin-top: 45px; /* Separa el reproductor de los botones */
-
-    padding: 25px; /* Agrega espacio interno */
-
-    background-color: rgba(255, 255, 255, 0.75);
-    /* Fondo blanco con un poco de transparencia */
-
-    border: 1px solid var(--borde);
-    /* Agrega un borde suave */
-
-    border-radius: 12px;
-    /* Redondea las esquinas */
-
-    box-shadow:
-        0 15px 35px rgba(23, 53, 47, 0.08);
-    /* Agrega una sombra suave */
-
-    text-align: left;
-    /* Mantiene la información alineada a la izquierda */
-}
 
 
-/* Información de la canción */
-
-.reproductor-info {
-    margin-bottom: 18px;
-    /* Separa la información de los controles */
-}
-
-.now-playing {
-    display: block;
-    /* Permite controlar el espacio del elemento */
-
-    margin-bottom: 6px;
-    /* Separa "NOW PLAYING" del nombre */
-
-    color: var(--dorado);
-    /* Utiliza el color dorado del sitio */
-
-    font-size: 0.7rem;
-    /* Hace pequeño el texto */
-
-    font-weight: bold;
-    /* Destaca el texto */
-
-    letter-spacing: 2px;
-    /* Aumenta el espacio entre las letras */
-}
-
-.reproductor-info h3 {
-    margin-bottom: 3px;
-    /* Separa el nombre de la descripción */
-
-    color: var(--verde-oscuro);
-    /* Utiliza el verde oscuro */
-
-    font-size: 1.1rem;
-    /* Define el tamaño del nombre */
-}
-
-.reproductor-info p {
-    color: var(--gris);
-    /* Utiliza el gris para el texto secundario */
-
-    font-size: 0.85rem;
-    /* Hace más pequeño el texto */
-
-    font-style: italic;
-    /* Le da un estilo más delicado */
-}
-
-
-/* Controles del reproductor */
-
-.reproductor-controles audio {
-    width: 100%;
-    /* Hace que el reproductor ocupe todo el ancho disponible */
-
-    height: 40px;
-    /* Define una altura compacta */
-}
-
-
-/* Barra decorativa */
-
-.barra-musica {
-    width: 100%;
-    /* La barra ocupa todo el ancho */
-
-    height: 5px;
-    /* Define el grosor de la barra */
-
-    margin-top: 15px;
-    /* Separa la barra de los controles */
-
-    overflow: hidden;
-    /* Oculta cualquier parte del progreso que sobresalga */
-
-    border-radius: 10px;
-    /* Redondea los extremos */
-
-    background-color: #e4e1d8;
-    /* Color de fondo de la barra */
-}
-
-
-/* Progreso animado */
-
-.progreso-musica {
-    width: 35%;
-    /* Define el ancho inicial del progreso */
-
-    height: 100%;
-    /* Ocupa toda la altura de la barra */
-
-    background-color: var(--dorado);
-    /* Color dorado del progreso */
-
-    border-radius: 10px;
-    /* Redondea los extremos */
-
-    animation: avanzar-musica 157s linear infinite;
-    /*
-        Hace que la barra avance durante 180 segundos.
-        180 segundos = 3 minutos.
-        "linear" mantiene una velocidad constante.
-        "infinite" hace que vuelva a comenzar al terminar.
-    */
-}
-
-
-/* Animación de la barra */
-
-@keyframes avanzar-musica {
-
-    from {
-        width: 0%;
-        /* La barra comienza vacía */
-    }
-
-    to {
-        width: 100%;
-        /* La barra termina completamente llena */
-    }
-
-}
-
-
-/* =========================================
-   REPRODUCTOR EN CELULARES
-   ========================================= */
-
-@media (max-width: 600px) {
+    /* ---------- Reproductor ---------- */
 
     .reproductor {
         width: 100%;
-        /* Utiliza todo el ancho disponible */
 
         padding: 20px;
-        /* Reduce el espacio interno */
     }
+
 
     .reproductor-info h3 {
         font-size: 1rem;
-        /* Reduce ligeramente el nombre */
     }
+
 
     .reproductor-info p {
         font-size: 0.8rem;
-        /* Reduce el texto secundario */
     }
 
 }
 
-/* =========================================
-   PORTADA DE LA CANCIÓN
-   ========================================= */
-
-.portada-musica {
-    width: 120px;
-    /* Define el tamaño del círculo */
-
-    height: 120px;
-    /* Mantiene el mismo alto que el ancho */
-
-    margin: 0 auto 20px;
-    /* Centra la portada y deja espacio debajo */
-
-    overflow: hidden;
-    /* Oculta las partes de la imagen que sobresalgan */
-
-    border-radius: 50%;
-    /* Convierte la imagen cuadrada en un círculo */
-
-    border: 4px solid var(--blanco);
-    /* Crea un pequeño borde blanco */
-
-    box-shadow:
-        0 10px 25px rgba(23, 53, 47, 0.18);
-    /* Agrega profundidad mediante una sombra */
-
-    animation: girar-portada 20s linear infinite;
-    /*
-        Hace que la portada gire.
-        8 segundos = una vuelta completa.
-        linear = velocidad constante.
-        infinite = gira continuamente.
-    */
-}
-
-
-.portada-musica img {
-    width: 100%;
-    /* Hace que la imagen ocupe todo el círculo */
-
-    height: 100%;
-    /* Mantiene la imagen dentro del círculo */
-
-    object-fit: cover;
-    /* Recorta la imagen para que cubra todo el espacio */
-
-    display: block;
-    /* Elimina espacios innecesarios debajo de la imagen */
-}
 
 
 /* =========================================
-   ANIMACIÓN DE LA PORTADA
+   CELULARES MUY PEQUEÑOS
    ========================================= */
 
-@keyframes girar-portada {
+/*
+   Ajustes adicionales para dispositivos de hasta
+   400px de ancho.
+*/
+@media (max-width: 400px) {
 
-    from {
-        transform: rotate(0deg);
-        /* Comienza en su posición original */
+    .menu {
+        gap: 10px;
     }
 
-    to {
-        transform: rotate(360deg);
-        /* Completa una vuelta de 360 grados */
+
+    .inicio h1 {
+        font-size: 2.5rem;
     }
 
-}
 
-.portada-musica::after {
-    content: "";
-    position: absolute;
-    width: 18px;
-    height: 18px;
-    background-color: #17352f;
-    border: 3px solid white;
-    border-radius: 50%;
+    .titulo-seccion h2 {
+        font-size: 2rem;
+    }
+
 }
