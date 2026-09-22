@@ -1,192 +1,240 @@
 <!DOCTYPE html>
-<html lang="es"> <!-- Indica que el idioma principal de la página es español -->
+<html lang="es">
 
 <head>
 
-    <!-- Configuración básica de la página -->
-    <meta charset="UTF-8"> <!-- Permite utilizar tildes, ñ y otros caracteres especiales -->
+    <!-- =====================================================
+         CONFIGURACIÓN DEL DOCUMENTO
+         ===================================================== -->
 
-    <!-- Hace que la página se adapte correctamente a celulares y tablets -->
+    <!-- Permite utilizar correctamente caracteres como:
+         á, é, í, ó, ú, ñ, etc. -->
+    <meta charset="UTF-8">
+
+    <!-- Hace que la página se adapte correctamente
+         a celulares, tablets y computadores -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Valentina | Sitio Personal</title> <!-- Título que aparece en la pestaña del navegador -->
+    <!-- Título que aparece en la pestaña del navegador -->
+    <title>Laboratorios | Liceo</title>
 
-    <!-- Conecta este archivo HTML con el archivo de estilos CSS -->
+    <!-- Conexión con la hoja de estilos principal -->
     <link rel="stylesheet" href="estilos.css">
 
 </head>
 
+
 <body>
 
-    <!-- =====================================
-         MENÚ DE NAVEGACIÓN
-         ===================================== -->
+
+    <!-- =====================================================
+         ENCABEZADO Y MENÚ DE NAVEGACIÓN
+         =====================================================
+
+         Esta sección permanece visible en la parte superior
+         de la página y permite desplazarse rápidamente entre
+         las diferentes secciones.
+         ===================================================== -->
 
     <header>
-        <nav class="navbar">
-            <!-- "class" permite aplicar los estilos definidos en CSS -->
 
-            <!-- Logo / nombre -->
+        <nav class="navbar">
+
+            <!-- Nombre/logo de la página.
+                 Al hacer clic lleva nuevamente al inicio. -->
             <a href="#inicio" class="logo">
-                <!-- href="#inicio" lleva al elemento que tenga id="inicio" -->
-                Valentina<span>.</span>
-                <!-- El span permite darle un estilo diferente solamente al punto -->
+                Laboratorios<span>.</span>
             </a>
 
 
-            <!-- Opciones del menú -->
+            <!-- Opciones principales de navegación -->
             <ul class="menu">
-                <!-- ul crea una lista no ordenada -->
 
                 <li>
                     <a href="#inicio">Inicio</a>
-                    <!-- Al hacer clic, lleva a la sección cuyo id es "inicio" -->
                 </li>
 
                 <li>
-                    <a href="#sobre-mi">Sobre mí</a>
-                    <!-- Lleva directamente a la sección "Sobre mí" -->
+                    <a href="#laboratorios">Laboratorios</a>
                 </li>
 
                 <li>
                     <a href="#contacto">Contacto</a>
-                    <!-- Lleva directamente a la sección "Contacto" -->
                 </li>
 
             </ul>
 
         </nav>
+
     </header>
 
 
+
+    <!-- =====================================================
+         CONTENIDO PRINCIPAL
+         ===================================================== -->
+
     <main>
-        <!-- main contiene el contenido principal del sitio -->
 
 
-        <!-- =====================================
-             INICIO
-             ===================================== -->
+        <!-- =================================================
+             SECCIÓN DE INICIO
+             =================================================
+
+             Es la primera sección que ve el usuario.
+             Presenta el propósito de la página y permite
+             acceder rápidamente a los laboratorios.
+             ================================================= -->
 
         <section id="inicio" class="inicio">
-            <!--
-                "section" divide la página en una sección temática.
-                id="inicio" permite llegar aquí desde los enlaces del menú.
-                class="inicio" permite aplicar estilos CSS.
-            -->
 
+
+            <!-- ---------------------------------------------
+                 TEXTO PRINCIPAL
+                 --------------------------------------------- -->
 
             <div class="inicio-texto">
 
+                <!-- Texto pequeño sobre el título -->
                 <p class="pequeno-titulo">
-                    BIENVENIDO A MI SITIO
+                    ESPACIOS DE APRENDIZAJE
                 </p>
 
+
+                <!-- Título principal de la página -->
                 <h1>
-                    Hola, soy
-                    <span>Valentina</span>
-                    <!-- span permite aplicar un estilo diferente al nombre -->
+                    Laboratorios
+                    <span>del liceo</span>
                 </h1>
 
+
+                <!-- Descripción general -->
                 <p class="descripcion">
-                    Estudiante de programación, futura estudiante
-                    de Medicina Veterinaria y una persona que trabaja
-                    constantemente por alcanzar sus metas.
+
+                    Conoce los diferentes laboratorios disponibles
+                    para el aprendizaje, la práctica y el desarrollo
+                    de proyectos de nuestros estudiantes.
+
                 </p>
 
 
-                <!-- Botones de navegación -->
+                <!-- -----------------------------------------
+                     BOTONES DE ACCESO
+                     ----------------------------------------- -->
 
                 <div class="botones">
 
-                    <a href="#sobre-mi" class="boton principal">
-                        <!-- Enlace que lleva a la sección "Sobre mí" -->
-                        Conocerme
+                    <!-- Lleva directamente a la sección
+                         de información de los laboratorios -->
+                    <a href="#laboratorios" class="boton principal">
+                        Ver laboratorios
                     </a>
 
+                    <!-- Lleva a la sección de contacto -->
                     <a href="#contacto" class="boton secundario">
-                        <!-- Enlace que lleva a la sección "Contacto" -->
                         Contacto
                     </a>
 
                 </div>
 
-            </div>
-
-           <!-- =====================================
-                REPRODUCTOR DE MÚSICA
-                ===================================== -->
-
-            <div class="reproductor">
-
-                <!-- Portada de la canción -->
-
-                <div class="portada-musica">
-
-                    <img
-                        src="portada.jpg"
-                        alt="Portada de la canción"
-                    >
-
-                </div>
 
 
-                <!-- Información de la canción -->
+                <!-- =========================================
+                     REPRODUCTOR DE MÚSICA
+                     =========================================
 
-                <div class="reproductor-info">
+                     Elemento multimedia incorporado a la
+                     página. La canción debe estar ubicada
+                     en la carpeta:
 
-                    <span class="now-playing">
-                        NOW PLAYING
-                    </span>
+                     audio/musica.mp3
 
-                    <h3>CORTIS - JoyRide</h3>
+                     La portada debe estar ubicada en:
 
-                    <p>Escuchando música mientras sigo avanzando</p>
+                     portada.jpg
+                     ========================================= -->
 
-                </div>
+                <div class="reproductor">
 
 
-                <!-- Reproductor de audio -->
+                    <!-- Portada de la canción -->
+                    <div class="portada-musica">
 
-                <div class="reproductor-controles">
-
-                    <audio controls autoplay loop>
-
-                        <source
-                            src="audio/musica.mp3"
-                            type="audio/mpeg"
+                        <img
+                            src="portada.jpg"
+                            alt="Portada de la canción"
                         >
 
-                        Tu navegador no puede reproducir este audio.
-
-                    </audio>
-
-                </div>
+                    </div>
 
 
-                <!-- Barra decorativa -->
+                    <!-- Información de la canción -->
+                    <div class="reproductor-info">
 
-                <div class="barra-musica">
+                        <span class="now-playing">
+                            NOW PLAYING
+                        </span>
 
-                    <div class="progreso-musica"></div>
+                        <h3>
+                            CORTIS - JoyRide
+                        </h3>
+
+                        <p>
+                            Música para acompañar la navegación
+                            por nuestro sitio.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Controles del reproductor -->
+                    <div class="reproductor-controles">
+
+                        <audio controls loop>
+
+                            <!-- Archivo de audio utilizado -->
+                            <source
+                                src="audio/musica.mp3"
+                                type="audio/mpeg"
+                            >
+
+                            <!-- Mensaje mostrado si el navegador
+                                 no soporta el elemento audio -->
+                            Tu navegador no puede reproducir este audio.
+
+                        </audio>
+
+                    </div>
+
+
+                    <!-- Barra decorativa de progreso -->
+                    <div class="barra-musica">
+
+                        <div class="progreso-musica"></div>
+
+                    </div>
 
                 </div>
 
             </div>
 
 
-            <!-- Elemento visual decorativo -->
+
+            <!-- =============================================
+                 ELEMENTO VISUAL DEL INICIO
+                 ============================================= -->
 
             <div class="inicio-visual">
 
-                <div class="circulo grande"></div>
                 <!-- Círculo decorativo grande -->
+                <div class="circulo grande"></div>
 
-                <div class="circulo pequeno"></div>
                 <!-- Círculo decorativo pequeño -->
+                <div class="circulo pequeno"></div>
 
-                <div class="huella">
-                    🐾
-                    <!-- Huella utilizada como elemento visual -->
+                <!-- Ícono principal -->
+                <div class="laboratorio-icono">
+                    🧪
                 </div>
 
             </div>
@@ -194,272 +242,255 @@
         </section>
 
 
-        <!-- =====================================
-             SOBRE MÍ
-             ===================================== -->
 
-        <section id="sobre-mi" class="sobre-mi">
+        <!-- =================================================
+             SECCIÓN DE LABORATORIOS
+             =================================================
+
+             Contiene las tarjetas con información de cada
+             laboratorio disponible en el liceo.
+             ================================================= -->
+
+        <section id="laboratorios" class="laboratorios">
+
+
+            <!-- ---------------------------------------------
+                 TÍTULO DE LA SECCIÓN
+                 --------------------------------------------- -->
 
             <div class="titulo-seccion">
 
                 <p class="pequeno-titulo">
-                    CONOCE UN POCO MÁS
+                    NUESTROS ESPACIOS
                 </p>
 
-                <h2>Sobre mí</h2>
+                <h2>
+                    Laboratorios
+                </h2>
 
                 <div class="linea"></div>
-                <!-- Línea decorativa debajo del título -->
 
-            </div>
+                <p class="texto-introduccion">
 
-
-            <!-- Foto + información -->
-
-            <div class="sobre-contenido">
-
-
-                <!-- FOTO -->
-
-                <div class="foto-contenedor">
-
-                    <div class="foto">
-
-                        <img
-                            src="mifoto.jpg"
-                            alt="Foto de Valentina"
-                        >
-                        <!--
-                            src indica dónde se encuentra la imagen.
-                            alt proporciona una descripción de la imagen.
-                            El texto alternativo también ayuda a la accesibilidad.
-                        -->
-
-                    </div>
-
-                </div>
-
-
-                <!-- INFORMACIÓN PERSONAL -->
-
-                <div class="sobre-texto">
-
-                    <p>
-                        Hola, soy <strong>Valentina</strong>, tengo 17 años
-                        y soy estudiante de 4to medio en Chile.
-                        Actualmente estudio programación y, al mismo tiempo,
-                        me preparo para entrar a la educación superior.
-                    </p>
-
-                    <p>
-                        Aunque la programación no es necesariamente mi área
-                        favorita, decidí estudiarla porque es una herramienta
-                        que me permite acercarme al futuro que quiero.
-                        También me permite tener la posibilidad de trabajar
-                        de manera remota mientras estudio.
-                    </p>
-
-
-                    <!-- Meta personal -->
-
-                    <div class="meta">
-
-                        <div class="meta-icon">
-                            🐾
-                        </div>
-
-                        <div>
-
-                            <h3>Mi gran meta</h3>
-
-                            <p>
-                                Desde los 5 años tengo decidido que quiero
-                                estudiar <strong>Medicina Veterinaria</strong>.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- =====================================
-                 TARJETAS INFORMATIVAS
-                 ===================================== -->
-
-            <div class="tarjetas">
-
-                <!--
-                    article representa un bloque independiente
-                    de información dentro de la página.
-                -->
-
-                <article class="tarjeta">
-
-                    <div class="icono">
-                        🌎
-                    </div>
-
-                    <h3>Mi futuro</h3>
-
-                    <p>
-                        Quiero viajar internacionalmente, especializarme
-                        en Nueva Zelanda y trabajar con animales exóticos.
-                    </p>
-
-                </article>
-
-
-                <article class="tarjeta">
-
-                    <div class="icono">
-                        🐋
-                    </div>
-
-                    <h3>Animales</h3>
-
-                    <p>
-                        Me gustaría trabajar con animales como leones,
-                        ballenas, delfines, pingüinos y nutrias.
-                    </p>
-
-                </article>
-
-
-                <article class="tarjeta">
-
-                    <div class="icono">
-                        ✨
-                    </div>
-
-                    <h3>Cómo soy</h3>
-
-                    <p>
-                        Me considero perseverante, puntual, amigable,
-                        estudiosa y cautelosa.
-                    </p>
-
-                </article>
-
-            </div>
-
-
-            <!-- =====================================
-                 GUSTOS Y PASATIEMPOS
-                 ===================================== -->
-
-            <div class="gustos">
-
-                <div class="titulo-seccion">
-
-                    <p class="pequeno-titulo">
-                        MI DÍA A DÍA
-                    </p>
-
-                    <h2>Lo que disfruto</h2>
-
-                </div>
-
-
-                <!-- Lista visual de intereses -->
-
-                <div class="etiquetas">
-
-                    <span>📚 Leer</span>
-                    <span>🎧 Escuchar música</span>
-                    <span>🍳 Cocinar</span>
-                    <span>🎮 Jugar</span>
-                    <span>😴 Dormir</span>
-                    <span>🎨 Dibujar</span>
-
-                </div>
-
-
-                <!-- Información adicional sobre la música -->
-
-                <p class="musica">
-
-                    🎵 La música también es importante para mí.
-                    CORTIS es uno de mis grupos favoritos y su música
-                    me ayuda a sobrellevar los momentos de estrés,
-                    sentirme mejor y seguir esforzándome.
+                    El liceo cuenta con distintos espacios equipados
+                    para apoyar el aprendizaje práctico y el desarrollo
+                    de diferentes áreas de conocimiento.
 
                 </p>
 
             </div>
 
 
-            <!-- =====================================
-                 APRENDIZAJE
-                 ===================================== -->
 
-            <div class="aprendizaje">
+            <!-- =============================================
+                 TARJETAS DE LOS LABORATORIOS
+                 ============================================= -->
 
+            <div class="laboratorios-grid">
+
+
+                <!-- =================================================
+                     LABORATORIO 1
+                     =================================================
+
+                     Es el laboratorio con los equipos de mayor
+                     rendimiento. La información aquí presentada
+                     corresponde a las características proporcionadas
+                     para este laboratorio.
+                     ================================================= -->
+
+                <article class="laboratorio-card laboratorio-1">
+
+                    <p class="numero-laboratorio">
+                        LABORATORIO 1
+                    </p>
+
+                    <h3>
+                        Laboratorio de alto rendimiento
+                    </h3>
+
+                    <p>
+
+                        El Laboratorio 1 cuenta con los equipos de
+                        mayor rendimiento disponibles en los
+                        laboratorios del liceo. Sus computadores
+                        ofrecen un buen nivel de resolución de imagen,
+                        conexión a internet de buena calidad y utilizan
+                        el sistema operativo Windows 11 Pro.
+
+                    </p>
+
+                    <p>
+
+                        Este laboratorio se encuentra ubicado en el
+                        segundo piso del liceo, al lado derecho.
+                        Además de ser utilizado para actividades
+                        académicas, en determinadas ocasiones se
+                        utiliza para realizar pruebas en línea
+                        correspondientes a estudiantes de primero y
+                        segundo medio.
+
+                    </p>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     LABORATORIO 2
+                     ================================================= -->
+
+                <article class="laboratorio-card laboratorio-2">
+
+                    <p class="numero-laboratorio">
+                        LABORATORIO 2
+                    </p>
+
+                    <h3>
+                        Desarrollo web
+                    </h3>
+
+                    <p>
+
+                        Equipo dedicado a la creación de páginas
+                        y aplicaciones web, con acceso a internet
+                        y herramientas de diseño y programación.
+
+                    </p>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     LABORATORIO 3
+                     ================================================= -->
+
+                <article class="laboratorio-card laboratorio-3">
+
+                    <p class="numero-laboratorio">
+                        LABORATORIO 3
+                    </p>
+
+                    <h3>
+                        Bases de datos
+                    </h3>
+
+                    <p>
+
+                        Computadores utilizados para aprender a
+                        organizar y consultar información mediante
+                        bases de datos y lenguajes como SQL.
+
+                    </p>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     LABORATORIO 4
+                     ================================================= -->
+
+                <article class="laboratorio-card laboratorio-4">
+
+                    <p class="numero-laboratorio">
+                        LABORATORIO 4
+                    </p>
+
+                    <h3>
+                        Robótica y hardware
+                    </h3>
+
+                    <p>
+
+                        Espacio con computadores conectados a
+                        placas y sensores, donde se programan
+                        proyectos de robótica y electrónica.
+
+                    </p>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     LABORATORIO 5
+                     ================================================= -->
+
+                <article class="laboratorio-card laboratorio-5">
+
+                    <p class="numero-laboratorio">
+                        LABORATORIO 5
+                    </p>
+
+                    <h3>
+                        Proyectos avanzados
+                    </h3>
+
+                    <p>
+
+                        Computadores de mayor capacidad reservados
+                        para proyectos finales y trabajos en equipo
+                        de mayor complejidad.
+
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             INFORMACIÓN GENERAL
+             =================================================
+
+             Explica de manera general la finalidad de los
+             laboratorios dentro del proceso educativo.
+             ================================================= -->
+
+        <section class="informacion">
+
+            <div class="informacion-contenido">
+
+                <!-- Columna izquierda -->
                 <div>
 
                     <p class="pequeno-titulo">
-                        SIEMPRE APRENDIENDO
+                        APRENDIZAJE PRÁCTICO
                     </p>
 
                     <h2>
-                        Quiero seguir mejorando
+                        Espacios para desarrollar
+                        nuevas habilidades
                     </h2>
 
                 </div>
 
 
-                <!-- Habilidades que estoy desarrollando -->
+                <!-- Columna derecha -->
+                <div>
 
-                <div class="habilidades">
+                    <p>
 
+                        Los laboratorios permiten que los estudiantes
+                        lleven los conocimientos aprendidos en clases
+                        a actividades prácticas.
 
-                    <!-- Inglés -->
+                    </p>
 
-                    <div class="habilidad">
+                    <p>
 
-                        <div class="habilidad-titulo">
+                        Cada espacio cuenta con recursos destinados
+                        a diferentes áreas, desde los fundamentos de
+                        programación hasta proyectos de robótica,
+                        hardware y desarrollo web.
 
-                            <span>Inglés</span>
-
-                            <span>En progreso</span>
-
-                        </div>
-
-
-                        <!--
-                            La barra funciona mediante CSS.
-                            El ancho de "progreso ingles" representa
-                            visualmente el porcentaje de avance.
-                        -->
-
-                        <div class="barra">
-                            <div class="progreso ingles"></div>
-                        </div>
-
-                    </div>
-
-
-                    <!-- Programación -->
-
-                    <div class="habilidad">
-
-                        <div class="habilidad-titulo">
-
-                            <span>Programación</span>
-
-                            <span>En aprendizaje</span>
-
-                        </div>
-
-
-                        <div class="barra">
-                            <div class="progreso programacion"></div>
-                        </div>
-
-                    </div>
+                    </p>
 
                 </div>
 
@@ -468,51 +499,49 @@
         </section>
 
 
-        <!-- =====================================
-             CONTACTO
-             ===================================== -->
+
+        <!-- =================================================
+             SECCIÓN DE CONTACTO
+             ================================================= -->
 
         <section id="contacto" class="contacto">
 
+
+            <!-- Título de la sección -->
             <div class="titulo-seccion">
 
                 <p class="pequeno-titulo">
-                    ¿HABLAMOS?
+                    ¿NECESITAS INFORMACIÓN?
                 </p>
 
-                <h2>Contacto</h2>
+                <h2>
+                    Contacto
+                </h2>
 
                 <div class="linea"></div>
 
-
                 <p>
-                    Si quieres comunicarte conmigo,
-                    puedes dejarme un mensaje.
+
+                    Si quieres obtener más información sobre los
+                    laboratorios, puedes dejarnos un mensaje.
+
                 </p>
 
             </div>
 
 
-            <!-- =====================================
+
+            <!-- =============================================
                  FORMULARIO DE CONTACTO
-                 ===================================== -->
+                 ============================================= -->
 
             <form class="formulario">
-                <!--
-                    "form" permite crear un formulario
-                    para recopilar información del usuario.
-                -->
 
 
-                <!-- Nombre -->
-
+                <!-- Campo para el nombre -->
                 <label for="nombre">
                     Nombre
                 </label>
-                <!--
-                    "for" conecta esta etiqueta con el input
-                    que tenga el mismo "id".
-                -->
 
                 <input
                     type="text"
@@ -521,17 +550,10 @@
                     placeholder="Tu nombre"
                     required
                 >
-                <!--
-                    type="text": permite escribir texto.
-                    id="nombre": identifica este campo.
-                    name="nombre": asigna un nombre al dato.
-                    placeholder: muestra un texto de ejemplo.
-                    required: obliga a completar el campo.
-                -->
 
 
-                <!-- Correo electrónico -->
 
+                <!-- Campo para el correo -->
                 <label for="email">
                     Correo electrónico
                 </label>
@@ -543,14 +565,10 @@
                     placeholder="tu@email.com"
                     required
                 >
-                <!--
-                    type="email" indica que el campo es para un correo.
-                    El navegador puede comprobar que tenga un formato válido.
-                -->
 
 
-                <!-- Mensaje -->
 
+                <!-- Campo para el mensaje -->
                 <label for="mensaje">
                     Mensaje
                 </label>
@@ -562,38 +580,37 @@
                     placeholder="Escribe tu mensaje..."
                     required
                 ></textarea>
-                <!--
-                    textarea permite escribir mensajes más largos.
-                    rows="6" define una altura inicial aproximada de 6 líneas.
-                -->
 
 
-                <!-- Botón para enviar -->
 
+                <!-- Botón para enviar el formulario -->
                 <button type="submit">
                     Enviar mensaje →
                 </button>
-                <!-- type="submit" indica que el botón envía el formulario -->
+
 
             </form>
 
         </section>
 
+
     </main>
 
 
-    <!-- =====================================
+
+    <!-- =====================================================
          PIE DE PÁGINA
-         ===================================== -->
+         ===================================================== -->
 
     <footer>
 
         <p>
-            © 2026 Valentina · Sitio web personal
+            © 2026 · Laboratorios del Liceo
         </p>
 
     </footer>
 
 
 </body>
+
 </html>
