@@ -1,126 +1,79 @@
-/* =========================================
+/* =========================================================
    CONFIGURACIÓN GENERAL
-   ========================================= */
+   ========================================================= */
 
-/*
-   Selector universal:
-   - Elimina márgenes y rellenos predeterminados del navegador.
-   - box-sizing: border-box hace que padding y border
-     se incluyan dentro del ancho/alto definido.
-*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
-/*
-   Hace que los desplazamientos internos de la página
-   sean suaves al utilizar enlaces/anclas.
-*/
 html {
     scroll-behavior: smooth;
 }
 
-
-/*
-   Estilos generales del documento.
-*/
 body {
     font-family: Arial, Helvetica, sans-serif;
-
     color: #26332f;
-
     background-color: #f8f5ee;
-
     line-height: 1.6;
 }
 
-
-/*
-   Los enlaces heredan el color del elemento padre
-   y no muestran subrayado por defecto.
-*/
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-
-/*
-   Las imágenes nunca superan el ancho de su contenedor.
-   display: block elimina espacios en línea no deseados.
-*/
 img {
     max-width: 100%;
     display: block;
 }
 
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
+button,
+input,
+textarea {
+    font-family: inherit;
+}
 
-/* =========================================
-   COLORES
-   ========================================= */
-
-/*
-   Variables globales del proyecto.
-
-   Centralizar los colores permite cambiar la identidad
-   visual de la página desde un único lugar.
-*/
 :root {
-
     --verde-oscuro: #17352f;
-
     --verde: #2f5d50;
-
     --verde-claro: #719789;
 
     --crema: #f8f5ee;
-
     --blanco: #ffffff;
 
     --dorado: #c7a96b;
-
     --dorado-claro: #e7d7b2;
 
     --texto: #26332f;
-
     --gris: #66736e;
-
     --borde: #dedbd3;
+
+    --verde-suave: #edf3f0;
+    --crema-oscuro: #f1eee6;
 }
 
 
+/* =========================================================
+   ENCABEZADO Y NAVEGACIÓN
+   ========================================================= */
 
-/* =========================================
-   MENÚ DE NAVEGACIÓN
-   ========================================= */
-
-/*
-   El encabezado permanece fijo en la parte superior
-   mientras el usuario hace scroll.
-*/
 header {
     position: sticky;
     top: 0;
     z-index: 1000;
 
-    background-color: rgba(248, 245, 238, 0.95);
+    background-color: rgba(248, 245, 238, 0.97);
 
     backdrop-filter: blur(10px);
 
     border-bottom: 1px solid #e5e1d8;
 }
 
-
-/*
-   Contenedor principal del menú.
-*/
 .navbar {
     width: 90%;
-    max-width: 1100px;
+    max-width: 1150px;
     min-height: 75px;
 
     margin: auto;
@@ -130,54 +83,41 @@ header {
     align-items: center;
 }
 
-
-
-/* ---------- Logo ---------- */
-
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
     color: var(--verde-oscuro);
+    font-size: 1.35rem;
+    font-weight: bold;
 }
-
 
 .logo span {
     color: var(--dorado);
 }
 
-
-
-/* ---------- Menú ---------- */
-
 .menu {
     display: flex;
-    gap: 35px;
+    align-items: center;
+    gap: 30px;
+
     list-style: none;
 }
-
 
 .menu a {
     position: relative;
 
     color: var(--verde-oscuro);
 
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 
     transition: color 0.3s ease;
 }
 
-
-/*
-   Línea decorativa que aparece debajo del enlace
-   al pasar el cursor.
-*/
 .menu a::after {
     content: "";
 
     position: absolute;
 
     left: 0;
-    bottom: -6px;
+    bottom: -7px;
 
     width: 0;
     height: 2px;
@@ -187,30 +127,154 @@ header {
     transition: width 0.3s ease;
 }
 
-
-.menu a:hover {
+.menu a:hover,
+.menu a.activo {
     color: var(--verde);
 }
 
-
-.menu a:hover::after {
+.menu a:hover::after,
+.menu a.activo::after {
     width: 100%;
 }
 
 
+/* =========================================================
+   ELEMENTOS GENERALES
+   ========================================================= */
 
-/* =========================================
-   SECCIÓN INICIO / HERO
-   ========================================= */
+.pequeno-titulo {
+    margin-bottom: 12px;
 
-/*
-   Distribuye la sección inicial en dos columnas:
-   - izquierda: texto
-   - derecha: elemento visual
-*/
+    color: var(--dorado);
+
+    font-size: 0.75rem;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+.linea {
+    width: 55px;
+    height: 3px;
+
+    margin: 20px auto;
+
+    background-color: var(--dorado);
+}
+
+.linea-izquierda {
+    margin-left: 0;
+}
+
+.texto-introduccion {
+    max-width: 700px;
+    margin: 25px auto 0;
+
+    color: var(--gris);
+}
+
+
+/* =========================================================
+   BOTONES
+   ========================================================= */
+
+.botones {
+    display: flex;
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    margin-top: 30px;
+}
+
+.boton {
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    border-radius: 5px;
+
+    font-weight: bold;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.boton:hover {
+    transform: translateY(-3px);
+}
+
+.boton.principal {
+    background-color: var(--verde-oscuro);
+    color: white;
+}
+
+.boton.principal:hover {
+    background-color: var(--verde);
+}
+
+.boton.secundario {
+    border: 1px solid var(--verde);
+    color: var(--verde);
+}
+
+.boton.secundario:hover {
+    background-color: var(--verde);
+    color: white;
+}
+
+
+/* =========================================================
+   ENCABEZADO DE PÁGINAS
+   ========================================================= */
+
+.pagina-encabezado {
+    padding: 100px 20px 90px;
+
+    background-color: var(--verde-oscuro);
+
+    color: white;
+
+    text-align: center;
+}
+
+.pagina-encabezado-contenido {
+    max-width: 800px;
+    margin: auto;
+}
+
+.pagina-encabezado .pequeno-titulo {
+    color: var(--dorado-claro);
+}
+
+.pagina-encabezado h1 {
+    margin-bottom: 15px;
+
+    font-size: clamp(2.8rem, 7vw, 5rem);
+
+    line-height: 1.05;
+}
+
+.pagina-encabezado p:last-child {
+    max-width: 700px;
+
+    margin: auto;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    font-size: 1.05rem;
+}
+
+
+/* =========================================================
+   INICIO
+   ========================================================= */
+
 .inicio {
     width: 90%;
-    max-width: 1100px;
+    max-width: 1150px;
 
     min-height: calc(100vh - 75px);
 
@@ -225,24 +289,9 @@ header {
     gap: 50px;
 }
 
-
 .inicio-texto {
     padding: 60px 0;
 }
-
-
-.pequeno-titulo {
-    margin-bottom: 12px;
-
-    color: var(--dorado);
-
-    font-size: 0.75rem;
-
-    font-weight: bold;
-
-    letter-spacing: 3px;
-}
-
 
 .inicio h1 {
     margin-bottom: 25px;
@@ -256,18 +305,15 @@ header {
     letter-spacing: -3px;
 }
 
-
 .inicio h1 span {
     display: block;
-
     color: var(--verde);
 }
-
 
 .descripcion {
     max-width: 600px;
 
-    margin-bottom: 35px;
+    margin-bottom: 25px;
 
     color: var(--gris);
 
@@ -275,66 +321,9 @@ header {
 }
 
 
-
-/* =========================================
-   BOTONES
-   ========================================= */
-
-.botones {
-    display: flex;
-
-    gap: 15px;
-
-    flex-wrap: wrap;
-}
-
-
-.boton {
-    padding: 13px 25px;
-
-    border-radius: 5px;
-
-    font-weight: bold;
-
-    transition: 0.3s ease;
-}
-
-
-.boton:hover {
-    transform: translateY(-3px);
-}
-
-
-.principal {
-    background-color: var(--verde-oscuro);
-
-    color: white;
-}
-
-
-.principal:hover {
-    background-color: var(--verde);
-}
-
-
-.secundario {
-    border: 1px solid var(--verde);
-
-    color: var(--verde);
-}
-
-
-.secundario:hover {
-    background-color: var(--verde);
-
-    color: white;
-}
-
-
-
-/* =========================================
-   ELEMENTO VISUAL DEL INICIO
-   ========================================= */
+/* =========================================================
+   ELEMENTO VISUAL
+   ========================================================= */
 
 .inicio-visual {
     position: relative;
@@ -344,17 +333,13 @@ header {
     display: flex;
 
     justify-content: center;
-
     align-items: center;
 }
 
-
 .circulo {
     position: absolute;
-
     border-radius: 50%;
 }
-
 
 .grande {
     width: 360px;
@@ -364,7 +349,6 @@ header {
 
     opacity: 0.55;
 }
-
 
 .pequeno {
     width: 150px;
@@ -378,10 +362,8 @@ header {
     opacity: 0.35;
 }
 
-
 .laboratorio-icono {
     position: relative;
-
     z-index: 2;
 
     width: 260px;
@@ -403,17 +385,14 @@ header {
 }
 
 
-
-/* =========================================
-   TÍTULOS DE SECCIONES
-   ========================================= */
+/* =========================================================
+   SECCIONES
+   ========================================================= */
 
 .titulo-seccion {
     margin-bottom: 60px;
-
     text-align: center;
 }
-
 
 .titulo-seccion h2 {
     color: var(--verde-oscuro);
@@ -424,48 +403,21 @@ header {
 }
 
 
-.linea {
-    width: 55px;
-    height: 3px;
+/* =========================================================
+   RESPONSABLES
+   ========================================================= */
 
-    margin: 20px auto;
-
-    background-color: var(--dorado);
-}
-
-
-.texto-introduccion {
-    max-width: 700px;
-
-    margin: 25px auto 0;
-
-    color: var(--gris);
-}
-
-
-
-/* =========================================
-   LABORATORIOS
-   ========================================= */
-
-/*
-   Contenedor general de la sección de laboratorios.
-*/
-.laboratorios {
+.informacion-laboratorios {
     width: 90%;
     max-width: 1100px;
 
     margin: auto;
 
-    padding: 110px 0;
+    padding: 80px 0 20px;
 }
 
-
-/*
-   Las tarjetas se muestran en dos columnas
-   en pantallas grandes.
-*/
-.laboratorios-grid {
+.informacion-laboratorios-grid,
+.responsables-grid {
     display: grid;
 
     grid-template-columns: repeat(2, 1fr);
@@ -473,29 +425,93 @@ header {
     gap: 25px;
 }
 
+.info-personal-lab,
+.responsable-card {
+    display: flex;
+
+    gap: 20px;
+
+    padding: 30px;
+
+    background-color: var(--blanco);
+
+    border-radius: 14px;
+
+    border: 1px solid var(--borde);
+
+    box-shadow:
+        0 10px 30px rgba(23, 53, 47, 0.06);
+}
+
+.info-icono {
+    width: 55px;
+    height: 55px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background-color: var(--dorado-claro);
+
+    font-size: 1.5rem;
+}
+
+.etiqueta-info {
+    margin-bottom: 4px;
+
+    color: var(--dorado);
+
+    font-size: 0.7rem;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.info-personal-lab h2,
+.responsable-card h2 {
+    margin-bottom: 8px;
+
+    color: var(--verde-oscuro);
+
+    font-size: 1.4rem;
+}
+
+.info-personal-lab p:last-child,
+.responsable-card p:last-child {
+    color: var(--gris);
+
+    font-size: 0.92rem;
+}
 
 
-/* =========================================
-   TARJETAS DE LABORATORIOS
-   ========================================= */
+/* =========================================================
+   LISTA DE LABORATORIOS
+   ========================================================= */
 
-/*
-   Estilo base de todas las tarjetas.
+.laboratorios {
+    width: 90%;
+    max-width: 1100px;
 
-   IMPORTANTE:
-   El color de fondo de la tarjeta continúa siendo blanco.
-   La diferenciación visual entre laboratorios se realiza
-   mediante el borde superior de 5px.
+    margin: auto;
 
-   Cada laboratorio cambia únicamente el color de
-   ese borde mediante .laboratorio-1, .laboratorio-2, etc.
-*/
+    padding: 100px 0;
+}
+
+.laboratorios-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px;
+}
+
 .laboratorio-card {
-    position: relative;
-
-    min-height: 220px;
-
-    padding: 32px 30px;
+    overflow: hidden;
 
     background-color: var(--blanco);
 
@@ -504,12 +520,6 @@ header {
     box-shadow:
         0 12px 30px rgba(23, 53, 47, 0.08);
 
-    /*
-       Color de respaldo.
-       Si una tarjeta no tiene una clase específica
-       .laboratorio-1, .laboratorio-2, etc., utilizará
-       el verde principal del proyecto.
-    */
     border-top: 5px solid var(--verde);
 
     transition:
@@ -517,142 +527,108 @@ header {
         box-shadow 0.3s ease;
 }
 
-
-/*
-   Efecto visual al pasar el cursor sobre una tarjeta:
-   - Se eleva ligeramente.
-   - La sombra aumenta para reforzar la sensación
-     de profundidad.
-*/
 .laboratorio-card:hover {
     transform: translateY(-7px);
 
     box-shadow:
-        0 18px 40px rgba(23, 53, 47, 0.13);
+        0 18px 40px rgba(23, 53, 47, 0.14);
 }
 
-
-
-/* =========================================
-   PALETA DE COLORES DE LOS LABORATORIOS
-   ========================================= */
-
-/*
-   Cada clase representa un laboratorio.
-
-   Orden de colores solicitado:
-
-   Laboratorio 1 → #4a944f
-   Laboratorio 2 → #5bba62
-   Laboratorio 3 → #479e61
-   Laboratorio 4 → #c9d46c
-   Laboratorio 5 → #b1d46c
-
-   Estos colores se aplican al borde superior de cada
-   tarjeta, manteniendo el resto de la tarjeta blanca.
-*/
-
-
-/*
-   Laboratorio 1
-   Verde medio.
-*/
 .laboratorio-1 {
     border-top-color: #4a944f;
 }
 
-
-/*
-   Laboratorio 2
-   Verde más luminoso.
-*/
 .laboratorio-2 {
     border-top-color: #5bba62;
 }
 
-
-/*
-   Laboratorio 3
-   Verde con una tonalidad ligeramente más profunda
-   y fría.
-*/
 .laboratorio-3 {
     border-top-color: #479e61;
 }
 
-
-/*
-   Laboratorio 4
-   Verde amarillento / lima suave.
-*/
 .laboratorio-4 {
     border-top-color: #c9d46c;
 }
 
-
-/*
-   Laboratorio 5
-   Verde lima ligeramente más intenso que el anterior.
-*/
 .laboratorio-5 {
     border-top-color: #b1d46c;
 }
 
+.laboratorio-imagen {
+    width: 100%;
+    height: 250px;
 
+    overflow: hidden;
 
-/* =========================================
-   CONTENIDO DE LAS TARJETAS
-   ========================================= */
+    background-color: #e8e5dd;
+}
 
-/*
-   Número identificador de cada laboratorio.
-*/
+.laboratorio-imagen img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.laboratorio-card:hover .laboratorio-imagen img {
+    transform: scale(1.05);
+}
+
+.laboratorio-card-contenido {
+    padding: 30px;
+}
+
 .numero-laboratorio {
     margin-bottom: 5px;
 
-    /*
-       Se utiliza un tono verde neutro para que el texto
-       no dependa del color individual de cada tarjeta.
-    */
-    color: #31577d;
+    color: var(--verde);
 
-    font-size: 0.8rem;
-
+    font-size: 0.75rem;
     font-weight: bold;
 
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 }
 
-
-/*
-   Título del laboratorio.
-*/
 .laboratorio-card h3 {
     margin-bottom: 12px;
 
-    color: #071f3f;
+    color: var(--verde-oscuro);
 
-    font-size: 1.3rem;
+    font-size: 1.35rem;
 }
 
+.laboratorio-card-contenido > p:not(.numero-laboratorio) {
+    margin-bottom: 22px;
 
-/*
-   Texto descriptivo de cada laboratorio.
-
-   :last-child permite seleccionar el último párrafo
-   existente dentro de la tarjeta.
-*/
-.laboratorio-card p:last-child {
-    color: #31577d;
+    color: var(--gris);
 
     font-size: 0.95rem;
 }
 
+.boton-card {
+    display: inline-block;
+
+    color: var(--verde);
+
+    font-weight: bold;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.boton-card:hover {
+    color: var(--dorado);
+
+    transform: translateX(4px);
+}
 
 
-/* =========================================
+/* =========================================================
    INFORMACIÓN GENERAL
-   ========================================= */
+   ========================================================= */
 
 .informacion {
     width: 90%;
@@ -662,7 +638,6 @@ header {
 
     padding-bottom: 110px;
 }
-
 
 .informacion-contenido {
     display: grid;
@@ -680,28 +655,666 @@ header {
     border-radius: 12px;
 }
 
-
 .informacion h2 {
     font-size: 2rem;
-
     line-height: 1.2;
 }
-
 
 .informacion-contenido > div:last-child {
     color: rgba(255, 255, 255, 0.8);
 }
-
 
 .informacion-contenido p {
     margin-bottom: 18px;
 }
 
 
+/* =========================================================
+   LABORATORIOS INDIVIDUALES
+   COMPATIBLE CON LAB01 - LAB05
+   ========================================================= */
 
-/* =========================================
+.detalle-laboratorio,
+.lab-detalle-hero {
+    width: 90%;
+    max-width: 1150px;
+
+    margin: auto;
+}
+
+.detalle-laboratorio {
+    padding: 90px 0;
+}
+
+.detalle-contenido,
+.lab-detalle-hero {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 60px;
+}
+
+
+/* =========================================================
+   HERO - ESTRUCTURA NUEVA
+   ========================================================= */
+
+.detalle-texto h1,
+.lab-detalle-hero-contenido h1 {
+    margin-bottom: 25px;
+
+    color: var(--verde-oscuro);
+
+    font-size: clamp(2.8rem, 6vw, 5rem);
+
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+}
+
+.detalle-texto h1 span,
+.lab-detalle-hero-contenido h1 span {
+    display: block;
+
+    color: var(--verde);
+}
+
+.detalle-texto .descripcion,
+.lab-detalle-hero-contenido > p:not(.pequeno-titulo) {
+    max-width: 600px;
+
+    margin-bottom: 20px;
+
+    color: var(--gris);
+
+    font-size: 1.05rem;
+}
+
+
+/* =========================================================
+   IMÁGENES DE LOS LABORATORIOS
+   ========================================================= */
+
+.detalle-imagen,
+.lab-detalle-hero-imagen {
+    width: 100%;
+
+    min-height: 420px;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    background-color: #e7e3d9;
+
+    box-shadow:
+        0 20px 50px rgba(23, 53, 47, 0.13);
+}
+
+.detalle-imagen img,
+.lab-detalle-hero-imagen img {
+    width: 100%;
+    height: 100%;
+
+    min-height: 420px;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.detalle-imagen:hover img,
+.lab-detalle-hero-imagen:hover img {
+    transform: scale(1.02);
+}
+
+
+/* =========================================================
+   CARACTERÍSTICAS
+   ========================================================= */
+
+.informacion-laboratorio {
+    width: 90%;
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    padding: 90px 0;
+}
+
+.informacion-laboratorio .titulo-seccion {
+    margin-bottom: 45px;
+}
+
+.informacion-laboratorio .titulo-seccion h2 {
+    color: var(--verde-oscuro);
+
+    font-size: clamp(2rem, 5vw, 3rem);
+
+    line-height: 1.2;
+}
+
+.informacion-laboratorio .linea {
+    width: 55px;
+    height: 3px;
+
+    margin: 20px auto;
+
+    background-color: var(--dorado);
+}
+
+
+/* =========================================================
+   GRID DE CARACTERÍSTICAS
+   ========================================================= */
+
+.caracteristicas-grid {
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   TARJETAS DE CARACTERÍSTICAS
+   ========================================================= */
+
+.caracteristica-card {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 75px minmax(0, 1fr);
+
+    grid-template-areas:
+        "icono titulo"
+        "icono texto";
+
+    column-gap: 25px;
+
+    align-items: center;
+
+    padding: 30px 35px;
+
+    background-color: var(--blanco);
+
+    border: 1px solid var(--borde);
+
+    border-left: 5px solid var(--verde);
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 8px 25px rgba(23, 53, 47, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.caracteristica-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 14px 32px rgba(23, 53, 47, 0.11);
+}
+
+
+/* =========================================================
+   ICONOS
+   ========================================================= */
+
+.caracteristica-icono {
+    grid-area: icono;
+
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background-color: var(--dorado-claro);
+
+    color: var(--verde-oscuro);
+
+    font-size: 1.7rem;
+}
+
+
+/* =========================================================
+   TÍTULOS Y TEXTO
+   ========================================================= */
+
+.caracteristica-card h3 {
+    grid-area: titulo;
+
+    margin-bottom: 5px;
+
+    color: var(--verde-oscuro);
+
+    font-size: 1.25rem;
+
+    line-height: 1.3;
+}
+
+.caracteristica-card p {
+    grid-area: texto;
+
+    margin: 0;
+
+    color: var(--gris);
+
+    font-size: 0.95rem;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   COLORES POR LABORATORIO
+   Funciona aunque .laboratorio-X esté en el contenedor
+   ========================================================= */
+
+.laboratorio-1 .caracteristica-card {
+    border-left-color: #4a944f;
+}
+
+.laboratorio-2 .caracteristica-card {
+    border-left-color: #5bba62;
+}
+
+.laboratorio-3 .caracteristica-card {
+    border-left-color: #479e61;
+}
+
+.laboratorio-4 .caracteristica-card {
+    border-left-color: #c9d46c;
+}
+
+.laboratorio-5 .caracteristica-card {
+    border-left-color: #b1d46c;
+}
+
+
+/* =========================================================
+   ESTRUCTURA ANTIGUA DE LABORATORIO
+   ========================================================= */
+
+.lab-detalle {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 80px 0;
+}
+
+.lab-detalle-grid {
+    display: grid;
+
+    grid-template-columns: 1.3fr 0.7fr;
+
+    gap: 70px;
+}
+
+.lab-descripcion h2,
+.datos-laboratorio h2 {
+    color: var(--verde-oscuro);
+
+    font-size: 2rem;
+
+    line-height: 1.2;
+}
+
+.lab-descripcion p:not(.pequeno-titulo) {
+    margin-bottom: 20px;
+
+    color: var(--gris);
+}
+
+.datos-laboratorio {
+    padding: 35px;
+
+    background-color: white;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 12px 30px rgba(23, 53, 47, 0.08);
+}
+
+.dato {
+    padding: 18px 0;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-bottom: 1px solid var(--borde);
+}
+
+.dato:last-child {
+    border-bottom: none;
+}
+
+.dato span {
+    color: var(--gris);
+
+    font-size: 0.9rem;
+}
+
+.dato strong {
+    color: var(--verde-oscuro);
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   HORARIOS
+   COMPATIBLE CON ESTRUCTURAS NUEVAS Y ANTIGUAS
+   ========================================================= */
+
+.horarios,
+.horario-laboratorio {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 50px 0 100px;
+}
+
+
+/* Contenedor de tabla */
+
+.tabla-contenedor {
+    width: 100%;
+
+    overflow-x: auto;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* Todas las tablas de horarios */
+
+.tabla-contenedor table,
+.tabla-horarios {
+    width: 100%;
+
+    min-width: 700px;
+
+    border-collapse: collapse;
+
+    border-spacing: 0;
+}
+
+
+/* Encabezados */
+
+.tabla-contenedor th,
+.tabla-horarios th {
+    padding: 17px 15px;
+
+    background-color: var(--verde-oscuro);
+
+    color: white;
+
+    font-size: 0.85rem;
+
+    font-weight: bold;
+
+    text-align: left;
+}
+
+
+/* Celdas */
+
+.tabla-contenedor td,
+.tabla-horarios td {
+    padding: 15px;
+
+    border-bottom: 1px solid #ebe8e1;
+
+    color: var(--texto);
+
+    font-size: 0.9rem;
+
+    vertical-align: middle;
+}
+
+
+/* Primera columna */
+
+.tabla-contenedor td:first-child,
+.tabla-contenedor th:first-child,
+.tabla-horarios td:first-child,
+.tabla-horarios th:first-child {
+    white-space: nowrap;
+}
+
+
+/* Hover */
+
+.tabla-contenedor tbody tr:hover,
+.tabla-horarios tbody tr:hover {
+    background-color: #f8f7f2;
+}
+
+
+/* Última fila */
+
+.tabla-contenedor tbody tr:last-child td,
+.tabla-horarios tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   RECREOS
+   ========================================================= */
+
+/*
+   Se aplican a cualquier fila que tenga:
+   .fila-recreo
+   .recreo
+   .bloque-recreo
+*/
+
+.tabla-contenedor tbody tr.fila-recreo,
+.tabla-contenedor tbody tr.recreo,
+.tabla-contenedor tbody tr.bloque-recreo,
+.tabla-horarios tbody tr.fila-recreo,
+.tabla-horarios tbody tr.recreo,
+.tabla-horarios tbody tr.bloque-recreo {
+    background-color: var(--crema-oscuro);
+}
+
+.tabla-contenedor tbody tr.fila-recreo td,
+.tabla-contenedor tbody tr.recreo td,
+.tabla-contenedor tbody tr.bloque-recreo td,
+.tabla-horarios tbody tr.fila-recreo td,
+.tabla-horarios tbody tr.recreo td,
+.tabla-horarios tbody tr.bloque-recreo td {
+    color: #77736b;
+
+    font-style: italic;
+}
+
+
+/* =========================================================
+   BLOQUES ESPECIALES
+   ========================================================= */
+
+.bloque-especial,
+.fila-especial {
+    background-color: var(--verde-suave);
+}
+
+.bloque-especial td,
+.fila-especial td {
+    color: var(--verde-oscuro);
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   NAVEGACIÓN ENTRE LABORATORIOS
+   ========================================================= */
+
+.navegacion-labs {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 0 0 100px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   NOTA
+   ========================================================= */
+
+.nota-laboratorio {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 0 0 80px;
+}
+
+.nota-contenido {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 20px;
+
+    padding: 30px;
+
+    background-color: var(--verde-suave);
+
+    border-left: 4px solid var(--verde);
+
+    border-radius: 10px;
+}
+
+.nota-icono {
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background-color: var(--blanco);
+
+    font-size: 1.3rem;
+}
+
+.nota-contenido h3 {
+    margin-bottom: 8px;
+
+    color: var(--verde-oscuro);
+
+    font-size: 1.1rem;
+}
+
+.nota-contenido p {
+    color: var(--gris);
+
+    font-size: 0.92rem;
+}
+
+
+/* =========================================================
+   BOTÓN FINAL
+   ========================================================= */
+
+.volver-laboratorios {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 20px 0 110px;
+
+    display: flex;
+
+    justify-content: center;
+}
+
+
+/* =========================================================
+   GALERÍA
+   ========================================================= */
+
+.lab-galeria {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 30px 0 100px;
+}
+
+.foto-laboratorio-grande {
+    max-height: 650px;
+
+    overflow: hidden;
+
+    border-radius: 16px;
+
+    background-color: #e7e3d9;
+
+    box-shadow:
+        0 15px 40px rgba(23, 53, 47, 0.1);
+}
+
+.foto-laboratorio-grande img {
+    width: 100%;
+
+    max-height: 650px;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
    CONTACTO
-   ========================================= */
+   ========================================================= */
 
 .contacto {
     width: 90%;
@@ -709,21 +1322,8 @@ header {
 
     margin: auto;
 
-    padding: 110px 0 130px;
+    padding: 100px 0 130px;
 }
-
-
-.contacto .titulo-seccion > p:last-child {
-    max-width: 600px;
-
-    margin: 20px auto 0;
-
-    color: var(--gris);
-}
-
-
-
-/* ---------- Formulario ---------- */
 
 .formulario {
     max-width: 700px;
@@ -740,7 +1340,6 @@ header {
         0 15px 40px rgba(23, 53, 47, 0.1);
 }
 
-
 .formulario label {
     display: block;
 
@@ -750,7 +1349,6 @@ header {
 
     font-weight: bold;
 }
-
 
 .formulario input,
 .formulario textarea {
@@ -770,13 +1368,8 @@ header {
 
     color: var(--texto);
 
-    font-family: inherit;
-
     font-size: 1rem;
-
-    transition: 0.3s ease;
 }
-
 
 .formulario input:focus,
 .formulario textarea:focus {
@@ -786,11 +1379,9 @@ header {
         0 0 0 3px rgba(47, 93, 80, 0.1);
 }
 
-
 .formulario textarea {
     resize: vertical;
 }
-
 
 .formulario button {
     width: 100%;
@@ -805,17 +1396,12 @@ header {
 
     color: white;
 
-    font-family: inherit;
-
     font-size: 1rem;
 
     font-weight: bold;
 
     cursor: pointer;
-
-    transition: 0.3s ease;
 }
-
 
 .formulario button:hover {
     background-color: var(--verde);
@@ -824,28 +1410,9 @@ header {
 }
 
 
-
-/* =========================================
-   PIE DE PÁGINA
-   ========================================= */
-
-footer {
-    padding: 35px 20px;
-
-    text-align: center;
-
-    background-color: var(--verde-oscuro);
-
-    color: rgba(255, 255, 255, 0.7);
-
-    font-size: 0.85rem;
-}
-
-
-
-/* =========================================
-   REPRODUCTOR DE MÚSICA
-   ========================================= */
+/* =========================================================
+   REPRODUCTOR
+   ========================================================= */
 
 .reproductor {
     max-width: 550px;
@@ -866,13 +1433,7 @@ footer {
     text-align: left;
 }
 
-
-
-/* ---------- Portada ---------- */
-
 .portada-musica {
-    position: relative;
-
     width: 120px;
     height: 120px;
 
@@ -891,7 +1452,6 @@ footer {
         girar-portada 20s linear infinite;
 }
 
-
 .portada-musica img {
     width: 100%;
     height: 100%;
@@ -899,14 +1459,9 @@ footer {
     object-fit: cover;
 }
 
-
-
-/* ---------- Información ---------- */
-
 .reproductor-info {
     margin-bottom: 18px;
 }
-
 
 .now-playing {
     display: block;
@@ -922,7 +1477,6 @@ footer {
     letter-spacing: 2px;
 }
 
-
 .reproductor-info h3 {
     margin-bottom: 3px;
 
@@ -930,7 +1484,6 @@ footer {
 
     font-size: 1.1rem;
 }
-
 
 .reproductor-info p {
     color: var(--gris);
@@ -940,23 +1493,13 @@ footer {
     font-style: italic;
 }
 
-
-
-/* ---------- Audio ---------- */
-
 .reproductor-controles audio {
     width: 100%;
-
     height: 40px;
 }
 
-
-
-/* ---------- Barra de progreso ---------- */
-
 .barra-musica {
     width: 100%;
-
     height: 5px;
 
     margin-top: 15px;
@@ -968,10 +1511,8 @@ footer {
     background-color: #e4e1d8;
 }
 
-
 .progreso-musica {
     width: 0%;
-
     height: 100%;
 
     background-color: var(--dorado);
@@ -983,17 +1524,32 @@ footer {
 }
 
 
+/* =========================================================
+   PIE DE PÁGINA
+   ========================================================= */
 
-/* =========================================
+footer {
+    padding: 35px 20px;
+
+    text-align: center;
+
+    background-color: var(--verde-oscuro);
+
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: 0.85rem;
+}
+
+footer p {
+    margin: 3px 0;
+}
+
+
+/* =========================================================
    ANIMACIONES
-   ========================================= */
+   ========================================================= */
 
-/*
-   Hace avanzar la barra de progreso del reproductor
-   desde 0% hasta 100%.
-*/
 @keyframes avanzar-musica {
-
     from {
         width: 0%;
     }
@@ -1001,15 +1557,9 @@ footer {
     to {
         width: 100%;
     }
-
 }
 
-
-/*
-   Hace girar continuamente la portada de música.
-*/
 @keyframes girar-portada {
-
     from {
         transform: rotate(0deg);
     }
@@ -1017,27 +1567,15 @@ footer {
     to {
         transform: rotate(360deg);
     }
-
 }
 
 
+/* =========================================================
+   TABLETS
+   ========================================================= */
 
-/* =========================================
-   RESPONSIVE - TABLETS
-   ========================================= */
-
-/*
-   Estas reglas se aplican cuando la pantalla tiene
-   un ancho máximo de 900px.
-
-   El objetivo es adaptar el diseño a tablets y
-   pantallas intermedias.
-*/
 @media (max-width: 900px) {
 
-    /*
-       El inicio pasa de dos columnas a una sola.
-    */
     .inicio {
         grid-template-columns: 1fr;
 
@@ -1046,61 +1584,68 @@ footer {
         padding: 70px 0;
     }
 
-
-    /*
-       Centra la descripción.
-    */
     .descripcion {
         margin-left: auto;
         margin-right: auto;
     }
 
-
-    /*
-       Centra los botones.
-    */
     .botones {
         justify-content: center;
     }
 
-
-    /*
-       Reduce la altura del elemento visual.
-    */
     .inicio-visual {
         height: 350px;
     }
 
-
-    /*
-       Las tarjetas de laboratorios pasan de dos columnas
-       a una sola columna.
-    */
     .laboratorios-grid {
         grid-template-columns: 1fr;
     }
 
-
-    /*
-       La sección de información pasa a una sola columna.
-    */
     .informacion-contenido {
         grid-template-columns: 1fr;
 
         gap: 40px;
     }
 
+    .informacion-laboratorios-grid,
+    .responsables-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .detalle-contenido,
+    .lab-detalle-hero {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .detalle-texto,
+    .lab-detalle-hero-contenido {
+        text-align: center;
+    }
+
+    .detalle-texto .descripcion,
+    .lab-detalle-hero-contenido > p:not(.pequeno-titulo) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .detalle-texto .botones,
+    .lab-detalle-hero-contenido .botones {
+        justify-content: center;
+    }
+
+    .lab-detalle-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 
-
-/* =========================================
-   RESPONSIVE - CELULARES
-   ========================================= */
+/* =========================================================
+   CELULARES
+   ========================================================= */
 
 @media (max-width: 600px) {
-
-    /* ---------- Menú ---------- */
 
     .navbar {
         min-height: 100px;
@@ -1112,19 +1657,17 @@ footer {
         gap: 10px;
     }
 
-
     .menu {
-        gap: 18px;
-    }
+        gap: 15px;
 
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
 
     .menu a {
-        font-size: 0.8rem;
+        font-size: 0.78rem;
     }
-
-
-
-    /* ---------- Inicio ---------- */
 
     .inicio {
         min-height: auto;
@@ -1132,45 +1675,34 @@ footer {
         padding: 70px 0;
     }
 
-
     .inicio h1 {
         font-size: 3rem;
 
         letter-spacing: -1px;
     }
 
-
     .descripcion {
         font-size: 1rem;
     }
-
-
-
-    /* ---------- Botones ---------- */
 
     .botones {
         flex-direction: column;
     }
 
-
     .boton {
         width: 100%;
+
+        text-align: center;
     }
-
-
-
-    /* ---------- Elemento visual ---------- */
 
     .inicio-visual {
         height: 280px;
     }
 
-
     .grande {
         width: 240px;
         height: 240px;
     }
-
 
     .laboratorio-icono {
         width: 180px;
@@ -1179,59 +1711,167 @@ footer {
         font-size: 4rem;
     }
 
-
     .pequeno {
         width: 100px;
         height: 100px;
     }
 
+    .pagina-encabezado {
+        padding: 75px 20px;
+    }
 
-
-    /* ---------- Secciones ---------- */
+    .pagina-encabezado h1 {
+        font-size: 3rem;
+    }
 
     .laboratorios,
     .contacto {
         padding: 80px 0;
     }
 
-
-
-    /* ---------- Tarjetas ---------- */
-
-    /*
-       Se mantiene la paleta de colores definida
-       anteriormente para cada laboratorio.
-       Aquí solamente se reduce el padding para que
-       las tarjetas aprovechen mejor el espacio disponible.
-    */
-    .laboratorio-card {
-        padding: 28px 24px;
+    .info-personal-lab,
+    .responsable-card {
+        flex-direction: column;
     }
 
+    .laboratorio-imagen {
+        height: 210px;
+    }
 
-
-    /* ---------- Información ---------- */
+    .laboratorio-card-contenido {
+        padding: 25px;
+    }
 
     .informacion {
         padding-bottom: 80px;
     }
-
 
     .informacion-contenido {
         padding: 35px 25px;
     }
 
 
+    /* =====================================================
+       LABORATORIO INDIVIDUAL
+       ===================================================== */
 
-    /* ---------- Formulario ---------- */
+    .detalle-laboratorio,
+    .lab-detalle-hero {
+        width: 90%;
+
+        padding: 60px 0;
+    }
+
+    .detalle-texto h1,
+    .lab-detalle-hero-contenido h1 {
+        font-size: 3rem;
+    }
+
+    .detalle-imagen,
+    .lab-detalle-hero-imagen {
+        min-height: 300px;
+    }
+
+    .detalle-imagen img,
+    .lab-detalle-hero-imagen img {
+        min-height: 300px;
+    }
+
+
+    /* =====================================================
+       CARACTERÍSTICAS
+       ===================================================== */
+
+    .informacion-laboratorio {
+        padding: 60px 0 80px;
+    }
+
+    .caracteristica-card {
+        grid-template-columns: 60px minmax(0, 1fr);
+
+        column-gap: 20px;
+
+        padding: 25px;
+    }
+
+    .caracteristica-icono {
+        width: 55px;
+        height: 55px;
+
+        font-size: 1.4rem;
+    }
+
+
+    /* =====================================================
+       HORARIOS
+       ===================================================== */
+
+    .horarios,
+    .horario-laboratorio {
+        width: 90%;
+
+        padding-bottom: 70px;
+    }
+
+    .tabla-contenedor {
+        width: 100%;
+
+        overflow-x: auto;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .tabla-contenedor table,
+    .tabla-horarios {
+        min-width: 700px;
+    }
+
+
+    /* =====================================================
+       NOTA
+       ===================================================== */
+
+    .nota-laboratorio {
+        padding-bottom: 60px;
+    }
+
+    .nota-contenido {
+        padding: 25px;
+
+        gap: 15px;
+    }
+
+
+    /* =====================================================
+       VOLVER
+       ===================================================== */
+
+    .volver-laboratorios {
+        padding-bottom: 80px;
+    }
+
+
+    /* =====================================================
+       GALERÍA
+       ===================================================== */
+
+    .lab-galeria {
+        padding-bottom: 70px;
+    }
+
+
+    /* =====================================================
+       FORMULARIO
+       ===================================================== */
 
     .formulario {
         padding: 30px 20px;
     }
 
 
-
-    /* ---------- Reproductor ---------- */
+    /* =====================================================
+       REPRODUCTOR
+       ===================================================== */
 
     .reproductor {
         width: 100%;
@@ -1239,42 +1879,416 @@ footer {
         padding: 20px;
     }
 
-
     .reproductor-info h3 {
         font-size: 1rem;
     }
 
-
     .reproductor-info p {
         font-size: 0.8rem;
     }
-
 }
 
 
-
-/* =========================================
+/* =========================================================
    CELULARES MUY PEQUEÑOS
-   ========================================= */
+   ========================================================= */
 
-/*
-   Ajustes adicionales para dispositivos de hasta
-   400px de ancho.
-*/
 @media (max-width: 400px) {
 
     .menu {
         gap: 10px;
     }
 
-
     .inicio h1 {
         font-size: 2.5rem;
     }
-
 
     .titulo-seccion h2 {
         font-size: 2rem;
     }
 
+    .pagina-encabezado h1 {
+        font-size: 2.5rem;
+    }
+
+    .detalle-texto h1,
+    .lab-detalle-hero-contenido h1 {
+        font-size: 2.5rem;
+    }
+
+    .nota-contenido {
+        flex-direction: column;
+    }
+}
+
+/* =========================================================
+   PÁGINA SOBRE MÍ
+   ========================================================= */
+
+.sobre-mi {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 90px 0 120px;
+}
+
+
+/* =========================================================
+   TÍTULO
+   ========================================================= */
+
+.sobre-mi .titulo-seccion {
+    margin-bottom: 65px;
+
+    text-align: center;
+}
+
+.sobre-mi .titulo-seccion h1 {
+    color: var(--verde-oscuro);
+
+    font-size: clamp(2.5rem, 6vw, 4rem);
+
+    line-height: 1.1;
+}
+
+.sobre-mi .texto-introduccion {
+    max-width: 700px;
+
+    margin: 25px auto 0;
+
+    color: var(--gris);
+
+    font-size: 1rem;
+}
+
+
+/* =========================================================
+   INFORMACIÓN PERSONAL
+   ========================================================= */
+
+.sobre-mi-contenido {
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.2fr;
+
+    align-items: center;
+
+    gap: 70px;
+
+    margin-bottom: 80px;
+}
+
+
+/* =========================================================
+   FOTOGRAFÍA
+   ========================================================= */
+
+.sobre-mi-foto {
+    width: 100%;
+
+    min-height: 480px;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    background-color: #e7e3d9;
+
+    border: 1px solid var(--borde);
+
+    box-shadow:
+        0 20px 50px rgba(23, 53, 47, 0.12);
+}
+
+.sobre-mi-foto img {
+    width: 100%;
+    height: 100%;
+
+    min-height: 480px;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.sobre-mi-foto:hover img {
+    transform: scale(1.03);
+}
+
+
+/* =========================================================
+   TEXTO PERSONAL
+   ========================================================= */
+
+.sobre-mi-texto {
+    padding: 10px 0;
+}
+
+.sobre-mi-texto h2 {
+    margin-bottom: 25px;
+
+    color: var(--verde-oscuro);
+
+    font-size: 2.2rem;
+
+    line-height: 1.2;
+}
+
+.sobre-mi-texto h2::after {
+    content: "";
+
+    display: block;
+
+    width: 55px;
+    height: 3px;
+
+    margin-top: 15px;
+
+    background-color: var(--dorado);
+}
+
+.sobre-mi-texto p {
+    margin-bottom: 18px;
+
+    color: var(--gris);
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   TARJETAS
+   ========================================================= */
+
+.sobre-mi-tarjetas {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+.sobre-mi-card {
+    position: relative;
+
+    padding: 35px;
+
+    background-color: var(--blanco);
+
+    border: 1px solid var(--borde);
+
+    border-radius: 14px;
+
+    border-top: 4px solid var(--verde);
+
+    box-shadow:
+        0 10px 30px rgba(23, 53, 47, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.sobre-mi-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 16px 35px rgba(23, 53, 47, 0.11);
+}
+
+
+/* =========================================================
+   COLORES DE LAS TARJETAS
+   ========================================================= */
+
+.sobre-mi-card:nth-child(1) {
+    border-top-color: #4a944f;
+}
+
+.sobre-mi-card:nth-child(2) {
+    border-top-color: #5bba62;
+}
+
+.sobre-mi-card:nth-child(3) {
+    border-top-color: #479e61;
+}
+
+.sobre-mi-card:nth-child(4) {
+    border-top-color: #c9d46c;
+}
+
+
+/* =========================================================
+   ICONOS
+   ========================================================= */
+
+.sobre-mi-icono {
+    width: 60px;
+    height: 60px;
+
+    margin-bottom: 20px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background-color: var(--dorado-claro);
+
+    font-size: 1.7rem;
+}
+
+
+/* =========================================================
+   TÍTULOS DE LAS TARJETAS
+   ========================================================= */
+
+.sobre-mi-card h3 {
+    margin-bottom: 15px;
+
+    color: var(--verde-oscuro);
+
+    font-size: 1.3rem;
+
+    line-height: 1.3;
+}
+
+
+/* =========================================================
+   TEXTO DE LAS TARJETAS
+   ========================================================= */
+
+.sobre-mi-card p {
+    margin-bottom: 14px;
+
+    color: var(--gris);
+
+    font-size: 0.94rem;
+
+    line-height: 1.7;
+}
+
+.sobre-mi-card p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .sobre-mi-contenido {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .sobre-mi-foto {
+        max-width: 600px;
+
+        min-height: 500px;
+
+        margin: auto;
+    }
+
+    .sobre-mi-foto img {
+        min-height: 500px;
+    }
+
+    .sobre-mi-texto {
+        text-align: center;
+    }
+
+    .sobre-mi-texto h2::after {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+/* =========================================================
+   CELULARES
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .sobre-mi {
+        width: 90%;
+
+        padding: 70px 0 90px;
+    }
+
+    .sobre-mi .titulo-seccion {
+        margin-bottom: 45px;
+    }
+
+    .sobre-mi .titulo-seccion h1 {
+        font-size: 3rem;
+    }
+
+    .sobre-mi-contenido {
+        gap: 35px;
+
+        margin-bottom: 60px;
+    }
+
+    .sobre-mi-foto {
+        min-height: 380px;
+
+        border-radius: 14px;
+    }
+
+    .sobre-mi-foto img {
+        min-height: 380px;
+    }
+
+    .sobre-mi-texto h2 {
+        font-size: 1.8rem;
+    }
+
+    .sobre-mi-texto p {
+        font-size: 0.95rem;
+    }
+
+    .sobre-mi-tarjetas {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .sobre-mi-card {
+        padding: 28px 25px;
+    }
+}
+
+
+/* =========================================================
+   CELULARES MUY PEQUEÑOS
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .sobre-mi .titulo-seccion h1 {
+        font-size: 2.5rem;
+    }
+
+    .sobre-mi-foto {
+        min-height: 320px;
+    }
+
+    .sobre-mi-foto img {
+        min-height: 320px;
+    }
+
+    .sobre-mi-card {
+        padding: 25px 20px;
+    }
 }
