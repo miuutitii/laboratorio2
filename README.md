@@ -1,161 +1,68 @@
-# Sitio web personal de Valentina
+# Sitio web Informativo Insuco - Espacios de Aprendizaje
 
 ## Descripción
 
-Este proyecto consiste en un sitio web personal e informativo creado como proyecto personal. Su objetivo es presentar información sobre mí, mis intereses, mis estudios y mis metas a futuro.
+Este proyecto consiste en un sitio web informativo y personal diseñado para presentar los laboratorios de computación de la especialidad de Programación en el liceo, sus características, equipamiento y horarios de uso. Asimismo, incluye una sección dedicada a la autora del sitio web, sus intereses académicos, metas profesionales e información de contacto.
 
-El sitio fue diseñado con una apariencia limpia, sencilla y profesional, utilizando principalmente tonos verdes, crema y dorados.
+El sitio fue diseñado con una interfaz limpia, profesional y moderna, estructurada mediante el uso de tonos verdes (`#17352f`, `#2f5d50`), crema (`#f8f5ee`) y detalles en dorado (`#c7a96b`). Cuenta con un diseño adaptativo (*responsive design*) que permite una visualización en computadores, tablets y dispositivos móviles.
 
-Además, cuenta con un diseño responsive que permite que la página se adapte a diferentes tamaños de pantalla, como computadores, tablets y celulares.
+## Objetivos del proyecto
 
-## Objetivo del proyecto
+- Proveer información clara e interactiva sobre los laboratorios de computación del liceo (equipamiento, responsables, horarios y cursos).
+- Dar a conocer el perfil de la autora, sus estudios actuales y su meta profesional de estudiar Medicina Veterinaria.
+- Facilitar un medio de comunicación directo mediante un formulario de contacto funcional en el sitio.
 
-El objetivo principal es crear una página web que permita conocerme de una manera visual, organizada y sencilla.
+## Secciones y Páginas del Sitio
 
-El sitio contiene información sobre:
+El sitio se encuentra dividido en cuatro páginas principales navegables desde el menú superior:
 
-- Mi información personal
-- Mis estudios actuales
-- Mis intereses y pasatiempos
-- Mi meta de estudiar Medicina Veterinaria
-- Mis planes a futuro
-- Las habilidades que estoy desarrollando
-- Un formulario de contacto
+### 1. Inicio (`index.html`)
+- Presentación general de los espacios tecnológicos y de aprendizaje del liceo.
+- Acceso directo a las distintas secciones del sitio.
+- Reproductor de ambiente/música (*CORTIS - JoyRide*) como elemento complementario durante la navegación.
 
-## Secciones del sitio
+### 2. Sobre mí (`sobre-mi.html`)
+- **Presentación personal:** Información sobre Valentina, estudiante de 4to medio en la especialidad de programación.
+- **Metas y futuro:** Interés por estudiar Medicina Veterinaria, especialización internacional en Nueva Zelanda y trabajo con animales exóticos.
+- **Intereses personales y pasatiempos:** Lectura, música (en especial CORTIS), cocina, dibujo y aprendizaje de inglés y programación.
 
-### Inicio
+### 3. Laboratorios (`laboratorios.html` y detalle por laboratorio)
+- Muestra el listado de los laboratorios del liceo, sus características generales, responsables (Prof. Juan Acevedo y técnico Eduardo Salazar) y páginas de detalle individual:
+  - `lab01.html`: Detalle y horario semanal del Laboratorio 01.
+  - `lab02.html`: Detalle y horario semanal del Laboratorio 02.
+  - *(lab03.html, lab04.html, lab05.html)*.
 
-Es la presentación principal del sitio. Contiene mi nombre, una breve descripción y botones que permiten navegar hacia las demás secciones.
+### 4. Contacto (`contacto.html`)
+- Formulario de contacto interactivo con validación de campos obligatorios (`Nombre`, `Correo electrónico` y `Mensaje`).
+- Sección de preguntas e información del propósito del sitio.
 
-### Sobre mí
+## Tecnologías Utilizadas
 
-En esta sección presento información personal, mis estudios actuales, algunas de mis características y mi principal meta profesional.
+- **HTML5:** Estructuración semántica del contenido (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`, etc.).
+- **CSS3:** Hoja de estilos principal (`estilos.css`) con implementación de:
+  - Variables CSS (`:root`) para la paleta de colores.
+  - *Flexbox* y *CSS Grid* para la maquetación y distribución espacial de tarjetas y tablas.
+  - *Media Queries* para garantizar el diseño adaptativo (*responsive*).
+  - Animaciones CSS (`@keyframes`) para elementos interactivos como el reproductor y rotación de imágenes.
 
-### Mis metas y futuro
-
-Presenta mis objetivos relacionados con la Medicina Veterinaria, los viajes y mi interés por trabajar con animales exóticos.
-
-### Mis gustos
-
-Incluye algunas de las actividades que disfruto realizar, como leer, escuchar música, cocinar, jugar, dormir y dibujar.
-
-También se menciona la importancia que tiene la música de CORTIS para mí, ya que me ayuda a sobrellevar momentos de estrés y seguir esforzándome.
-
-### Aprendizaje
-
-Muestra algunas de las habilidades que actualmente estoy desarrollando, principalmente inglés y programación.
-
-### Contacto
-
-Incluye un formulario donde el usuario puede ingresar su nombre, correo electrónico y mensaje.
-
-## Tecnologías utilizadas
-
-El proyecto fue desarrollado utilizando:
-
-- HTML5: para crear la estructura y el contenido de la página.
-- CSS3: para diseñar la página, los colores, las tarjetas, los botones, las animaciones y el diseño responsive.
-
-No se utilizaron frameworks ni librerías externas.
-
-## Diseño responsive
-
-El sitio está diseñado para adaptarse a diferentes dispositivos.
-
-Para lograrlo se utilizaron Media Queries en CSS, las cuales permiten modificar la distribución y el tamaño de los elementos dependiendo del ancho de la pantalla.
-
-El diseño considera principalmente:
-
-- Computadores
-- Tablets
-- Celulares
-
-## Estructura del proyecto
+## Estructura del Proyecto
 
 ```text
 sitio-personal/
 │
-├── index.html
-├── estilos.css
-├── README.md
+├── index.html          # Página principal de bienvenida
+├── sobre-mi.html       # Página con información personal y metas de Valentina
+├── laboratorios.html   # Listado general de laboratorios de computación
+├── lab01.html          # Detalle y horarios del Laboratorio 01
+├── lab02.html          # Detalle y horarios del Laboratorio 02
+├── contacto.html       # Formulario de comunicación y contacto
+├── estilos.css         # Hoja de estilos global del proyecto
+├── README.md           # Documentación técnica del proyecto
 │
-└── mifoto.jpg
-
-Archivos principales
-
-index.html
-
-Contiene la estructura y el contenido del sitio web.
-
-estilos.css
-
-Contiene los estilos visuales y las reglas necesarias para adaptar el sitio a diferentes tamaños de pantalla.
-
-README.md
-
-Contiene la documentación general del proyecto.
-
-mifoto.jpg
-
-Corresponde a la fotografía utilizada en la sección "Sobre mí".
-
-Cómo ejecutar el proyecto
-Descargar o clonar este repositorio.
-Mantener la carpeta img dentro de la carpeta principal del proyecto.
-Verificar que la fotografía se encuentre en:
-img/valentina.jpg
-
-Abrir el archivo index.html en un navegador web.
-
-No es necesario instalar programas adicionales para visualizar el sitio.
-
-Documentación del código
-
-El código HTML y CSS contiene comentarios explicativos para facilitar su comprensión y mantenimiento.
-
-En el archivo HTML se documentan elementos como:
-
-La estructura de las diferentes secciones.
-Los enlaces del menú de navegación.
-El uso de id y class.
-La estructura del formulario.
-Los campos de entrada.
-Elementos relacionados con la accesibilidad.
-
-En el archivo CSS se documentan propiedades y características como:
-
-Flexbox.
-CSS Grid.
-Variables CSS.
-Posicionamiento.
-Pseudoelementos.
-Transiciones y efectos.
-Media Queries.
-Diseño responsive.
-Autora
-
-Valentina
-
-Estudiante de 4to medio en Chile.
-
-Actualmente estudio programación y me preparo para ingresar a la educación superior, con el objetivo de estudiar Medicina Veterinaria.
-
-Mi meta a futuro es especializarme internacionalmente, especialmente en Nueva Zelanda, y trabajar con animales exóticos.
-
-Estado del proyecto
-
-Proyecto completado.
-
-Incluye:
-
- Inicio
- Sobre mí
- Contacto
- Menú de navegación
- Diseño responsive
- Formulario de contacto
- Código documentado
- README
-
-© 2026 Valentina · Sitio web personal
+├── audio/
+│   └── musica.mp3      # Archivo de audio para el reproductor en Inicio
+│
+└── img/
+    ├── valentina.jpeg  # Fotografía principal para la sección "Sobre mí"
+    ├── lab01.jpg       # Imagen del Laboratorio 01
+    └── lab02.jpg       # Imagen del Laboratorio 02
