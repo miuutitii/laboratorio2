@@ -7,18 +7,21 @@
          CONFIGURACIÓN DEL DOCUMENTO
          ===================================================== -->
 
-    <!-- Permite utilizar correctamente caracteres como:
-         á, é, í, ó, ú, ñ, etc. -->
+    <!-- Permite utilizar correctamente caracteres especiales
+         como á, é, í, ó, ú, ñ, etc. -->
     <meta charset="UTF-8">
 
-    <!-- Hace que la página se adapte correctamente
-         a celulares, tablets y computadores -->
+
+    <!-- Permite adaptar el sitio a computadores,
+         tablets y celulares. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Título que aparece en la pestaña del navegador -->
-    <title>Laboratorios | Liceo</title>
 
-    <!-- Conexión con la hoja de estilos principal -->
+    <!-- Título que aparece en la pestaña del navegador. -->
+    <title>Espacios de Aprendizaje | Liceo</title>
+
+
+    <!-- Conexión con la hoja de estilos principal. -->
     <link rel="stylesheet" href="estilos.css">
 
 </head>
@@ -29,37 +32,72 @@
 
     <!-- =====================================================
          ENCABEZADO Y MENÚ DE NAVEGACIÓN
-         =====================================================
-
-         Esta sección permanece visible en la parte superior
-         de la página y permite desplazarse rápidamente entre
-         las diferentes secciones.
          ===================================================== -->
 
     <header>
 
         <nav class="navbar">
 
-            <!-- Nombre/logo de la página.
-                 Al hacer clic lleva nuevamente al inicio. -->
-            <a href="#inicio" class="logo">
-                Laboratorios<span>.</span>
+
+            <!-- =============================================
+                 LOGO
+                 =============================================
+
+                 El logo permite volver a la página principal.
+                 ============================================= -->
+
+            <a href="index.html" class="logo">
+
+                Espacios<span>.</span>
+
             </a>
 
 
-            <!-- Opciones principales de navegación -->
+
+            <!-- =============================================
+                 MENÚ PRINCIPAL
+                 ============================================= -->
+
             <ul class="menu">
 
+
+                <!-- Página de inicio -->
                 <li>
-                    <a href="#inicio">Inicio</a>
+
+                    <a href="index.html">
+                        Inicio
+                    </a>
+
                 </li>
 
+
+                <!-- Información personal de la autora -->
                 <li>
-                    <a href="#laboratorios">Laboratorios</a>
+
+                    <a href="sobre-mi.html">
+                        Sobre mí
+                    </a>
+
                 </li>
 
+
+                <!-- Información de los laboratorios -->
                 <li>
-                    <a href="#contacto">Contacto</a>
+
+                    <a href="laboratorios.html">
+                        Laboratorios
+                    </a>
+
+                </li>
+
+
+                <!-- Formulario de contacto -->
+                <li>
+
+                    <a href="contacto.html">
+                        Contacto
+                    </a>
+
                 </li>
 
             </ul>
@@ -78,61 +116,88 @@
 
 
         <!-- =================================================
-             SECCIÓN DE INICIO
+             SECCIÓN DE PRESENTACIÓN
              =================================================
 
-             Es la primera sección que ve el usuario.
-             Presenta el propósito de la página y permite
-             acceder rápidamente a los laboratorios.
+             Esta sección funciona como portada informativa
+             del sitio.
+
+             A diferencia de una página personal, el foco
+             está puesto en el tema del proyecto:
+             los espacios de aprendizaje y los laboratorios
+             disponibles en el liceo.
              ================================================= -->
 
         <section id="inicio" class="inicio">
 
 
-            <!-- ---------------------------------------------
-                 TEXTO PRINCIPAL
-                 --------------------------------------------- -->
+            <!-- =============================================
+                 INFORMACIÓN PRINCIPAL
+                 ============================================= -->
 
             <div class="inicio-texto">
 
-                <!-- Texto pequeño sobre el título -->
+
+                <!-- Categoría de la página -->
                 <p class="pequeno-titulo">
-                    ESPACIOS DE APRENDIZAJE
+
+                    SITIO INFORMATIVO
+
                 </p>
 
 
-                <!-- Título principal de la página -->
+                <!-- Título principal -->
+
                 <h1>
-                    Laboratorios
-                    <span>del liceo</span>
+
+                    Espacios de
+                    <span>aprendizaje</span>
+
                 </h1>
 
 
-                <!-- Descripción general -->
+                <!-- Descripción general del sitio -->
+
                 <p class="descripcion">
 
-                    Conoce los diferentes laboratorios disponibles
-                    para el aprendizaje, la práctica y el desarrollo
-                    de proyectos de nuestros estudiantes.
+                    Este sitio presenta información sobre los
+                    laboratorios de computación del liceo, sus
+                    características, ubicación y recursos
+                    disponibles para el desarrollo de actividades
+                    académicas.
 
                 </p>
 
 
-                <!-- -----------------------------------------
-                     BOTONES DE ACCESO
-                     ----------------------------------------- -->
+
+                <!-- =========================================
+                     BOTONES PRINCIPALES
+                     ========================================= -->
 
                 <div class="botones">
 
-                    <!-- Lleva directamente a la sección
-                         de información de los laboratorios -->
-                    <a href="#laboratorios" class="boton principal">
-                        Ver laboratorios
+
+                    <!-- Acceso a la información de laboratorios -->
+
+                    <a
+                        href="laboratorios.html"
+                        class="boton principal"
+                    >
+
+                        Conocer los laboratorios
+
                     </a>
 
-                    <!-- Lleva a la sección de contacto -->
-                    <a href="#contacto" class="boton secundario">
-                        Contacto
+
+                    <!-- Acceso a la información sobre la autora -->
+
+                    <a
+                        href="sobre-mi.html"
+                        class="boton secundario"
+                    >
+
+                        Sobre el proyecto
+
                     </a>
 
                 </div>
@@ -140,74 +205,82 @@
 
 
                 <!-- =========================================
-                     REPRODUCTOR DE MÚSICA
+                     INFORMACIÓN DESTACADA
                      =========================================
 
-                     Elemento multimedia incorporado a la
-                     página. La canción debe estar ubicada
-                     en la carpeta:
-
-                     audio/musica.mp3
-
-                     La portada debe estar ubicada en:
-
-                     portada.jpg
+                     Pequeño bloque informativo que refuerza
+                     que el sitio tiene un propósito educativo.
                      ========================================= -->
 
                 <div class="reproductor">
 
 
-                    <!-- Portada de la canción -->
+                    <!-- Portada decorativa -->
+
                     <div class="portada-musica">
 
                         <img
                             src="portada.jpg"
-                            alt="Portada de la canción"
+                            alt="Portada de la canción utilizada en el sitio"
                         >
 
                     </div>
 
 
-                    <!-- Información de la canción -->
+
+                    <!-- Información de la música -->
+
                     <div class="reproductor-info">
 
                         <span class="now-playing">
-                            NOW PLAYING
+
+                            AMBIENTE DEL SITIO
+
                         </span>
 
+
                         <h3>
+
                             CORTIS - JoyRide
+
                         </h3>
 
+
                         <p>
-                            Música para acompañar la navegación
-                            por nuestro sitio.
+
+                            Música utilizada como elemento
+                            complementario durante la navegación.
+
                         </p>
 
                     </div>
 
 
+
                     <!-- Controles del reproductor -->
+
                     <div class="reproductor-controles">
 
                         <audio controls loop>
 
-                            <!-- Archivo de audio utilizado -->
                             <source
                                 src="audio/musica.mp3"
                                 type="audio/mpeg"
                             >
 
-                            <!-- Mensaje mostrado si el navegador
-                                 no soporta el elemento audio -->
-                            Tu navegador no puede reproducir este audio.
+                            <!-- Mensaje alternativo -->
+
+                            Tu navegador no puede reproducir
+                            este audio.
 
                         </audio>
 
                     </div>
 
 
-                    <!-- Barra decorativa de progreso -->
+
+                    <!-- Barra decorativa -->
+
                     <div class="barra-musica">
 
                         <div class="progreso-musica"></div>
@@ -221,20 +294,32 @@
 
 
             <!-- =============================================
-                 ELEMENTO VISUAL DEL INICIO
+                 ELEMENTO VISUAL
+                 =============================================
+
+                 Representa visualmente la idea de tecnología,
+                 aprendizaje y trabajo práctico.
                  ============================================= -->
 
             <div class="inicio-visual">
 
-                <!-- Círculo decorativo grande -->
+
+                <!-- Círculo decorativo principal -->
+
                 <div class="circulo grande"></div>
 
-                <!-- Círculo decorativo pequeño -->
+
+                <!-- Círculo decorativo secundario -->
+
                 <div class="circulo pequeno"></div>
 
-                <!-- Ícono principal -->
+
+                <!-- Elemento visual central -->
+
                 <div class="laboratorio-icono">
+
                     🧪
+
                 </div>
 
             </div>
@@ -244,311 +329,77 @@
 
 
         <!-- =================================================
-             SECCIÓN DE LABORATORIOS
+             PRESENTACIÓN DEL SITIO
              =================================================
 
-             Contiene las tarjetas con información de cada
-             laboratorio disponible en el liceo.
-             ================================================= -->
-
-        <section id="laboratorios" class="laboratorios">
-
-
-            <!-- ---------------------------------------------
-                 TÍTULO DE LA SECCIÓN
-                 --------------------------------------------- -->
-
-            <div class="titulo-seccion">
-
-                <p class="pequeno-titulo">
-                    NUESTROS ESPACIOS
-                </p>
-
-                <h2>
-                    Laboratorios
-                </h2>
-
-                <div class="linea"></div>
-
-                <p class="texto-introduccion">
-
-                    El liceo cuenta con distintos espacios equipados
-                    para apoyar el aprendizaje práctico y el desarrollo
-                    de diferentes áreas de conocimiento.
-
-                </p>
-
-            </div>
-
-
-
-            <!-- =============================================
-                 TARJETAS DE LOS LABORATORIOS
-                 ============================================= -->
-
-            <div class="laboratorios-grid">
-
-
-                <!-- =================================================
-                    LABORATORIO 1
-                    ================================================= -->
-
-                <article class="laboratorio-card laboratorio-1">
-
-                    <p class="numero-laboratorio">
-                        LABORATORIO 1
-                    </p>
-
-                    <h3>
-                        Laboratorio de alto rendimiento
-                    </h3>
-
-                    <p>
-
-                        El Laboratorio 1 cuenta con los equipos de
-                        mayor rendimiento disponibles en los
-                        laboratorios del liceo. Sus computadores
-                        ofrecen un buen nivel de resolución de imagen,
-                        conexión a internet de buena calidad y utilizan
-                        el sistema operativo Windows 11 Pro.
-
-                    </p>
-
-                    <p>
-
-                        Este laboratorio se encuentra ubicado en el
-                        segundo piso del liceo, al lado derecho.
-                        Además de ser utilizado para actividades
-                        académicas, en determinadas ocasiones se
-                        utiliza para realizar pruebas en línea
-                        correspondientes a estudiantes de primero y
-                        segundo medio.
-
-                    </p>
-
-                </article>
-
-
-                <!-- =================================================
-                    LABORATORIO 2
-                    ================================================= -->
-
-                <article class="laboratorio-card laboratorio-2">
-
-                    <p class="numero-laboratorio">
-                        LABORATORIO 2
-                    </p>
-
-                    <h3>
-                        Laboratorio de uso general
-                    </h3>
-
-                    <p>
-
-                        El Laboratorio 2 cuenta con computadores que
-                        presentan un rendimiento ligeramente inferior
-                        al de los equipos de los Laboratorios 1 y 4.
-                        A pesar de esto, los computadores funcionan
-                        correctamente y permiten realizar diferentes
-                        actividades académicas y trabajos escolares.
-
-                    </p>
-
-                    <p>
-
-                        Los equipos cuentan con 16 GB de memoria RAM y
-                        procesadores Intel Core 7, lo que permite
-                        utilizarlos para tareas habituales, navegación
-                        por internet y distintas actividades realizadas
-                        durante las clases.
-
-                    </p>
-
-                    <p>
-
-                        Este laboratorio se encuentra ubicado en el
-                        tercer piso, en el ala derecha del liceo.
-
-                    </p>
-
-                </article>
-
-
-                <!-- =================================================
-                    LABORATORIO 3
-                    ================================================= -->
-
-                <article class="laboratorio-card laboratorio-3">
-
-                    <p class="numero-laboratorio">
-                        LABORATORIO 3
-                    </p>
-
-                    <h3>
-                        Laboratorio con Ubuntu
-                    </h3>
-
-                    <p>
-
-                        El Laboratorio 3 es actualmente el espacio con
-                        menor rendimiento entre los laboratorios del
-                        liceo. Sus computadores presentan una velocidad
-                        de funcionamiento considerablemente menor en
-                        comparación con los demás equipos.
-
-                    </p>
-
-                    <p>
-
-                        Los computadores utilizan el sistema operativo
-                        Ubuntu. Debido a las limitaciones de rendimiento
-                        de estos equipos, los cursos de programación no
-                        suelen utilizar este laboratorio para sus
-                        actividades.
-
-                    </p>
-
-                    <p>
-
-                        Se encuentra ubicado en el segundo piso del
-                        liceo, en el ala derecha.
-
-                    </p>
-
-                </article>
-
-
-                <!-- =================================================
-                    LABORATORIO 4
-                    ================================================= -->
-
-                <article class="laboratorio-card laboratorio-4">
-
-                    <p class="numero-laboratorio">
-                        LABORATORIO 4
-                    </p>
-
-                    <h3>
-                        Laboratorio de buen rendimiento
-                    </h3>
-
-                    <p>
-
-                        El Laboratorio 4 cuenta con computadores de
-                        buen rendimiento, superiores a los disponibles
-                        en los Laboratorios 2, 3 y 5. Sus equipos
-                        utilizan Windows 11 y cuentan con 16 GB de
-                        memoria RAM.
-
-                    </p>
-
-                    <p>
-
-                        Se encuentra en el tercer piso, en una de las
-                        zonas más alejadas de la entrada principal,
-                        aproximadamente frente a ella. Debido a su
-                        ubicación y al uso que se le da a los distintos
-                        espacios del liceo, no es uno de los laboratorios
-                        que se utiliza con mayor frecuencia.
-
-                    </p>
-
-                </article>
-
-
-                <!-- =================================================
-                    LABORATORIO 5
-                    ================================================= -->
-
-                <article class="laboratorio-card laboratorio-5">
-
-                    <p class="numero-laboratorio">
-                        LABORATORIO 5
-                    </p>
-
-                    <h3>
-                        Laboratorio de uso frecuente
-                    </h3>
-
-                    <p>
-
-                        El Laboratorio 5 es uno de los espacios
-                        utilizados habitualmente por los distintos
-                        cursos del liceo. Al igual que el Laboratorio 3,
-                        los cursos de programación no suelen utilizarlo
-                        debido al rendimiento de sus computadores.
-
-                    </p>
-
-                    <p>
-
-                        Sus equipos presentan una velocidad de
-                        funcionamiento bastante baja en comparación
-                        con otros laboratorios, por lo que las
-                        actividades que requieren mayor capacidad de
-                        procesamiento pueden resultar más lentas.
-
-                    </p>
-
-                    <p>
-
-                        Este laboratorio se encuentra en el tercer piso,
-                        justo al lado del Laboratorio 2.
-
-                    </p>
-
-                </article>
-
-
-            </div>  
-        </section>
-
-
-
-        <!-- =================================================
-             INFORMACIÓN GENERAL
-             =================================================
-
-             Explica de manera general la finalidad de los
-             laboratorios dentro del proceso educativo.
+             Esta sección entrega información rápida sobre
+             lo que el visitante puede encontrar.
              ================================================= -->
 
         <section class="informacion">
 
+
             <div class="informacion-contenido">
 
-                <!-- Columna izquierda -->
+
+                <!-- =============================================
+                     COLUMNA IZQUIERDA
+                     ============================================= -->
+
                 <div>
 
+
                     <p class="pequeno-titulo">
-                        APRENDIZAJE PRÁCTICO
+
+                        SOBRE ESTE SITIO
+
                     </p>
 
+
                     <h2>
-                        Espacios para desarrollar
-                        nuevas habilidades
+
+                        Información sobre los espacios
+                        tecnológicos del liceo
+
                     </h2>
 
                 </div>
 
 
-                <!-- Columna derecha -->
+
+                <!-- =============================================
+                     COLUMNA DERECHA
+                     ============================================= -->
+
                 <div>
+
 
                     <p>
 
-                        Los laboratorios permiten que los estudiantes
-                        lleven los conocimientos aprendidos en clases
-                        a actividades prácticas.
+                        Los laboratorios son espacios destinados
+                        al aprendizaje práctico y al desarrollo
+                        de diferentes actividades relacionadas
+                        con la tecnología.
 
                     </p>
 
+
                     <p>
 
-                        Cada espacio cuenta con recursos destinados
-                        a diferentes áreas, desde los fundamentos de
-                        programación hasta proyectos de robótica,
-                        hardware y desarrollo web.
+                        En este sitio se pueden consultar las
+                        características generales de los cinco
+                        laboratorios, sus equipos, sistemas
+                        operativos y ubicación dentro del liceo.
+
+                    </p>
+
+
+                    <p>
+
+                        También se presenta información sobre
+                        la autora del proyecto, sus intereses,
+                        aprendizajes actuales y objetivos
+                        relacionados con su futuro académico.
 
                     </p>
 
@@ -561,29 +412,42 @@
 
 
         <!-- =================================================
-             SECCIÓN DE CONTACTO
+             ACCESOS PRINCIPALES
+             =================================================
+
+             Estas tarjetas funcionan como accesos rápidos
+             a las diferentes partes del sitio.
              ================================================= -->
 
-        <section id="contacto" class="contacto">
+        <section class="laboratorios">
 
 
-            <!-- Título de la sección -->
+            <!-- Título -->
+
             <div class="titulo-seccion">
 
                 <p class="pequeno-titulo">
-                    ¿NECESITAS INFORMACIÓN?
+
+                    EXPLORA EL SITIO
+
                 </p>
 
+
                 <h2>
-                    Contacto
+
+                    Información disponible
+
                 </h2>
+
 
                 <div class="linea"></div>
 
-                <p>
 
-                    Si quieres obtener más información sobre los
-                    laboratorios, puedes dejarnos un mensaje.
+                <p class="texto-introduccion">
+
+                    Utiliza las siguientes secciones para
+                    conocer los contenidos disponibles en
+                    este sitio web.
 
                 </p>
 
@@ -592,64 +456,142 @@
 
 
             <!-- =============================================
-                 FORMULARIO DE CONTACTO
+                 TARJETAS DE ACCESO
                  ============================================= -->
 
-            <form class="formulario">
-
-
-                <!-- Campo para el nombre -->
-                <label for="nombre">
-                    Nombre
-                </label>
-
-                <input
-                    type="text"
-                    id="nombre"
-                    name="nombre"
-                    placeholder="Tu nombre"
-                    required
-                >
+            <div class="laboratorios-grid">
 
 
 
-                <!-- Campo para el correo -->
-                <label for="email">
-                    Correo electrónico
-                </label>
+                <!-- =============================================
+                     TARJETA: LABORATORIOS
+                     ============================================= -->
 
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="tu@email.com"
-                    required
-                >
+                <article class="laboratorio-card laboratorio-1">
 
 
+                    <p class="numero-laboratorio">
 
-                <!-- Campo para el mensaje -->
-                <label for="mensaje">
-                    Mensaje
-                </label>
+                        SECCIÓN 01
 
-                <textarea
-                    id="mensaje"
-                    name="mensaje"
-                    rows="6"
-                    placeholder="Escribe tu mensaje..."
-                    required
-                ></textarea>
+                    </p>
 
 
+                    <h3>
 
-                <!-- Botón para enviar el formulario -->
-                <button type="submit">
-                    Enviar mensaje →
-                </button>
+                        Laboratorios
+
+                    </h3>
 
 
-            </form>
+                    <p>
+
+                        Conoce los cinco laboratorios del liceo,
+                        sus características, equipos, sistemas
+                        operativos y ubicación.
+
+                    </p>
+
+
+                    <a
+                        href="laboratorios.html"
+                        class="boton principal"
+                    >
+
+                        Ver laboratorios →
+
+                    </a>
+
+                </article>
+
+
+
+                <!-- =============================================
+                     TARJETA: SOBRE MÍ
+                     ============================================= -->
+
+                <article class="laboratorio-card laboratorio-2">
+
+
+                    <p class="numero-laboratorio">
+
+                        SECCIÓN 02
+
+                    </p>
+
+
+                    <h3>
+
+                        Sobre mí
+
+                    </h3>
+
+
+                    <p>
+
+                        Conoce a la autora del proyecto, sus
+                        intereses, aprendizajes y objetivos
+                        relacionados con su futuro profesional.
+
+                    </p>
+
+
+                    <a
+                        href="sobre-mi.html"
+                        class="boton principal"
+                    >
+
+                        Conocer más →
+
+                    </a>
+
+                </article>
+
+
+
+                <!-- =============================================
+                     TARJETA: CONTACTO
+                     ============================================= -->
+
+                <article class="laboratorio-card laboratorio-3">
+
+
+                    <p class="numero-laboratorio">
+
+                        SECCIÓN 03
+
+                    </p>
+
+
+                    <h3>
+
+                        Contacto
+
+                    </h3>
+
+
+                    <p>
+
+                        Si necesitas información adicional
+                        sobre el sitio o sus contenidos,
+                        puedes utilizar el formulario de contacto.
+
+                    </p>
+
+
+                    <a
+                        href="contacto.html"
+                        class="boton principal"
+                    >
+
+                        Ir a contacto →
+
+                    </a>
+
+                </article>
+
+
+            </div>
 
         </section>
 
@@ -665,7 +607,9 @@
     <footer>
 
         <p>
-            © 2026 · Laboratorios del Liceo
+
+            © 2026 Valentina · Sitio informativo
+
         </p>
 
     </footer>
