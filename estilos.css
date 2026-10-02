@@ -2292,3 +2292,392 @@ footer p {
         padding: 25px 20px;
     }
 }
+
+/* =========================================================
+   AJUSTE DE LAS TARJETAS DE LA PÁGINA PRINCIPAL
+   ========================================================= */
+
+/* 
+   Organiza las tarjetas en dos columnas.
+   También agrega espacio entre cada tarjeta.
+*/
+.laboratorios-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    align-items: stretch;
+}
+
+
+/*
+   Define el espacio interno y la altura mínima
+   de cada tarjeta.
+   
+   Flex permite ordenar el contenido de la tarjeta
+   de forma vertical.
+*/
+.laboratorio-card {
+    padding: 30px;
+    min-height: 210px;
+
+    display: flex;
+    flex-direction: column;
+
+    /* Distribuye el contenido de forma ordenada */
+    justify-content: space-between;
+}
+
+
+/*
+   Agrega espacio entre el número de sección
+   y el título de la tarjeta.
+*/
+.laboratorio-card h3 {
+    margin-top: 5px;
+    margin-bottom: 12px;
+}
+
+
+/*
+   Da espacio debajo de la descripción
+   y mejora la separación entre las líneas.
+*/
+.laboratorio-card > p:not(.numero-laboratorio) {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+
+/*
+   Mantiene el botón alineado al comienzo
+   de la tarjeta.
+*/
+.laboratorio-card .boton {
+    align-self: flex-start;
+}
+
+
+/* =========================================================
+   TARJETA DE CONTACTO
+   ========================================================= */
+
+/*
+   La tercera tarjeta ocupa una posición centrada
+   debajo de las dos primeras tarjetas.
+*/
+.laboratorio-3 {
+    grid-column: 1 / -1;
+
+    /* Mantiene el mismo ancho aproximado
+       que las tarjetas superiores */
+    width: calc(50% - 15px);
+
+    /* Centra la tarjeta horizontalmente */
+    justify-self: center;
+}
+
+
+/* =========================================================
+   ESPACIADO GENERAL DE LA SECCIÓN
+   ========================================================= */
+
+/*
+   Reduce un poco el espacio superior e inferior
+   de la sección de tarjetas.
+*/
+.laboratorios {
+    padding-top: 70px;
+    padding-bottom: 90px;
+}
+
+
+/*
+   Controla la separación entre el título
+   y las tarjetas.
+*/
+.titulo-seccion {
+    margin-bottom: 50px;
+}
+
+
+/*
+   Agrega separación debajo del título
+   principal de la sección.
+*/
+.titulo-seccion h2 {
+    margin-bottom: 15px;
+}
+
+
+/*
+   Agrega espacio entre el texto introductorio
+   y los elementos que lo rodean.
+*/
+.texto-introduccion {
+    margin-top: 20px;
+}
+
+
+/* =========================================================
+   ADAPTACIÓN PARA CELULARES
+   ========================================================= */
+
+/*
+   Cuando la pantalla es menor a 700px,
+   las tarjetas pasan a ocupar una sola columna.
+*/
+@media (max-width: 700px) {
+
+    /*
+       Cambia el diseño a una sola columna
+       para que las tarjetas no queden apretadas.
+    */
+    .laboratorios-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+
+    /*
+       La tarjeta de contacto deja de ocupar
+       toda una fila y vuelve a su tamaño normal.
+    */
+    .laboratorio-3 {
+        grid-column: auto;
+        width: 100%;
+    }
+
+
+    /*
+       En celulares las tarjetas ya no necesitan
+       una altura mínima fija.
+    */
+    .laboratorio-card {
+        min-height: auto;
+    }
+
+}
+
+/* =========================================================
+   AJUSTE DE LAS TARJETAS DE INFORMACIÓN DE LOS LABORATORIOS
+   ========================================================= */
+
+/*
+   Organiza las características de los laboratorios
+   en dos columnas para aprovechar mejor el espacio.
+*/
+.caracteristicas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+
+/*
+   Diseño general de cada tarjeta.
+   Se elimina la distribución horizontal anterior
+   y se organiza el contenido de forma vertical.
+*/
+.caracteristica-card {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 28px 30px;
+
+    background-color: var(--blanco);
+
+    border: 1px solid var(--borde);
+    border-left: 5px solid var(--verde);
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 8px 25px rgba(23, 53, 47, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/*
+   Efecto al pasar el mouse sobre una tarjeta.
+*/
+.caracteristica-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 14px 32px rgba(23, 53, 47, 0.11);
+}
+
+
+/*
+   Etiqueta superior de la tarjeta.
+   Ejemplo: SISTEMA OPERATIVO, RENDIMIENTO,
+   USO ACADÉMICO o UBICACIÓN.
+*/
+.caracteristica-card .etiqueta-info {
+    margin-bottom: 10px;
+
+    color: var(--verde);
+
+    font-size: 0.72rem;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+/*
+   Título principal de la característica.
+   Ejemplo: Ubuntu, Actividades informáticas,
+   Segundo piso, etc.
+*/
+.caracteristica-card h3 {
+    margin: 0 0 12px 0;
+
+    color: var(--verde-oscuro);
+
+    font-size: 1.3rem;
+
+    line-height: 1.3;
+}
+
+
+/*
+   Descripción de cada característica.
+*/
+.caracteristica-card p {
+    margin: 0;
+
+    color: var(--gris);
+
+    font-size: 0.95rem;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   TARJETAS DE RESPONSABLES
+   ========================================================= */
+
+/*
+   Organiza los responsables en dos columnas.
+*/
+.responsables-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+
+/*
+   Diseño de las tarjetas de los responsables.
+*/
+.responsable-card {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+
+    padding: 28px 30px;
+
+    background-color: var(--blanco);
+
+    border: 1px solid var(--borde);
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 8px 25px rgba(23, 53, 47, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/*
+   Efecto al pasar el mouse sobre la tarjeta.
+*/
+.responsable-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 14px 32px rgba(23, 53, 47, 0.11);
+}
+
+
+/*
+   Etiqueta que indica el cargo.
+   Ejemplo: PROFESOR A CARGO o TÉCNICO.
+*/
+.responsable-card .etiqueta-info {
+    margin-bottom: 5px;
+
+    color: var(--verde);
+
+    font-size: 0.72rem;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+/*
+   Nombre de la persona responsable.
+*/
+.responsable-card h2 {
+    margin: 0 0 8px 0;
+
+    color: var(--verde-oscuro);
+
+    font-size: 1.35rem;
+
+    line-height: 1.3;
+}
+
+
+/*
+   Descripción de las funciones del responsable.
+*/
+.responsable-card p {
+    margin: 0;
+
+    color: var(--gris);
+
+    font-size: 0.95rem;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   ADAPTACIÓN PARA PANTALLAS PEQUEÑAS
+   ========================================================= */
+
+/*
+   En pantallas pequeñas las tarjetas pasan
+   a ocupar una sola columna.
+*/
+@media (max-width: 700px) {
+
+    .caracteristicas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .responsables-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .caracteristica-card,
+    .responsable-card {
+        padding: 25px;
+    }
+
+}
